@@ -1,0 +1,1 @@
+# selfcare_anroid_projekt
