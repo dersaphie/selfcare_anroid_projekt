@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/blankFragment">
+<!---->
+    <activity
+        android:id="@+id/mainActivity"
+        android:name="com.example.testfragnav.MainActivity"
+        android:label="activity_main"
+        tools:layout="@layout/activity_main" />
+    <fragment
+        android:id="@+id/blankFragment"
+        android:name="com.example.testfragnav.BlankFragment"
+        android:label="fragment_blank"
+        tools:layout="@layout/fragment_blank" >
+        <argument
+            android:name="flowStepNumber"
+            app:argType="integer"
+            android:defaultValue="1"/>
+
+        <action
+            android:id="@+id/action_blankFragment_to_blankFragment2"
+            app:destination="@id/blankFragment2"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_blankFragment_to_navigation2"
+            app:destination="@id/navigation2" />
+    </fragment>
+    <fragment
+        android:id="@+id/blankFragment2"
+        android:name="com.example.testfragnav.BlankFragment2"
+        android:label="fragment_blank2"
+        tools:layout="@layout/fragment_blank2" />
+    <navigation android:id="@+id/navigation2"
+        app:startDestination="@id/blankFragment3">
+        <fragment
+            android:id="@+id/blankFragment3"
+            android:name="com.example.testfragnav.BlankFragment3"
+            android:label="fragment_blank3"
+            tools:layout="@layout/fragment_blank3" />
+    </navigation><action android:id="@+id/action_global_blankFragment" app:destination="@id/blankFragment"/><action android:id="@+id/action_global_blankFragment2" app:destination="@id/blankFragment2"/><!---->
+</navigation>

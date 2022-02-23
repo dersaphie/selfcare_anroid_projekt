@@ -1,4 +1,4 @@
-package com.example.themeswitcher20dieeine
+package com.example.testfragnav
 
 import org.junit.Test
 
