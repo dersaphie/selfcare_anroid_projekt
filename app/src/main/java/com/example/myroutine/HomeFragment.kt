@@ -33,7 +33,7 @@ class HomeFragment : Fragment(){
         }
         //where to click an whats comes next //change writing navigate_sport_button
         view.findViewById<Button>(R.id.animSport)?.setOnClickListener {
-            findNavController().navigate(R.id.sportFragment, null, options)
+            findNavController().navigate(R.id.nutritionFragment, null, options)
         }
 
         // navigate with action for safe arguments

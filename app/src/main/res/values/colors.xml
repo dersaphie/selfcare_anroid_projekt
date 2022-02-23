@@ -14,6 +14,7 @@
     <color name="colorPrimaryTeal">#008577</color>
     <color name="colorPrimaryDarkTeal">#00574B</color>
     <color name="colorAccentTeal">#D81B60</color>
+    <color name="colorAccentRose">#d15b8f</color>
 
     <!-- Cyan Theme Colors -->
     <color name="colorPrimaryCyan">#26c6da</color>

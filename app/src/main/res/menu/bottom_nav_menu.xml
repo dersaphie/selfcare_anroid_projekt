@@ -20,4 +20,8 @@
         android:id="@+id/sportFragment"
         android:icon="@drawable/ic_android"
         android:title="Sport" />
+    <item
+        android:id="@+id/nutritionFragment"
+        android:icon="@drawable/ic_android"
+        android:title="Nutrition" />
 </menu>
