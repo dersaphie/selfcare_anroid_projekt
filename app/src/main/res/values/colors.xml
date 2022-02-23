@@ -7,14 +7,16 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
     <!-- Teal Theme Colors -->
-        <color name="colorPrimaryTeal">#008577</color>
-        <color name="colorPrimaryDarkTeal">#00574B</color>
-        <color name="colorAccentTeal">#D81B60</color>
+    <color name="colorPrimaryTeal">#008577</color>
+    <color name="colorPrimaryDarkTeal">#00574B</color>
+    <color name="colorAccentTeal">#D81B60</color>
 
-        <!-- Cyan Theme Colors -->
-        <color name="colorPrimaryCyan">#26c6da</color>
-        <color name="colorPrimaryDarkCyan">#0095a8</color>
-        <color name="colorAccentCyan">#ffca28</color>
-
+    <!-- Cyan Theme Colors -->
+    <color name="colorPrimaryCyan">#26c6da</color>
+    <color name="colorPrimaryDarkCyan">#0095a8</color>
+    <color name="colorAccentCyan">#ffca28</color>
 </resources>

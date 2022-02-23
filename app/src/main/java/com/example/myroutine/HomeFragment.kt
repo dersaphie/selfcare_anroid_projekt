@@ -1,0 +1,48 @@
+package com.example.myroutine
+
+import android.os.Bundle
+import android.view.*
+import androidx.fragment.app.Fragment
+import android.widget.Button
+import androidx.navigation.Navigation
+import androidx.navigation.Navigation.findNavController
+import androidx.navigation.fragment.findNavController
+import androidx.navigation.navOptions
+
+class HomeFragment : Fragment(){
+/*
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+       // setHasOptionsMenu(true)
+        // Inflate the layout for this fragment
+        return inflater.inflate(R.layout.fragment_home, container, false)
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        //anim for side change
+        val options = navOptions {
+         /*   anim {
+                enter = R.anim.slide_in_right
+                exit = R.anim.slide_out_left
+                popEnter = R.anim.slide_in_left
+                popExit = R.anim.slide_out_right
+            }*/
+        }
+        //where to click an whats comes next //change writing navigate_sport_button
+        view.findViewById<Button>(R.id.animSport)?.setOnClickListener {
+            findNavController().navigate(R.id.sportFragment, null, options)
+        }
+        //NAvigate via action and not to page
+        view.findViewById<Button>(R.id.animMeTime)?.setOnClickListener(
+            Navigation.createNavigateOnClickListener(R.id.sportFragment, null)
+        )
+
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        inflater.inflate(R.menu.overflow_menu, menu)
+    }*/
+}

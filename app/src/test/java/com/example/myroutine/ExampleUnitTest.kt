@@ -1,4 +1,4 @@
-package com.example.themeswitcher20dieeine
+package com.example.myroutine
 
 import org.junit.Test
 

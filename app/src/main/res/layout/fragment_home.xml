@@ -6,215 +6,203 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:paddingTop="@dimen/size_8"
-    tools:context=".MainActivity">
+    tools:context=".HomeFragment">
+    <!---->
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/gl50PercentVert"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.5" />
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/gl50PercentVert"
-        android:layout_width="0dp"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.5" />
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/gl33PercentVert"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.33" />
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/gl33PercentVert"
-        android:layout_width="0dp"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.33" />
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/gl66PercentVert"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.66" />
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/gl66PercentVert"
-        android:layout_width="0dp"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.66" />
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/gl99PercentVert"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.99" />
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/gl99PercentVert"
-        android:layout_width="0dp"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.99" />
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/gl005PercentHor"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.05" />
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/gl005PercentHor"
-        android:layout_width="0dp"
-        android:layout_height="match_parent"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.05" />
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/gl40PercentHor"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.4" />
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/gl40PercentHor"
-        android:layout_width="0dp"
-        android:layout_height="match_parent"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.4" />
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/gl50PercentHor"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.5" />
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/gl50PercentHor"
-        android:layout_width="0dp"
-        android:layout_height="match_parent"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.5" />
+        <ImageView
+            android:id="@+id/picAPIGoodMood"
+            android:src="@drawable/img_cocktail_daiquiri"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/size_0"
+            android:layout_margin="@dimen/size_16"
+            app:layout_constraintTop_toTopOf="@id/gl005PercentHor"
+            app:layout_constraintBottom_toTopOf="@id/gl40PercentHor"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:contentDescription="@string/content_desc_API"
+            android:background="@drawable/sh_rectangle"/>
 
-    <ImageView
-        android:id="@+id/picAPIGoodMood"
-        android:src="@drawable/cocktail_daiquiri"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/size_0"
-        android:layout_margin="@dimen/size_16"
-        app:layout_constraintTop_toTopOf="@id/gl005PercentHor"
-        app:layout_constraintBottom_toTopOf="@id/gl40PercentHor"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:contentDescription="@string/content_desc_API"
-        android:background="@drawable/shape"/>
+        <ImageView
+            android:id="@+id/picUserEmoji"
+            android:layout_width="131dp"
+            android:layout_height="130dp"
+            android:background="@drawable/sh_circle"
+            android:contentDescription="@string/content_desc_Profile"
+            android:src="@drawable/img_user_emoji"
+            app:layout_constraintBottom_toTopOf="@id/gl50PercentHor"
+            app:layout_constraintEnd_toEndOf="@id/gl66PercentVert"
+            app:layout_constraintStart_toStartOf="@id/gl33PercentVert"
+            app:layout_constraintTop_toTopOf="@id/gl005PercentHor"
+            app:layout_constraintVertical_bias="0.9" />
 
-    <ImageView
-        android:id="@+id/picUserEmoji"
-        android:layout_width="131dp"
-        android:layout_height="130dp"
-        android:background="@drawable/circle"
-        android:contentDescription="@string/content_desc_Profile"
-        android:src="@drawable/d"
-        app:layout_constraintBottom_toTopOf="@id/gl50PercentHor"
-        app:layout_constraintEnd_toEndOf="@id/gl66PercentVert"
-        app:layout_constraintStart_toStartOf="@id/gl33PercentVert"
-        app:layout_constraintTop_toTopOf="@id/gl005PercentHor"
-        app:layout_constraintVertical_bias="0.9" />
+        <ImageView
+            android:id="@+id/cotnMeTime"
+            android:src="@drawable/img_cocktail_daiquiri"
+            android:layout_width="@dimen/size_0"
+            android:layout_height="@dimen/size_0"
+            android:layout_margin="@dimen/size_4"
+            app:layout_constraintTop_toTopOf="@id/gl50PercentHor"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/gl33PercentVert"
+            android:contentDescription="@string/content_desc_API"
+            android:background="@drawable/sh_container_rectangle"/>
 
-    <ImageView
-        android:id="@+id/cotnMeTime"
-        android:src="@drawable/cocktail_daiquiri"
-        android:layout_width="@dimen/size_0"
-        android:layout_height="@dimen/size_0"
-        android:layout_margin="@dimen/size_4"
-        app:layout_constraintTop_toTopOf="@id/gl50PercentHor"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="@id/gl33PercentVert"
-        android:contentDescription="@string/content_desc_API"
-        android:background="@drawable/containerrectangle"/>
+        <ImageView
+            android:id="@+id/cotnNutrition"
+            android:src="@drawable/img_cocktail_daiquiri"
+            android:layout_width="@dimen/size_0"
+            android:layout_height="@dimen/size_0"
+            android:layout_margin="@dimen/size_4"
+            app:layout_constraintTop_toTopOf="@id/gl50PercentHor"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@id/gl33PercentVert"
+            app:layout_constraintEnd_toEndOf="@id/gl66PercentVert"
+            android:contentDescription="@string/content_desc_API"
+            android:background="@drawable/sh_container_rectangle"/>
 
-    <ImageView
-        android:id="@+id/cotnNutrition"
-        android:src="@drawable/cocktail_daiquiri"
-        android:layout_width="@dimen/size_0"
-        android:layout_height="@dimen/size_0"
-        android:layout_margin="@dimen/size_4"
-        app:layout_constraintTop_toTopOf="@id/gl50PercentHor"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="@id/gl33PercentVert"
-        app:layout_constraintEnd_toEndOf="@id/gl66PercentVert"
-        android:contentDescription="@string/content_desc_API"
-        android:background="@drawable/containerrectangle"/>
+        <ImageView
+            android:id="@+id/cotnSport"
+            android:src="@drawable/img_cocktail_daiquiri"
+            android:layout_width="@dimen/size_0"
+            android:layout_height="@dimen/size_0"
+            android:layout_margin="@dimen/size_4"
+            app:layout_constraintTop_toTopOf="@id/gl50PercentHor"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@id/gl66PercentVert"
+            app:layout_constraintEnd_toEndOf="@id/gl99PercentVert"
+            android:contentDescription="@string/content_desc_API"
+            android:background="@drawable/sh_container_rectangle"/>
 
-    <ImageView
-        android:id="@+id/cotnSport"
-        android:src="@drawable/cocktail_daiquiri"
-        android:layout_width="@dimen/size_0"
-        android:layout_height="@dimen/size_0"
-        android:layout_margin="@dimen/size_4"
-        app:layout_constraintTop_toTopOf="@id/gl50PercentHor"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="@id/gl66PercentVert"
-        app:layout_constraintEnd_toEndOf="@id/gl99PercentVert"
-        android:contentDescription="@string/content_desc_API"
-        android:background="@drawable/containerrectangle"/>
+        <Button
+            android:id="@+id/animMeTime"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/size_164"
+            android:layout_margin="@dimen/size_8"
+            app:layout_constraintTop_toTopOf="@id/gl50PercentHor"
+            app:layout_constraintBottom_toTopOf="@id/space"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/gl33PercentVert"
+            android:contentDescription="@string/content_desc_Profile"
+            android:background="@drawable/sh_rectangle"/>
 
-    <Button
-        android:id="@+id/animMeTime"
-        android:layout_width="0dp"
-        android:layout_height="@dimen/size_164"
-        android:layout_margin="@dimen/size_8"
-        app:layout_constraintTop_toTopOf="@id/gl50PercentHor"
-        app:layout_constraintBottom_toTopOf="@id/space"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="@id/gl33PercentVert"
-        android:contentDescription="@string/content_desc_Profile"
-        android:background="@drawable/shape"/>
+        <ImageView
+            android:id="@+id/animNutrition"
+            android:src="@drawable/img_cocktail_daiquiri"
+            android:layout_width="@dimen/size_0"
+            android:layout_height="@dimen/size_164"
+            android:layout_margin="@dimen/size_8"
+            app:layout_constraintTop_toTopOf="@id/gl50PercentHor"
+            app:layout_constraintBottom_toTopOf="@id/space"
+            app:layout_constraintStart_toStartOf="@id/gl33PercentVert"
+            app:layout_constraintEnd_toEndOf="@id/gl66PercentVert"
+            android:contentDescription="@string/content_desc_Profile"
+            android:background="@drawable/sh_rectangle"/>
 
-    <ImageView
-        android:id="@+id/animNutrition"
-        android:src="@drawable/cocktail_daiquiri"
-        android:layout_width="@dimen/size_0"
-        android:layout_height="@dimen/size_164"
-        android:layout_margin="@dimen/size_8"
-        app:layout_constraintTop_toTopOf="@id/gl50PercentHor"
-        app:layout_constraintBottom_toTopOf="@id/space"
-        app:layout_constraintStart_toStartOf="@id/gl33PercentVert"
-        app:layout_constraintEnd_toEndOf="@id/gl66PercentVert"
-        android:contentDescription="@string/content_desc_Profile"
-        android:background="@drawable/shape"/>
+        <Button
+            android:id="@+id/animSport"
+            android:layout_width="@dimen/size_0"
+            android:layout_height="@dimen/size_164"
+            android:layout_margin="@dimen/size_8"
+            app:layout_constraintTop_toTopOf="@id/gl50PercentHor"
+            app:layout_constraintBottom_toTopOf="@id/space"
+            app:layout_constraintStart_toStartOf="@id/gl66PercentVert"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:contentDescription="@string/content_desc_Profile"
+            android:background="@drawable/sh_rectangle" />
 
-    <Button
-        android:id="@+id/animSport"
-        android:layout_width="@dimen/size_0"
-        android:layout_height="@dimen/size_164"
-        android:layout_margin="@dimen/size_8"
-        app:layout_constraintTop_toTopOf="@id/gl50PercentHor"
-        app:layout_constraintBottom_toTopOf="@id/space"
-        app:layout_constraintStart_toStartOf="@id/gl66PercentVert"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:contentDescription="@string/content_desc_Profile"
-        android:background="@drawable/shape" />
+        <ImageView
+            android:id="@+id/animMeTimeToday"
+            android:src="@drawable/img_cocktail_daiquiri"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/size_164"
+            android:layout_margin="@dimen/size_8"
+            app:layout_constraintTop_toBottomOf="@id/space"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/gl33PercentVert"
+            android:contentDescription="@string/content_desc_Profile"
+            android:background="@drawable/sh_rectangle"/>
 
-    <ImageView
-        android:id="@+id/animMeTimeToday"
-        android:src="@drawable/cocktail_daiquiri"
-        android:layout_width="0dp"
-        android:layout_height="@dimen/size_164"
-        android:layout_margin="@dimen/size_8"
-        app:layout_constraintTop_toBottomOf="@id/space"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="@id/gl33PercentVert"
-        android:contentDescription="@string/content_desc_Profile"
-        android:background="@drawable/shape"/>
+        <ImageView
+            android:id="@+id/animNutritionToday"
+            android:src="@drawable/img_cocktail_daiquiri"
+            android:layout_width="@dimen/size_0"
+            android:layout_height="@dimen/size_164"
+            android:layout_margin="@dimen/size_8"
+            app:layout_constraintTop_toBottomOf="@id/space"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@id/gl33PercentVert"
+            app:layout_constraintEnd_toEndOf="@id/gl66PercentVert"
+            android:contentDescription="@string/content_desc_Profile"
+            android:background="@drawable/sh_rectangle"/>
 
-    <ImageView
-        android:id="@+id/animNutritionToday"
-        android:src="@drawable/cocktail_daiquiri"
-        android:layout_width="@dimen/size_0"
-        android:layout_height="@dimen/size_164"
-        android:layout_margin="@dimen/size_8"
-        app:layout_constraintTop_toBottomOf="@id/space"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="@id/gl33PercentVert"
-        app:layout_constraintEnd_toEndOf="@id/gl66PercentVert"
-        android:contentDescription="@string/content_desc_Profile"
-        android:background="@drawable/shape"/>
+        <ImageView
+            android:id="@+id/animSportToday"
+            android:src="@drawable/img_cocktail_daiquiri"
+            android:layout_width="@dimen/size_0"
+            android:layout_height="@dimen/size_164"
+            android:layout_margin="@dimen/size_8"
+            app:layout_constraintTop_toBottomOf="@id/space"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@id/gl66PercentVert"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:contentDescription="@string/content_desc_Profile"
+            android:background="@drawable/sh_rectangle" />
 
-    <ImageView
-        android:id="@+id/animSportToday"
-        android:src="@drawable/cocktail_daiquiri"
-        android:layout_width="@dimen/size_0"
-        android:layout_height="@dimen/size_164"
-        android:layout_margin="@dimen/size_8"
-        app:layout_constraintTop_toBottomOf="@id/space"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="@id/gl66PercentVert"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:contentDescription="@string/content_desc_Profile"
-        android:background="@drawable/shape" />
-
-    <Space
-        android:id="@+id/space"
-        android:layout_width="match_parent"
-        android:layout_height="10dp"
-        app:layout_constraintTop_toBottomOf="@id/gl50PercentHor"
-        app:layout_constraintBottom_toBottomOf="parent"/>
-
-      <Button
-        android:id="@+id/btnMainMenu"
-        android:text="@string/button_menu"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="@id/gl33PercentVert"
-        app:layout_constraintVertical_bias="0"
-        style="@style/Widget.AppCompat.Button.Colored" />
+        <Space
+            android:id="@+id/space"
+            android:layout_width="match_parent"
+            android:layout_height="10dp"
+            app:layout_constraintTop_toBottomOf="@id/gl50PercentHor"
+            app:layout_constraintBottom_toBottomOf="parent"/><!---->
 
 </androidx.constraintlayout.widget.ConstraintLayout>

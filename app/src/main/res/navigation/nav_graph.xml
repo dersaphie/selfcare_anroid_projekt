@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation><!--xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.myroutine.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_sportFragment"
+            app:destination="@id/sportFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_homeFragment_to_placeholder"
+            app:destination="@id/placeholder" />
+        <action
+            android:id="@+id/action_homeFragment_to_placeholder2"
+            app:destination="@id/placeholder2" />
+    </fragment>
+    <fragment
+        android:id="@+id/sportFragment"
+        android:name="com.example.myroutine.SportFragment"
+        android:label="fragment_sport"
+        tools:layout="@layout/fragment_sport" />
+    <fragment android:id="@+id/placeholder" />
+    <fragment android:id="@+id/placeholder2" />-->
+</navigation>

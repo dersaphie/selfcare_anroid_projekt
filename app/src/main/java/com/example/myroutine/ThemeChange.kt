@@ -1,18 +1,14 @@
-package com.example.themeswitcher20dieeine
+package com.example.myroutine
 
 import android.app.ActivityManager
 import android.graphics.BitmapFactory
 import android.os.Build
 import android.os.Bundle
 import android.preference.PreferenceManager
-
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 
-
-//class for Theme Change
-abstract class BaseActivity : AppCompatActivity() {
-
+abstract class ThemeChange : AppCompatActivity(){
     private var currentTheme = TEAL
     // on create the current Theme is set
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -55,4 +51,3 @@ abstract class BaseActivity : AppCompatActivity() {
         private const val CYAN = R.style.AppTheme_Cyan
     }
 }
-//till here

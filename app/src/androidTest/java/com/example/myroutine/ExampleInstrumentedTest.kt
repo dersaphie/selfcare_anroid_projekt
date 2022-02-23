@@ -1,4 +1,4 @@
-package com.example.themeswitcher20dieeine
+package com.example.myroutine
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4
@@ -19,6 +19,6 @@ class ExampleInstrumentedTest {
     fun useAppContext() {
         // Context of the app under test.
         val appContext = InstrumentationRegistry.getInstrumentation().targetContext
-        assertEquals("com.example.themeswitcher20dieeine", appContext.packageName)
+        assertEquals("com.example.myroutine", appContext.packageName)
     }
 }
