@@ -11,6 +11,7 @@
         android:name="com.example.myroutine.HomeFragment"
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" >
+        <!--
         <action
             android:id="@+id/action_homeFragment_to_sportFragment"
             app:destination="@id/sportFragment"
@@ -19,18 +20,15 @@
             app:popEnterAnim="@anim/slide_in_left"
             app:popExitAnim="@anim/slide_out_right" />
         <action
-            android:id="@+id/action_homeFragment_to_placeholder2"
-            app:destination="@id/placeholder2" />
-        <action
             android:id="@+id/action_homeFragment_to_nutritionFragment"
             app:destination="@id/nutritionFragment" />
+            -->
     </fragment>
     <fragment
         android:id="@+id/sportFragment"
         android:name="com.example.myroutine.SportFragment"
         android:label="fragment_sport"
         tools:layout="@layout/fragment_sport" />
-    <fragment android:id="@+id/placeholder2" />
     <fragment
         android:id="@+id/nutritionFragment"
         android:name="com.example.myroutine.NutritionFragment"

@@ -11,14 +11,15 @@ import androidx.appcompat.widget.Toolbar
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
-import androidx.navigation.ui.onNavDestinationSelected
-import androidx.navigation.ui.setupWithNavController
+import androidx.navigation.ui.*
 import com.example.myroutine.databinding.ActivityMainBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.navigation.NavigationView
 
 class MainActivity : ThemeChange() {
     private lateinit var binding: ActivityMainBinding
+    private lateinit var navController: NavController
+    private lateinit var appBarConfiguration: AppBarConfiguration
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,18 +29,23 @@ class MainActivity : ThemeChange() {
         setContentView(binding.root)
         val toolbar = findViewById<Toolbar>(R.id.toolbar)
         setSupportActionBar(toolbar)
-        val host: NavHostFragment = supportFragmentManager
-            .findFragmentById(R.id.nav_host_fragment) as NavHostFragment? ?: return
+        //val host: NavHostFragment = supportFragmentManager
+        //    .findFragmentById(R.id.nav_host_fragment) as NavHostFragment? ?: return
 
         // Set up Action Bar
-        val navController = host.navController
+        val navHostFragment = supportFragmentManager.findFragmentById(
+            R.id.nav_host_fragment
+        ) as NavHostFragment
+        navController = navHostFragment.navController
         // when clicking btn Theme is changed and Layout new created
         binding.changeThemeButton.setOnClickListener {
             switchTheme()
             recreate()
         }
 
+        /*
         setupBottomNavMenu(navController)
+         */
         navController.addOnDestinationChangedListener { _, destination, _ ->
             val dest: String = try {
                 resources.getResourceName(destination.id)
@@ -51,13 +57,32 @@ class MainActivity : ThemeChange() {
                 Toast.LENGTH_SHORT).show()
             Log.d("NavigationActivity", "Navigated to $dest")
         }
+
+        // Setup the bottom navigation view with navController
+        val bottomNavigationView = findViewById<BottomNavigationView>(R.id.bottom_nav_view)
+        bottomNavigationView.setupWithNavController(navController)
+
+        // Setup the ActionBar with navController and 3 top level destinations
+        appBarConfiguration = AppBarConfiguration(
+            setOf(R.id.homeFragment, R.id.nutritionFragment,  R.id.sportFragment)
+        )
+        setupActionBarWithNavController(navController, appBarConfiguration)
     }
+
+    override fun onSupportNavigateUp(): Boolean {
+        return navController.navigateUp(appBarConfiguration)
+    }
+
+
     //Bottom funktioniert erweiterung in layout und Layout definiert die
-    private fun setupBottomNavMenu(navController: NavController) {
+
+    /*private fun setupBottomNavMenu(navController: NavController) {
         // TODO STEP 9.3 - Use NavigationUI to set up Bottom Nav
         val bottomNav = findViewById<BottomNavigationView>(R.id.bottom_nav_view)
         bottomNav?.setupWithNavController(navController)
     }
+
+     */
     /*
     //inflating menu and nav_view which is layout for host fragment
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
