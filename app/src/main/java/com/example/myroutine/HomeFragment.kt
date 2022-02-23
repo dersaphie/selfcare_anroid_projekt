@@ -10,7 +10,7 @@ import androidx.navigation.fragment.findNavController
 import androidx.navigation.navOptions
 
 class HomeFragment : Fragment(){
-/*
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -24,17 +24,26 @@ class HomeFragment : Fragment(){
         super.onViewCreated(view, savedInstanceState)
         //anim for side change
         val options = navOptions {
-         /*   anim {
+            anim {
                 enter = R.anim.slide_in_right
                 exit = R.anim.slide_out_left
                 popEnter = R.anim.slide_in_left
                 popExit = R.anim.slide_out_right
-            }*/
+            }
         }
         //where to click an whats comes next //change writing navigate_sport_button
         view.findViewById<Button>(R.id.animSport)?.setOnClickListener {
             findNavController().navigate(R.id.sportFragment, null, options)
         }
+
+        // navigate with action for safe arguments
+        /*view.findViewById<Button>(R.id.animSport)?.setOnClickListener {
+            //val flowStepNumberArg = 1
+            val action = HomeFragmentDirections.actionHomeFragmentToSportFragment()
+            findNavController().navigate(action)
+        }
+        */
+
         //NAvigate via action and not to page
         view.findViewById<Button>(R.id.animMeTime)?.setOnClickListener(
             Navigation.createNavigateOnClickListener(R.id.sportFragment, null)
@@ -42,7 +51,9 @@ class HomeFragment : Fragment(){
 
     }
 
+    /*
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         inflater.inflate(R.menu.overflow_menu, menu)
-    }*/
+    }
+    */
 }

@@ -26,19 +26,19 @@ class MainActivity : ThemeChange() {
         //start Theme is set
         setTheme()
         setContentView(binding.root)
-       // val toolbar = findViewById<Toolbar>(R.id.toolbar)
-        //setSupportActionBar(toolbar)
-        //val host: NavHostFragment = supportFragmentManager
-          //  .findFragmentById(R.id.nav_host_fragment) as NavHostFragment? ?: return
+        val toolbar = findViewById<Toolbar>(R.id.toolbar)
+        setSupportActionBar(toolbar)
+        val host: NavHostFragment = supportFragmentManager
+            .findFragmentById(R.id.nav_host_fragment) as NavHostFragment? ?: return
 
         // Set up Action Bar
-      //  val navController = host.navController
+        val navController = host.navController
         // when clicking btn Theme is changed and Layout new created
         binding.changeThemeButton.setOnClickListener {
             switchTheme()
             recreate()
         }
-/*
+
         setupBottomNavMenu(navController)
         navController.addOnDestinationChangedListener { _, destination, _ ->
             val dest: String = try {
@@ -50,15 +50,16 @@ class MainActivity : ThemeChange() {
             Toast.makeText(this@MainActivity, "Navigated to $dest",
                 Toast.LENGTH_SHORT).show()
             Log.d("NavigationActivity", "Navigated to $dest")
-        }*/
+        }
     }
-   /* //Bottom funktioniert erweiterung in layout und Layout definiert die
+    //Bottom funktioniert erweiterung in layout und Layout definiert die
     private fun setupBottomNavMenu(navController: NavController) {
         // TODO STEP 9.3 - Use NavigationUI to set up Bottom Nav
         val bottomNav = findViewById<BottomNavigationView>(R.id.bottom_nav_view)
         bottomNav?.setupWithNavController(navController)
-    }*/
-   /* //inflating menu and nav_view which is layout for host fragment
+    }
+    /*
+    //inflating menu and nav_view which is layout for host fragment
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         val retValue = super.onCreateOptionsMenu(menu)
         val navigationView = findViewById<NavigationView>(R.id.nav_view)
@@ -74,6 +75,6 @@ class MainActivity : ThemeChange() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return item.onNavDestinationSelected(findNavController(R.id.nav_host_fragment))
 
-    }*/
-
+    }
+*/
 }
