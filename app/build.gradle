@@ -57,7 +57,7 @@ dependencies {
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     // Jetpack Compose Integration Fragment Navigation
     implementation 'androidx.navigation:navigation-compose:2.4.1'
-    implementation 'androidx.preference:preference:1.1.1'
+    implementation 'androidx.preference:preference:1.2.0'
     // Testing Navigation Fragment Navigation
     androidTestImplementation 'androidx.navigation:navigation-testing:2.4.1'
     testImplementation 'junit:junit:4.+'
