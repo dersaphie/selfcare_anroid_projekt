@@ -24,4 +24,8 @@
         android:id="@+id/nutritionFragment"
         android:icon="@drawable/ic_android"
         android:title="Nutrition" />
+    <item
+        android:id="@+id/profilFragment"
+        android:icon="@drawable/ic_android"
+        android:title="Profil" />
 </menu>

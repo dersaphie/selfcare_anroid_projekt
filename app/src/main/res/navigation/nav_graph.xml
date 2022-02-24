@@ -34,4 +34,13 @@
         android:name="com.example.myroutine.NutritionFragment"
         android:label="fragment_nutrition"
         tools:layout="@layout/fragment_nutrition" />
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.example.myroutine.SettingsFragment"
+        android:label="SettingsFragment" />
+    <fragment
+        android:id="@+id/profilFragment"
+        android:name="com.example.myroutine.ProfileFragment"
+        android:label="fragment_profil"
+        tools:layout="@layout/fragment_profile" />
 </navigation>
