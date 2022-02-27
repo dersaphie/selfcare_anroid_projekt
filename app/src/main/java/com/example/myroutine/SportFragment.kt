@@ -52,5 +52,5 @@ class SportFragment : Fragment() {
         )
 
     }
-    
+
 }
