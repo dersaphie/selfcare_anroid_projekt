@@ -23,25 +23,38 @@ class MainActivity : ThemeChange() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        //define binding
         binding = ActivityMainBinding.inflate(layoutInflater)
         //start Theme is set
         setTheme()
         setContentView(binding.root)
         val toolbar = findViewById<Toolbar>(R.id.toolbar)
         setSupportActionBar(toolbar)
-        //val host: NavHostFragment = supportFragmentManager
-        //    .findFragmentById(R.id.nav_host_fragment) as NavHostFragment? ?: return
-
         // Set up Action Bar
         val navHostFragment = supportFragmentManager.findFragmentById(
             R.id.nav_host_fragment
         ) as NavHostFragment
         navController = navHostFragment.navController
+
         // when clicking btn Theme is changed and Layout new created
         binding.changeThemeButton.setOnClickListener {
             switchTheme()
             recreate()
         }
+
+        /*
+        ///DB
+        //pass context
+        var helper = DBHelper(applicationContext)
+        //DB
+        var db = helper.readableDatabase
+        //cursor
+        var rd = db.rawQuery("SELECT * FROM USERS", null)
+
+        //if DB created
+        if(rd.moveToNext())
+            Toast.makeText(applicationContext,rd.getString(1),Toast.LENGTH_LONG).show()
+*/
 
         /*
         setupBottomNavMenu(navController)
@@ -68,19 +81,19 @@ class MainActivity : ThemeChange() {
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
 
-/*
+
         ///DB
         //pass context
         var helper = DBHelper(applicationContext)
         //DB
         var db = helper.readableDatabase
         //cursor
-        var rd = db.rawQuery("SELECT * FROM USERS", null)
+        var rd = db.rawQuery("SELECT * FROM CARDIO", null)
 
         //if DB created
         if(rd.moveToNext())
             Toast.makeText(applicationContext,rd.getString(1),Toast.LENGTH_LONG).show()
-*/
+
     }
 
     override fun onSupportNavigateUp(): Boolean {

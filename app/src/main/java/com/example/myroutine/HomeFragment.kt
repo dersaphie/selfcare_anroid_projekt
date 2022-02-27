@@ -36,7 +36,7 @@ class HomeFragment : Fragment(){
         *FEHLER!! Das neue Fragment wird zum Home Fragment -> eigentlich sollte Action aufruf es lösen
         * aber absturz bis jetzt
          */
-        //where to click an whats comes next //change writing navigate_sport_button
+        //click for next fragment //change writing navigate_sport_button
         view.findViewById<Button>(R.id.animSport)?.setOnClickListener {
             findNavController().navigate(R.id.action_home_to_sport, null, options)
         }
