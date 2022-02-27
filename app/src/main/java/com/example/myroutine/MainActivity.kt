@@ -68,7 +68,7 @@ class MainActivity : ThemeChange() {
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
 
-
+/*
         ///DB
         //pass context
         var helper = DBHelper(applicationContext)
@@ -80,7 +80,7 @@ class MainActivity : ThemeChange() {
         //if DB created
         if(rd.moveToNext())
             Toast.makeText(applicationContext,rd.getString(1),Toast.LENGTH_LONG).show()
-
+*/
     }
 
     override fun onSupportNavigateUp(): Boolean {
