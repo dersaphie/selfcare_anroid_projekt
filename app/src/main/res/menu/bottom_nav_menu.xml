@@ -24,8 +24,8 @@
         android:id="@+id/nutrition"
         android:icon="@drawable/ic_baseline_food_bank_24"
         android:title="nutrition" />
-   <!-- <item
+   <item
         android:id="@+id/profilFragment"
         android:icon="@drawable/ic_baseline_self_improvement_24"
-        android:title="Profil" />-->
+        android:title="Profil" />
 </menu>

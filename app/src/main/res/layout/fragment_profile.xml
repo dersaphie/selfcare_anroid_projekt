@@ -88,10 +88,11 @@
         android:ems="10"
         android:hint="@string/user_name"
         android:inputType="textPersonName"
-        app:layout_constraintTop_toBottomOf="tv_your_name"
+        app:layout_constraintTop_toBottomOf="@id/tv_your_name"
         app:layout_constraintBottom_toTopOf="@id/tv_your_age"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintEnd_toEndOf="parent"
+        android:autofillHints="" />
 
     <TextView
         android:id="@+id/tv_your_age"
@@ -102,7 +103,7 @@
         android:layout_marginBottom="4dp"
         android:ems="10"
         android:text="@string/your_name"
-        app:layout_constraintTop_toBottomOf="et_your_name"
+        app:layout_constraintTop_toBottomOf="@id/et_your_name"
         app:layout_constraintBottom_toTopOf="@id/et_your_age"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
@@ -117,7 +118,7 @@
         android:ems="10"
         android:hint="@string/user_name"
         android:inputType="textPersonName"
-        app:layout_constraintTop_toBottomOf="tv_your_age"
+        app:layout_constraintTop_toBottomOf="@id/tv_your_age"
         app:layout_constraintBottom_toTopOf="@id/tv_your_weight"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
@@ -131,7 +132,7 @@
         android:layout_marginBottom="4dp"
         android:ems="10"
         android:text="@string/your_name"
-        app:layout_constraintTop_toBottomOf="et_your_age"
+        app:layout_constraintTop_toBottomOf="@id/et_your_age"
         app:layout_constraintBottom_toTopOf="@id/et_your_weight"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
@@ -146,7 +147,7 @@
         android:ems="10"
         android:hint="@string/user_name"
         android:inputType="textPersonName"
-        app:layout_constraintTop_toBottomOf="tv_your_weight"
+        app:layout_constraintTop_toBottomOf="@id/tv_your_weight"
         app:layout_constraintBottom_toTopOf="@id/tv_your_height"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
@@ -160,7 +161,7 @@
         android:layout_marginBottom="4dp"
         android:ems="10"
         android:text="@string/your_name"
-        app:layout_constraintTop_toBottomOf="et_your_weight"
+        app:layout_constraintTop_toBottomOf="@id/et_your_weight"
         app:layout_constraintBottom_toTopOf="@id/et_your_height"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
@@ -175,7 +176,7 @@
         android:ems="10"
         android:hint="@string/user_name"
         android:inputType="textPersonName"
-        app:layout_constraintTop_toBottomOf="tv_your_height"
+        app:layout_constraintTop_toBottomOf="@id/tv_your_height"
         app:layout_constraintBottom_toTopOf="@id/tv_your_sex"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
@@ -189,7 +190,7 @@
         android:layout_marginBottom="4dp"
         android:ems="10"
         android:text="@string/your_name"
-        app:layout_constraintTop_toBottomOf="et_your_height"
+        app:layout_constraintTop_toBottomOf="@id/et_your_height"
         app:layout_constraintBottom_toTopOf="@id/et_your_sex"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
@@ -204,7 +205,7 @@
         android:ems="10"
         android:hint="@string/user_name"
         android:inputType="textPersonName"
-        app:layout_constraintTop_toBottomOf="tv_your_sex"
+        app:layout_constraintTop_toBottomOf="@id/tv_your_sex"
         app:layout_constraintBottom_toTopOf="@id/tv_your_sport"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
@@ -218,7 +219,7 @@
         android:layout_marginBottom="4dp"
         android:ems="10"
         android:text="@string/your_name"
-        app:layout_constraintTop_toBottomOf="et_your_sex"
+        app:layout_constraintTop_toBottomOf="@id/et_your_sex"
         app:layout_constraintBottom_toTopOf="@id/et_your_sport"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
@@ -233,7 +234,7 @@
         android:ems="10"
         android:hint="@string/user_name"
         android:inputType="textPersonName"
-        app:layout_constraintTop_toBottomOf="tv_your_sport"
+        app:layout_constraintTop_toBottomOf="@id/tv_your_sport"
         app:layout_constraintBottom_toTopOf="@id/btn_insert_user_into_db"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
@@ -244,7 +245,7 @@
         android:layout_height="wrap_content"
         android:contentDescription="@string/insert_user_into_db"
         android:background="@drawable/sh_rectangle"
-        app:layout_constraintTop_toBottomOf="et_your_sport"
+        app:layout_constraintTop_toBottomOf="@id/et_your_sport"
         app:layout_constraintBottom_toTopOf="@id/btn_read_user_from_db"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
@@ -255,6 +256,7 @@
         android:layout_height="wrap_content"
         android:contentDescription="@string/insert_user_into_db"
         android:background="@drawable/sh_rectangle"
+        app:layout_constraintTop_toBottomOf="@id/btn_insert_user_into_db"
         app:layout_constraintBottom_toTopOf="@id/glBottomHor"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
