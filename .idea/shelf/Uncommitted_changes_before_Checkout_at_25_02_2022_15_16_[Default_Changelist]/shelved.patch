@@ -1,0 +1,18 @@
+Index: .idea/misc.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"DesignSurface\">\r\n    <option name=\"filePathToZoomLevelMap\">\r\n      <map>\r\n        <entry key=\"..\\:/Users/syazici/AndroidStudioProjects/selfcare_anroid_projekt/app/src/main/res/drawable/sh_button_frame_default.xml\" value=\"0.122\" />\r\n        <entry key=\"..\\:/Users/syazici/AndroidStudioProjects/selfcare_anroid_projekt/app/src/main/res/drawable/sh_button_pressed.xml\" value=\"0.122\" />\r\n        <entry key=\"..\\:/Users/syazici/AndroidStudioProjects/selfcare_anroid_projekt/app/src/main/res/layout/fragment_home.xml\" value=\"0.1796875\" />\r\n        <entry key=\"..\\:/Users/syazici/AndroidStudioProjects/selfcare_anroid_projekt/app/src/main/res/layout/fragment_nutrition.xml\" value=\"0.1796875\" />\r\n        <entry key=\"..\\:/Users/syazici/AndroidStudioProjects/selfcare_anroid_projekt/app/src/main/res/layout/fragment_sport.xml\" value=\"0.1796875\" />\r\n        <entry key=\"..\\:/Users/syazici/AndroidStudioProjects/selfcare_anroid_projekt/app/src/main/res/menu/bottom_nav_menu.xml\" value=\"0.1796875\" />\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"ExternalStorageConfigurationManager\" enabled=\"true\" />\r\n  <component name=\"ProjectRootManager\" version=\"2\" languageLevel=\"JDK_11\" default=\"true\" project-jdk-name=\"11\" project-jdk-type=\"JavaSDK\">\r\n    <output url=\"file://$PROJECT_DIR$/out\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/misc.xml b/.idea/misc.xml
+--- a/.idea/misc.xml	(revision 2546356f94ec76003f819ba598f99201ff5922c6)
++++ b/.idea/misc.xml	(date 1645798342261)
+@@ -5,6 +5,7 @@
+       <map>
+         <entry key="..\:/Users/syazici/AndroidStudioProjects/selfcare_anroid_projekt/app/src/main/res/drawable/sh_button_frame_default.xml" value="0.122" />
+         <entry key="..\:/Users/syazici/AndroidStudioProjects/selfcare_anroid_projekt/app/src/main/res/drawable/sh_button_pressed.xml" value="0.122" />
++        <entry key="..\:/Users/syazici/AndroidStudioProjects/selfcare_anroid_projekt/app/src/main/res/layout/activity_masurements.xml" value="0.16197916666666667" />
+         <entry key="..\:/Users/syazici/AndroidStudioProjects/selfcare_anroid_projekt/app/src/main/res/layout/fragment_home.xml" value="0.1796875" />
+         <entry key="..\:/Users/syazici/AndroidStudioProjects/selfcare_anroid_projekt/app/src/main/res/layout/fragment_nutrition.xml" value="0.1796875" />
+         <entry key="..\:/Users/syazici/AndroidStudioProjects/selfcare_anroid_projekt/app/src/main/res/layout/fragment_sport.xml" value="0.1796875" />

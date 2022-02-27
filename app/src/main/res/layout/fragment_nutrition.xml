@@ -59,7 +59,7 @@
 
 
     <Button
-        android:id="@+id/picAPIGoodMood"
+        android:id="@+id/btnNutricions"
         android:layout_width="match_parent"
         android:layout_height="@dimen/size_0"
         android:layout_margin="@dimen/size_16"
@@ -73,7 +73,7 @@
 
 
     <Button
-        android:id="@+id/animMeTime"
+        android:id="@+id/btnFavFood"
         android:layout_width="119dp"
         android:layout_height="116dp"
         android:layout_margin="@dimen/size_8"
@@ -100,7 +100,7 @@
             app:layout_constraintVertical_bias="0.0" />-->
 
     <Button
-        android:id="@+id/animSport"
+        android:id="@+id/btnRecipes"
         android:layout_width="119dp"
         android:layout_height="116dp"
         android:layout_margin="@dimen/size_8"
@@ -113,7 +113,7 @@
         android:background="@drawable/sh_button_frame_default" />
 
     <Button
-        android:id="@+id/animMeTimeToday"
+        android:id="@+id/btnMassurement"
         android:text="KÖRPERWERTE"
         android:layout_width="119dp"
         android:layout_height="116dp"
@@ -136,7 +136,7 @@
         android:background="@drawable/sh_button_frame_default"/>
 
     <Button
-        android:id="@+id/animSportToday"
+        android:id="@+id/btnAdd"
 
         android:layout_width="@dimen/size_0"
         android:layout_height="80dp"

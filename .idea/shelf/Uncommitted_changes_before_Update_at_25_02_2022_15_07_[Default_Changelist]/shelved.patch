@@ -1,0 +1,79 @@
+Index: app/src/main/java/com/example/myroutine/Masurements.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/myroutine/Masurements.kt b/app/src/main/java/com/example/myroutine/Masurements.kt
+new file mode 100644
+--- /dev/null	(date 1645790801680)
++++ b/app/src/main/java/com/example/myroutine/Masurements.kt	(date 1645790801680)
+@@ -0,0 +1,11 @@
++package com.example.myroutine
++
++import androidx.appcompat.app.AppCompatActivity
++import android.os.Bundle
++
++class Masurements : AppCompatActivity() {
++    override fun onCreate(savedInstanceState: Bundle?) {
++        super.onCreate(savedInstanceState)
++        setContentView(R.layout.activity_masurements)
++    }
++}
+\ No newline at end of file
+Index: app/src/main/res/values/strings.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><resources>\r\n    <string name=\"app_name\">MyRoutine</string>\r\n    <string name=\"placeholder\">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci corporis culpa cum eaque eligendi ex excepturi illum itaque molestias nam natus obcaecati perferendis ratione recusandae sed, similique vel? Necessitatibus praesentium quae quis tempore. Beatae blanditiis corporis, culpa dolorem ea est inventore maxime necessitatibus obcaecati pariatur porro, quis repudiandae sapiente temporibus voluptatibus. At ducimus, laudantium? Ab ex impedit nulla perspiciatis veritatis?</string>\r\n    <string name=\"button_theme\">Change Theme</string>\r\n    <string name=\"button_menu\">Main Menu</string>\r\n    <string name=\"content_desc_API\">API GOOD MOOD PICTURE</string>\r\n    <string name=\"content_desc_Profile\">API GOOD MOOD PICTURE</string>\r\n\r\n</resources>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/values/strings.xml b/app/src/main/res/values/strings.xml
+--- a/app/src/main/res/values/strings.xml	(revision 7fff860b2511882904d0139417212f24d5797294)
++++ b/app/src/main/res/values/strings.xml	(date 1645790801414)
+@@ -5,5 +5,4 @@
+     <string name="button_menu">Main Menu</string>
+     <string name="content_desc_API">API GOOD MOOD PICTURE</string>
+     <string name="content_desc_Profile">API GOOD MOOD PICTURE</string>
+-
+ </resources>
+\ No newline at end of file
+Index: app/src/main/res/layout/activity_masurements.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/layout/activity_masurements.xml b/app/src/main/res/layout/activity_masurements.xml
+new file mode 100644
+--- /dev/null	(date 1645790802119)
++++ b/app/src/main/res/layout/activity_masurements.xml	(date 1645790802119)
+@@ -0,0 +1,9 @@
++<?xml version="1.0" encoding="utf-8"?>
++<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
++    xmlns:app="http://schemas.android.com/apk/res-auto"
++    xmlns:tools="http://schemas.android.com/tools"
++    android:layout_width="match_parent"
++    android:layout_height="match_parent"
++    tools:context=".Masurements">
++
++</androidx.constraintlayout.widget.ConstraintLayout>
+\ No newline at end of file
+Index: app/src/main/AndroidManifest.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<manifest xmlns:android=\"http://schemas.android.com/apk/res/android\"\r\n    package=\"com.example.myroutine\">\r\n\r\n    <application\r\n        android:allowBackup=\"true\"\r\n        android:icon=\"@mipmap/ic_launcher\"\r\n        android:label=\"@string/app_name\"\r\n        android:roundIcon=\"@mipmap/ic_launcher_round\"\r\n        android:supportsRtl=\"true\"\r\n        android:theme=\"@style/AppTheme\">\r\n        <activity\r\n            android:name=\".MainActivity\"\r\n            android:exported=\"true\">\r\n            <intent-filter>\r\n                <action android:name=\"android.intent.action.MAIN\" />\r\n\r\n                <category android:name=\"android.intent.category.LAUNCHER\" />\r\n            </intent-filter>\r\n        </activity>\r\n    </application>\r\n\r\n</manifest>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/AndroidManifest.xml b/app/src/main/AndroidManifest.xml
+--- a/app/src/main/AndroidManifest.xml	(revision 7fff860b2511882904d0139417212f24d5797294)
++++ b/app/src/main/AndroidManifest.xml	(date 1645790802031)
+@@ -10,6 +10,9 @@
+         android:supportsRtl="true"
+         android:theme="@style/AppTheme">
+         <activity
++            android:name=".Masurements"
++            android:exported="false" />
++        <activity
+             android:name=".MainActivity"
+             android:exported="true">
+             <intent-filter>
