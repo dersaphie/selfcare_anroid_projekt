@@ -3,34 +3,34 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/nav_graph"
-    app:startDestination="@id/homeFragment">
+
+    app:startDestination="@id/home">
 
     <fragment
-        android:id="@+id/homeFragment"
+        android:id="@+id/home"
         android:name="com.example.myroutine.HomeFragment"
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" >
-        <!--
+
         <action
-            android:id="@+id/action_homeFragment_to_sportFragment"
-            app:destination="@id/sportFragment"
-            app:enterAnim="@anim/slide_in_right"
-            app:exitAnim="@anim/slide_out_left"
-            app:popEnterAnim="@anim/slide_in_left"
-            app:popExitAnim="@anim/slide_out_right" />
-        <action
-            android:id="@+id/action_homeFragment_to_nutritionFragment"
-            app:destination="@id/nutritionFragment" />
-            -->
+            android:id="@+id/action_home_to_sport"
+            app:destination="@id/sport"/>
+        <!-- app:enterAnim="@anim/slide_in_right"
+         app:exitAnim="@anim/slide_out_left"
+         app:popEnterAnim="@anim/slide_in_left"
+         app:popExitAnim="@anim/slide_out_right" />-->
+     <action
+         android:id="@+id/action_home_to_nutrition"
+         app:destination="@id/nutrition" />
+
     </fragment>
     <fragment
-        android:id="@+id/sportFragment"
+        android:id="@+id/sport"
         android:name="com.example.myroutine.SportFragment"
         android:label="fragment_sport"
         tools:layout="@layout/fragment_sport" />
     <fragment
-        android:id="@+id/nutritionFragment"
+        android:id="@+id/nutrition"
         android:name="com.example.myroutine.NutritionFragment"
         android:label="fragment_nutrition"
         tools:layout="@layout/fragment_nutrition" />

@@ -15,7 +15,7 @@ class HomeFragment : Fragment(){
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-       // setHasOptionsMenu(true)
+        //setHasOptionsMenu(true)
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_home, container, false)
     }
@@ -31,9 +31,14 @@ class HomeFragment : Fragment(){
                 popExit = R.anim.slide_out_right
             }
         }
+
+        /*
+        *FEHLER!! Das neue Fragment wird zum Home Fragment -> eigentlich sollte Action aufruf es lösen
+        * aber absturz bis jetzt
+         */
         //where to click an whats comes next //change writing navigate_sport_button
         view.findViewById<Button>(R.id.animSport)?.setOnClickListener {
-            findNavController().navigate(R.id.nutritionFragment, null, options)
+            findNavController().navigate(R.id.action_home_to_sport, null, options)
         }
 
         // navigate with action for safe arguments
@@ -46,7 +51,7 @@ class HomeFragment : Fragment(){
 
         //NAvigate via action and not to page
         view.findViewById<Button>(R.id.animMeTime)?.setOnClickListener(
-            Navigation.createNavigateOnClickListener(R.id.sportFragment, null)
+            Navigation.createNavigateOnClickListener(R.id.action_home_to_nutrition, null)
         )
 
     }

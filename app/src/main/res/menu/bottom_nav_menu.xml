@@ -13,15 +13,15 @@
   -->
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
-        android:id="@+id/homeFragment"
+        android:id="@+id/home"
         android:icon="@drawable/ic_home"
         android:title="Home" />
     <item
-        android:id="@+id/sportFragment"
+        android:id="@+id/sport"
         android:icon="@drawable/ic_android"
         android:title="Sport" />
     <item
-        android:id="@+id/nutritionFragment"
+        android:id="@+id/nutrition"
         android:icon="@drawable/ic_android"
         android:title="Nutrition" />
     <item

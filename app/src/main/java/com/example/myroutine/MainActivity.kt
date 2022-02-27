@@ -59,12 +59,12 @@ class MainActivity : ThemeChange() {
         }
 
         // Setup the bottom navigation view with navController
-        val bottomNavigationView = findViewById<BottomNavigationView>(R.id.bottom_nav_view)
+        val bottomNavigationView = findViewById<BottomNavigationView>(R.id.bottom_nav_menu)
         bottomNavigationView.setupWithNavController(navController)
 
         // Setup the ActionBar with navController and 3 top level destinations
         appBarConfiguration = AppBarConfiguration(
-            setOf(R.id.homeFragment, R.id.nutritionFragment,  R.id.sportFragment)
+            setOf(R.id.home, R.id.sport,  R.id.nutrition)
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
     }
@@ -101,5 +101,10 @@ class MainActivity : ThemeChange() {
         return item.onNavDestinationSelected(findNavController(R.id.nav_host_fragment))
 
     }
+     override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return item.onNavDestinationSelected(findNavController(R.id.nav_host_fragment))
+
+    }
 */
+
 }

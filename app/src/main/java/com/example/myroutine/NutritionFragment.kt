@@ -21,4 +21,7 @@ class NutritionFragment: Fragment(){
         super.onViewCreated(view, savedInstanceState)
         //anim for side change
     }
+   /* override fun onDestroyView() {
+        super.onDestroyView()
+    }*/
 }

@@ -1,14 +1,123 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:paddingTop="@dimen/size_8"
     tools:context=".SportFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gl50PercentVert"
+        android:layout_width="0dp"
         android:layout_height="match_parent"
-        android:text="@string/content_desc_Profile" />
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="206dp" />
 
-</FrameLayout>
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gl33PercentVert"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.33" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gl66PercentVert"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.66" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gl99PercentVert"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.99" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gl005PercentHor"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.09" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gl40PercentHor"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.44" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gl50PercentHor"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.5" />
+
+
+    <Button
+        android:id="@+id/picAPIGoodMood"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/size_0"
+        android:layout_margin="@dimen/size_16"
+        android:text="KcalCount"
+        app:layout_constraintTop_toTopOf="@id/gl005PercentHor"
+        app:layout_constraintBottom_toTopOf="@id/gl40PercentHor"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:contentDescription="@string/content_desc_API"
+        android:background="@drawable/sh_button_pressed"/>
+
+
+    <Button
+        android:id="@+id/btnCardio"
+        android:layout_width="119dp"
+        android:layout_height="116dp"
+        android:layout_margin="@dimen/size_8"
+        android:background="@drawable/sh_button_frame_default"
+        android:text="@string/btnCardioArea"
+        app:layout_constraintBottom_toTopOf="@id/spaceSport"
+        app:layout_constraintEnd_toEndOf="@id/gl33PercentVert"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/gl50PercentHor" />
+
+
+    <Button
+        android:id="@+id/btnMuscle"
+        android:layout_width="119dp"
+        android:layout_height="116dp"
+        android:layout_margin="@dimen/size_8"
+        android:text="@string/btnMuscleArea"
+        app:layout_constraintTop_toTopOf="@id/gl50PercentHor"
+        app:layout_constraintBottom_toTopOf="@id/spaceSport"
+        app:layout_constraintStart_toStartOf="@id/gl66PercentVert"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:contentDescription="@string/content_desc_Profile"
+        android:background="@drawable/sh_button_frame_default" />
+
+
+    <Button
+        android:id="@+id/btnStretching"
+        android:layout_width="119dp"
+        android:layout_height="116dp"
+        android:layout_margin="@dimen/size_8"
+        android:text="@string/btnstretchingArea"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@id/gl33PercentVert"
+        app:layout_constraintEnd_toEndOf="@id/gl66PercentVert"
+        app:layout_constraintTop_toBottomOf="@id/spaceSport"
+        android:background="@drawable/sh_button_frame_default"/>
+
+    <Space
+        android:id="@+id/spaceSport"
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        app:layout_constraintTop_toBottomOf="@id/gl50PercentHor"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

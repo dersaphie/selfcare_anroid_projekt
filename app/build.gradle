@@ -3,6 +3,7 @@ plugins {
     id 'kotlin-android'
     //Navigation Fragment
     id 'androidx.navigation.safeargs.kotlin'
+    //DB
     id 'kotlin-kapt'
 }
 

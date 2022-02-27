@@ -73,13 +73,13 @@
 
 
     <Button
-        android:id="@+id/animMeTime"
+        android:id="@+id/btnFavFood"
         android:layout_width="119dp"
         android:layout_height="116dp"
         android:layout_margin="@dimen/size_8"
         android:background="@drawable/sh_button_frame_default"
         android:text="Fav essen"
-        app:layout_constraintBottom_toTopOf="@id/space"
+        app:layout_constraintBottom_toTopOf="@id/spaceNutrition"
         app:layout_constraintEnd_toEndOf="@id/gl33PercentVert"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@id/gl50PercentHor" />
@@ -100,31 +100,31 @@
             app:layout_constraintVertical_bias="0.0" />-->
 
     <Button
-        android:id="@+id/animSport"
+        android:id="@+id/btnReceipe"
         android:layout_width="119dp"
         android:layout_height="116dp"
         android:layout_margin="@dimen/size_8"
         android:text="Rezepte"
         app:layout_constraintTop_toTopOf="@id/gl50PercentHor"
-        app:layout_constraintBottom_toTopOf="@id/space"
+        app:layout_constraintBottom_toTopOf="@id/spaceNutrition"
         app:layout_constraintStart_toStartOf="@id/gl66PercentVert"
         app:layout_constraintEnd_toEndOf="parent"
         android:contentDescription="@string/content_desc_Profile"
         android:background="@drawable/sh_button_frame_default" />
 
     <Button
-        android:id="@+id/animMeTimeToday"
+        android:id="@+id/btnBodyValues"
         android:text="KÖRPERWERTE"
         android:layout_width="119dp"
         android:layout_height="116dp"
-        app:layout_constraintTop_toBottomOf="@id/space"
+        app:layout_constraintTop_toBottomOf="@id/spaceNutrition"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="@id/gl33PercentVert"
         android:background="@drawable/sh_button_frame_default"/>
 
     <Button
-        android:id="@+id/animNutritionToday"
+        android:id="@+id/btnNutritionGuideline"
         android:layout_width="119dp"
         android:layout_height="116dp"
         android:layout_margin="@dimen/size_8"
@@ -132,11 +132,11 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="@id/gl66PercentVert"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/space"
+        app:layout_constraintTop_toBottomOf="@id/spaceNutrition"
         android:background="@drawable/sh_button_frame_default"/>
 
     <Button
-        android:id="@+id/animSportToday"
+        android:id="@+id/btnAddSmth"
 
         android:layout_width="@dimen/size_0"
         android:layout_height="80dp"
@@ -163,7 +163,7 @@
 
 
     <Space
-        android:id="@+id/space"
+        android:id="@+id/spaceNutrition"
         android:layout_width="match_parent"
         android:layout_height="10dp"
         app:layout_constraintTop_toBottomOf="@id/gl50PercentHor"
