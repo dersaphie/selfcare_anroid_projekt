@@ -42,19 +42,7 @@ class MainActivity : ThemeChange() {
             recreate()
         }
 
-        /*
-        ///DB
-        //pass context
-        var helper = DBHelper(applicationContext)
-        //DB
-        var db = helper.readableDatabase
-        //cursor
-        var rd = db.rawQuery("SELECT * FROM USERS", null)
-
-        //if DB created
-        if(rd.moveToNext())
-            Toast.makeText(applicationContext,rd.getString(1),Toast.LENGTH_LONG).show()
-*/
+    
 
         /*
         setupBottomNavMenu(navController)
