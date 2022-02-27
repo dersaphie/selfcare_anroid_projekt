@@ -71,7 +71,7 @@
         android:contentDescription="@string/content_desc_API"
         android:background="@drawable/sh_button_pressed"/>
 
-
+<!--
     <Button
         android:id="@+id/btnCardio"
         android:layout_width="119dp"
@@ -117,7 +117,127 @@
         android:layout_height="10dp"
         app:layout_constraintTop_toBottomOf="@id/gl50PercentHor"
         app:layout_constraintBottom_toBottomOf="parent"/>
+-->
+    <ImageView
+        android:id="@+id/cotnCardio"
+        android:layout_width="@dimen/size_0"
+        android:layout_height="@dimen/size_0"
+        android:layout_margin="@dimen/size_4"
+        app:layout_constraintTop_toTopOf="@id/gl50PercentHor"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/gl33PercentVert"
+        android:contentDescription="@string/ctnCardioArea"
+        android:background="@drawable/sh_container_rectangle"/>
 
+    <ImageView
+        android:id="@+id/cotnMuscle"
+        android:layout_width="@dimen/size_0"
+        android:layout_height="@dimen/size_0"
+        android:layout_margin="@dimen/size_4"
+        app:layout_constraintTop_toTopOf="@id/gl50PercentHor"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@id/gl33PercentVert"
+        app:layout_constraintEnd_toEndOf="@id/gl66PercentVert"
+        android:contentDescription="@string/ctnMuscleArea"
+        android:background="@drawable/sh_container_rectangle"/>
+
+    <ImageView
+        android:id="@+id/cotnStretching"
+        android:layout_width="@dimen/size_0"
+        android:layout_height="@dimen/size_0"
+        android:layout_margin="@dimen/size_4"
+        app:layout_constraintTop_toTopOf="@id/gl50PercentHor"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@id/gl66PercentVert"
+        app:layout_constraintEnd_toEndOf="@id/gl99PercentVert"
+        android:contentDescription="@string/ctnstretchingArea"
+        android:background="@drawable/sh_container_rectangle"/>
+
+    <Button
+        android:id="@+id/btnCardioBodyWeight"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/size_164"
+        android:layout_margin="@dimen/size_8"
+        app:layout_constraintTop_toTopOf="@id/gl50PercentHor"
+        app:layout_constraintBottom_toTopOf="@id/space"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/gl33PercentVert"
+        android:text="@string/btnCardioBodyWeight"
+        android:contentDescription="@string/btnCardioBodyWeight"
+        android:background="@drawable/sh_rectangle"/>
+
+    <Button
+        android:id="@+id/btnMuscleBodyWeight"
+        android:layout_width="@dimen/size_0"
+        android:layout_height="@dimen/size_164"
+        android:layout_margin="@dimen/size_8"
+        app:layout_constraintTop_toTopOf="@id/gl50PercentHor"
+        app:layout_constraintBottom_toTopOf="@id/space"
+        app:layout_constraintStart_toStartOf="@id/gl33PercentVert"
+        app:layout_constraintEnd_toEndOf="@id/gl66PercentVert"
+        android:text="@string/btnMuscleBodyWeight"
+        android:contentDescription="@string/btnMuscleBodyWeight"
+        android:background="@drawable/sh_rectangle"/>
+
+    <Button
+        android:id="@+id/btnStretchingBodyWeight"
+        android:layout_width="@dimen/size_0"
+        android:layout_height="@dimen/size_164"
+        android:layout_margin="@dimen/size_8"
+        app:layout_constraintTop_toTopOf="@id/gl50PercentHor"
+        app:layout_constraintBottom_toTopOf="@id/space"
+        app:layout_constraintStart_toStartOf="@id/gl66PercentVert"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:text="@string/btnStretchingBodyWeight"
+        android:contentDescription="@string/btnStretchingBodyWeight"
+        android:background="@drawable/sh_rectangle" />
+
+    <Button
+        android:id="@+id/btnCardioequipment"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/size_164"
+        android:layout_margin="@dimen/size_8"
+        app:layout_constraintTop_toBottomOf="@id/space"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/gl33PercentVert"
+        android:text="@string/btnCardioEquipment"
+        android:contentDescription="@string/btnMuscleEquipment"
+        android:background="@drawable/sh_rectangle"/>
+
+    <Button
+        android:id="@+id/btnMuscleEquipment"
+        android:layout_width="@dimen/size_0"
+        android:layout_height="@dimen/size_164"
+        android:layout_margin="@dimen/size_8"
+        app:layout_constraintTop_toBottomOf="@id/space"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@id/gl33PercentVert"
+        app:layout_constraintEnd_toEndOf="@id/gl66PercentVert"
+        android:text="@string/btnMuscleEquipment"
+        android:contentDescription="@string/btnMuscleEquipment"
+        android:background="@drawable/sh_rectangle"/>
+
+    <Button
+        android:id="@+id/btnStretchingEquipment"
+        android:layout_width="@dimen/size_0"
+        android:layout_height="@dimen/size_164"
+        android:layout_margin="@dimen/size_8"
+        app:layout_constraintTop_toBottomOf="@id/space"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@id/gl66PercentVert"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:text="@string/btnStretchingEquipment"
+        android:contentDescription="@string/btnStretchingEquipment"
+        android:background="@drawable/sh_rectangle" />
+
+    <Space
+        android:id="@+id/space"
+        android:layout_width="match_parent"
+        android:layout_height="5dp"
+        app:layout_constraintTop_toBottomOf="@id/gl50PercentHor"
+        app:layout_constraintBottom_toBottomOf="parent"/><!---->
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

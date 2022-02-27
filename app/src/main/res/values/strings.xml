@@ -24,7 +24,13 @@
     <string name="your_name">Your Name</string>
 
     <!--Sport Section-->
-    <string name="btnCardioArea">cardio</string>
-    <string name="btnMuscleArea">muscle</string>
-    <string name="btnstretchingArea">stretching</string>
+    <string name="btnCardioBodyWeight">Cardio - Body Weight</string>
+    <string name="btnCardioEquipment">Cardio - Equipment</string>
+    <string name="btnMuscleBodyWeight">Muscle - Body Weight</string>
+    <string name="btnMuscleEquipment">Muscle - Equipment</string>
+    <string name="btnStretchingBodyWeight">Stretching - Body Weight</string>
+    <string name="btnStretchingEquipment">Stretching - Equipment</string>
+    <string name="ctnCardioArea">ContainerCardio</string>
+    <string name="ctnMuscleArea">ContainerMuscle</string>
+    <string name="ctnstretchingArea">ContainerStretching</string>
 </resources>

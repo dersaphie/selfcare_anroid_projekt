@@ -4,6 +4,10 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import androidx.navigation.Navigation
+import androidx.navigation.fragment.findNavController
+import androidx.navigation.navOptions
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -28,9 +32,25 @@ class SportFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        //anim for side change
+        val options = navOptions {
+            anim {
+                enter = R.anim.slide_in_right
+                exit = R.anim.slide_out_left
+                popEnter = R.anim.slide_in_left
+                popExit = R.anim.slide_out_right
+            }
+        }
+
+        view.findViewById<Button>(R.id.animSport)?.setOnClickListener {
+            findNavController().navigate(R.id.action_home_to_sport, null, options)
+        }
+
+        //NAvigate via action and not to page
+        view.findViewById<Button>(R.id.animMeTime)?.setOnClickListener(
+            Navigation.createNavigateOnClickListener(R.id.action_home_to_nutrition, null)
+        )
+
     }
-  /* //wird es gebraucht?
-    override fun onDestroyView() {
-        super.onDestroyView()
-    }*/
+    
 }
