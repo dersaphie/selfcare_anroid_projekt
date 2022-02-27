@@ -28,4 +28,7 @@ class NutritionFragment: Fragment(){
         }
         //anim for side change
     }
+   /* override fun onDestroyView() {
+        super.onDestroyView()
+    }*/
 }

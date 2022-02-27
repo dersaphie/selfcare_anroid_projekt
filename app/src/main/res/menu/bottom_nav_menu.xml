@@ -13,19 +13,19 @@
   -->
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
-        android:id="@+id/homeFragment"
+        android:id="@+id/home"
         android:icon="@drawable/ic_home"
-        android:title="Home" />
+        android:title="home" />
     <item
-        android:id="@+id/sportFragment"
-        android:icon="@drawable/ic_android"
-        android:title="Sport" />
+        android:id="@+id/sport"
+        android:icon="@drawable/ic_baseline_directions_run_24"
+        android:title="sport" />
     <item
-        android:id="@+id/nutritionFragment"
-        android:icon="@drawable/ic_android"
-        android:title="Nutrition" />
-    <item
+        android:id="@+id/nutrition"
+        android:icon="@drawable/ic_baseline_food_bank_24"
+        android:title="nutrition" />
+   <!-- <item
         android:id="@+id/profilFragment"
-        android:icon="@drawable/ic_android"
-        android:title="Profil" />
+        android:icon="@drawable/ic_baseline_self_improvement_24"
+        android:title="Profil" />-->
 </menu>

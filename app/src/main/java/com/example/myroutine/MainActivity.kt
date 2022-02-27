@@ -23,25 +23,26 @@ class MainActivity : ThemeChange() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        //define binding
         binding = ActivityMainBinding.inflate(layoutInflater)
         //start Theme is set
         setTheme()
         setContentView(binding.root)
         val toolbar = findViewById<Toolbar>(R.id.toolbar)
         setSupportActionBar(toolbar)
-        //val host: NavHostFragment = supportFragmentManager
-        //    .findFragmentById(R.id.nav_host_fragment) as NavHostFragment? ?: return
-
         // Set up Action Bar
         val navHostFragment = supportFragmentManager.findFragmentById(
             R.id.nav_host_fragment
         ) as NavHostFragment
         navController = navHostFragment.navController
+
         // when clicking btn Theme is changed and Layout new created
         binding.changeThemeButton.setOnClickListener {
             switchTheme()
             recreate()
         }
+
+    
 
         /*
         setupBottomNavMenu(navController)
@@ -59,14 +60,28 @@ class MainActivity : ThemeChange() {
         }
 
         // Setup the bottom navigation view with navController
-        val bottomNavigationView = findViewById<BottomNavigationView>(R.id.bottom_nav_view)
+        val bottomNavigationView = findViewById<BottomNavigationView>(R.id.bottom_nav_menu)
         bottomNavigationView.setupWithNavController(navController)
 
         // Setup the ActionBar with navController and 3 top level destinations
         appBarConfiguration = AppBarConfiguration(
-            setOf(R.id.homeFragment, R.id.nutritionFragment,  R.id.sportFragment)
+            setOf(R.id.home, R.id.sport,  R.id.nutrition)
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
+
+
+        ///DB
+        //pass context
+        var helper = DBHelper(applicationContext)
+        //DB
+        var db = helper.readableDatabase
+        //cursor
+        var rd = db.rawQuery("SELECT * FROM CARDIO", null)
+
+        //if DB created
+        if(rd.moveToNext())
+            Toast.makeText(applicationContext,rd.getString(1),Toast.LENGTH_LONG).show()
+
     }
 
     override fun onSupportNavigateUp(): Boolean {
@@ -101,5 +116,10 @@ class MainActivity : ThemeChange() {
         return item.onNavDestinationSelected(findNavController(R.id.nav_host_fragment))
 
     }
+     override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return item.onNavDestinationSelected(findNavController(R.id.nav_host_fragment))
+
+    }
 */
+
 }

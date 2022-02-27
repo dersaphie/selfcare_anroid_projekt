@@ -23,4 +23,8 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="your_name">Your Name</string>
 
+    <!--Sport Section-->
+    <string name="btnCardioArea">cardio</string>
+    <string name="btnMuscleArea">muscle</string>
+    <string name="btnstretchingArea">stretching</string>
 </resources>
