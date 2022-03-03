@@ -20,4 +20,14 @@
     <color name="colorPrimaryCyan">#26c6da</color>
     <color name="colorPrimaryDarkCyan">#0095a8</color>
     <color name="colorAccentCyan">#ffca28</color>
+
+    <!-- BMI colors -->
+    <color name="colorSevereUnderweight">#f00</color>
+    <color name="colorModerateUnderweight">#fb0</color>
+    <color name="colorSlightUnderweight">#df0</color>
+    <color name="colorNormalWeight">#0f0</color>
+    <color name="colorPreadiposity">#df0</color>
+    <color name="colorObesityGradeOne">#fb0</color>
+    <color name="colorObesityGradeTwo">#f60</color>
+    <color name="colorObesityGradeThree">#f00</color>
 </resources>

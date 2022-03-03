@@ -1,20 +1,17 @@
 package com.example.myroutine
 
+import android.annotation.SuppressLint
+import android.content.ContentValues
 import android.content.res.Resources
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import android.view.Menu
-import android.view.MenuItem
 import android.widget.Toast
 import androidx.appcompat.widget.Toolbar
 import androidx.navigation.NavController
-import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.*
 import com.example.myroutine.databinding.ActivityMainBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
-import com.google.android.material.navigation.NavigationView
 
 class MainActivity : ThemeChange() {
     private lateinit var binding: ActivityMainBinding
@@ -39,7 +36,6 @@ class MainActivity : ThemeChange() {
         // when clicking btn Theme is changed and Layout new created
         binding.changeThemeButton.setOnClickListener {
             switchTheme()
-            recreate()
         }
 
 
@@ -65,18 +61,19 @@ class MainActivity : ThemeChange() {
 
         // Setup the ActionBar with navController and 3 top level destinations
         appBarConfiguration = AppBarConfiguration(
-            setOf(R.id.home, R.id.sport,  R.id.nutrition)
+            setOf(R.id.homeFragment, R.id.sportFragment,  R.id.nutritionFragment)
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
 
-
         ///DB
         //pass context
-        var helper = DBHelper(applicationContext)
+        val helper = DBHelper(applicationContext)
         //DB
-        var db = helper.readableDatabase
-        //cursor
-        var rd = db.rawQuery("SELECT * FROM CARDIO", null)
+        val db = helper.readableDatabase
+        // DB
+        // cursor
+        @SuppressLint("Recycle")
+        val rd = db.rawQuery("SELECT * FROM CARDIO", null)
 
         //if DB created
         if(rd.moveToNext())
@@ -88,6 +85,12 @@ class MainActivity : ThemeChange() {
         return navController.navigateUp(appBarConfiguration)
     }
 
+    fun saveUserDataInDB(cv: ContentValues)
+    {
+        val helper = DBHelper(applicationContext)
+        val db = helper.writableDatabase
+        db.insert("USER", null, cv)
+    }
 
     //Bottom funktioniert erweiterung in layout und Layout definiert die
 

@@ -69,8 +69,10 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:contentDescription="@string/content_desc_API"
-        android:background="@drawable/sh_button_pressed"/>
-
+        app:backgroundTint="@null"
+        android:background="@drawable/sh_button_pressed"
+        />
+        <!-- android:backgroundTint="@null" -->
 
     <Button
         android:id="@+id/btnFavFood"

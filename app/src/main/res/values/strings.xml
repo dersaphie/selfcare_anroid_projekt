@@ -20,7 +20,7 @@
     </string>
     <string name="attachment_summary_off">Only download attachments when manually requested</string>
 
-    <!--Sport Section-->
+    <!-- Sport Section -->
     <string name="btnCardioBodyWeight">Cardio - Body Weight</string>
     <string name="btnCardioEquipment">Cardio - Equipment</string>
     <string name="btnMuscleBodyWeight">Muscle - Body Weight</string>
@@ -31,8 +31,35 @@
     <string name="ctnMuscleArea">ContainerMuscle</string>
     <string name="ctnstretchingArea">ContainerStretching</string>
 
-    <!--Profile Section-->
-    <string name="your_name">Your Name</string>
-    <string name="insert_user_into_db">insert user into db</string>
-    <string name="user_name">Enter your name here</string>
+    <!-- Profile Section -->
+    <string name="yourName">Your Name</string>
+    <string name="btnSave">Save Button</string>
+    <string name="save">Save</string>
+    <string name="enterYourNameHere">Enter your name here</string>
+    <string name="enterYourAgeHere">Enter your age here</string>
+    <string name="show_stats">Show Stats</string>
+    <string name="btn_show_stats">Button to show User Stats</string>
+
+    <!-- Results Section -->
+    <string name="disclaimer">Disclaimer</string>
+
+    <!-- BMI -->
+    <string name="severeUnderweight">Severe underweight</string>
+    <string name="moderateUnderweight">Moderate underweight</string>
+    <string name="slightUnderweight">Slight underweight</string>
+    <string name="normalWeight">Normal weight</string>
+    <string name="preadiposity">Preadiposity</string>
+    <string name="obesityGradeOne">Obesity grade 1</string>
+    <string name="obesityGradeTwo">Obesity grade 2</string>
+    <string name="obesityGradeThree">Obesity grade 3</string>
+
+    <!-- Placeholder and Test -->
+    <string name="tachjen">tachjen</string>
+    <string name="btnTestCalculation">Test Calculation</string>
+
+    <!-- Fragment Titles -->
+    <string name="home">home</string>
+    <string name="sport">sport</string>
+    <string name="nutrition">nutrition</string>
+    <string name="profile">profile</string>
 </resources>

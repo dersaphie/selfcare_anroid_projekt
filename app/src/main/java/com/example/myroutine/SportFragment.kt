@@ -42,12 +42,12 @@ class SportFragment : Fragment() {
             }
         }
 
-        view.findViewById<Button>(R.id.animSport)?.setOnClickListener {
+        view.findViewById<Button>(R.id.btnSport)?.setOnClickListener {
             findNavController().navigate(R.id.action_home_to_sport, null, options)
         }
 
         //NAvigate via action and not to page
-        view.findViewById<Button>(R.id.animMeTime)?.setOnClickListener(
+        view.findViewById<Button>(R.id.btnNutrition)?.setOnClickListener(
             Navigation.createNavigateOnClickListener(R.id.action_home_to_nutrition, null)
         )
 

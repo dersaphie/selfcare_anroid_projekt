@@ -123,7 +123,7 @@
             android:background="@drawable/sh_container_rectangle"/>
 
         <Button
-            android:id="@+id/animMeTime"
+            android:id="@+id/btnNutrition"
             android:layout_width="0dp"
             android:layout_height="@dimen/size_164"
             android:layout_margin="@dimen/size_8"
@@ -132,7 +132,8 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="@id/gl33PercentVert"
             android:contentDescription="@string/content_desc_Profile"
-            android:background="@drawable/sh_rectangle"/>
+            android:backgroundTint="?attr/colorPrimary"/>
+            <!-- app:backgroundTint="?attr/colorPrimary" -->
 
         <ImageView
             android:id="@+id/animNutrition"
@@ -148,7 +149,7 @@
             android:background="@drawable/sh_rectangle"/>
 
         <Button
-            android:id="@+id/animSport"
+            android:id="@+id/btnSport"
             android:layout_width="@dimen/size_0"
             android:layout_height="@dimen/size_164"
             android:layout_margin="@dimen/size_8"

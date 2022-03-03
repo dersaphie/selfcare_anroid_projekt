@@ -2,12 +2,13 @@ package com.example.myroutine
 
 import android.os.Bundle
 import android.view.*
-import androidx.fragment.app.Fragment
 import android.widget.Button
+import androidx.fragment.app.Fragment
+import androidx.navigation.NavOptions
 import androidx.navigation.Navigation
-import androidx.navigation.Navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.navOptions
+
 
 class HomeFragment : Fragment(){
 
@@ -36,10 +37,25 @@ class HomeFragment : Fragment(){
         *FEHLER!! Das neue Fragment wird zum Home Fragment -> eigentlich sollte Action aufruf es lösen
         * aber absturz bis jetzt
          */
-        //click for next fragment //change writing navigate_sport_button
-        view.findViewById<Button>(R.id.animSport)?.setOnClickListener {
-            findNavController().navigate(R.id.action_home_to_sport, null, options)
+        // click for sport fragment
+        // change writing navigate_sport_button
+        // Todo: animation in action is ignored and back button of device acts as back to home button \
+        //  back button of device ignores navigation steps between home and sport \
+        //  Problems could be resolved by replacing the navbar with regular buttons in the MainActivity
+        view.findViewById<Button>(R.id.btnSport)?.setOnClickListener {
+            val navOptions: NavOptions = NavOptions.Builder()
+                .setPopUpTo(R.id.homeFragment, inclusive = false, saveState = true)
+                //.setRestoreState(restoreState = true)
+                .build()
+            findNavController().navigate(HomeFragmentDirections.actionHomeToSport(), navOptions)
+            //findNavController().navigate(R.id.action_home_to_sport, null, navOptions)
         }
+        /*
+        .setEnterAnim(R.anim.slide_in_right)
+                .setExitAnim(R.anim.slide_out_left)
+                .setPopEnterAnim(R.anim.slide_in_left)
+                .setPopExitAnim(R.anim.slide_out_right)
+         */
 
         // navigate with action for safe arguments
         /*view.findViewById<Button>(R.id.animSport)?.setOnClickListener {
@@ -50,7 +66,7 @@ class HomeFragment : Fragment(){
         */
 
         //NAvigate via action and not to page
-        view.findViewById<Button>(R.id.animMeTime)?.setOnClickListener(
+        view.findViewById<Button>(R.id.btnNutrition)?.setOnClickListener(
             Navigation.createNavigateOnClickListener(R.id.action_home_to_nutrition, null)
         )
 
