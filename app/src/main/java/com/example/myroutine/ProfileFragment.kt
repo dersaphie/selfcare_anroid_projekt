@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import androidx.navigation.NavOptions
 import androidx.navigation.Navigation
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.navOptions
@@ -72,11 +73,13 @@ class ProfileFragment : Fragment() {
             (activity as MainActivity?)!!.saveUserDataInDB(cv)
         }
 
-        // navigate with action for safe arguments
         view.findViewById<Button>(R.id.btn_show_user_stats)?.setOnClickListener {
-            //val flowStepNumberArg = 1
-            val action = ProfileFragmentDirections.actionProfileFragmentToResultsFragment()
-            findNavController().navigate(action, null)
+            val navOptions: NavOptions = NavOptions.Builder()
+                .setPopUpTo(R.id.profileFragment, inclusive = false, saveState = true)
+                //.setRestoreState(restoreState = true)
+                .build()
+            findNavController().navigate(ProfileFragmentDirections.actionProfileFragmentToResultsFragment(), navOptions)
+            //findNavController().navigate(R.id.action_home_to_sport, null, navOptions)
         }
 
         /*

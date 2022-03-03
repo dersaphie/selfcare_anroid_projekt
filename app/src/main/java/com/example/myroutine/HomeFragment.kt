@@ -39,15 +39,23 @@ class HomeFragment : Fragment(){
          */
         // click for sport fragment
         // change writing navigate_sport_button
-        // Todo: animation in action is ignored and back button of device acts as back to home button \
-        //  back button of device ignores navigation steps between home and sport \
-        //  Problems could be resolved by replacing the navbar with regular buttons in the MainActivity
+        // animation in action is ignored and back button of device acts as back to home button \
+        // back button of device ignores navigation steps between home and sport \
+        // Problems could be resolved by replacing the navbar with regular buttons in the MainActivity
         view.findViewById<Button>(R.id.btnSport)?.setOnClickListener {
             val navOptions: NavOptions = NavOptions.Builder()
                 .setPopUpTo(R.id.homeFragment, inclusive = false, saveState = true)
                 //.setRestoreState(restoreState = true)
                 .build()
             findNavController().navigate(HomeFragmentDirections.actionHomeToSport(), navOptions)
+            //findNavController().navigate(R.id.action_home_to_sport, null, navOptions)
+        }
+        view.findViewById<Button>(R.id.btnNutrition)?.setOnClickListener {
+            val navOptions: NavOptions = NavOptions.Builder()
+                .setPopUpTo(R.id.homeFragment, inclusive = false, saveState = true)
+                //.setRestoreState(restoreState = true)
+                .build()
+            findNavController().navigate(HomeFragmentDirections.actionHomeToNutrition(), navOptions)
             //findNavController().navigate(R.id.action_home_to_sport, null, navOptions)
         }
         /*
@@ -64,11 +72,6 @@ class HomeFragment : Fragment(){
             findNavController().navigate(action)
         }
         */
-
-        //NAvigate via action and not to page
-        view.findViewById<Button>(R.id.btnNutrition)?.setOnClickListener(
-            Navigation.createNavigateOnClickListener(R.id.action_home_to_nutrition, null)
-        )
 
     }
 
