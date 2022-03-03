@@ -74,6 +74,7 @@ class ProfileFragment : Fragment() {
         }
 
         view.findViewById<Button>(R.id.btn_show_user_stats)?.setOnClickListener {
+            //val bmi = 1.0
             val navOptions: NavOptions = NavOptions.Builder()
                 .setPopUpTo(R.id.profileFragment, inclusive = false, saveState = true)
                 //.setRestoreState(restoreState = true)

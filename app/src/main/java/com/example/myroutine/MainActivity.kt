@@ -66,25 +66,21 @@ class MainActivity : ThemeChange() {
         setupActionBarWithNavController(navController, appBarConfiguration)
 
         ///DB
-        //pass context
-        val helper = DBHelper(applicationContext)
+        Utility.helper = DBHelper(applicationContext)
         //DB
-        val db = helper.readableDatabase
-        // DB
-        // cursor
-        @SuppressLint("Recycle")
-        val rd = db.rawQuery("SELECT * FROM CARDIO", null)
-
+        Utility.db = Utility.helper.readableDatabase
+        //cursor
+        var rd = Utility.db.rawQuery("SELECT * FROM CARDIO", null)
         //if DB created
-        if(rd.moveToNext())
-            Toast.makeText(applicationContext,rd.getString(1),Toast.LENGTH_LONG).show()
-
+        if (rd.moveToNext())
+            Toast.makeText(applicationContext, rd.getString(1), Toast.LENGTH_LONG).show()
     }
 
     override fun onSupportNavigateUp(): Boolean {
         return navController.navigateUp(appBarConfiguration)
     }
 
+    // TODO: check if needed
     fun saveUserDataInDB(cv: ContentValues)
     {
         val helper = DBHelper(applicationContext)

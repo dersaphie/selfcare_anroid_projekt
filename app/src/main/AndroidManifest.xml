@@ -13,7 +13,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme.Teal">
         <activity
-            android:name=".Massurements"
+            android:name=".Measurements"
             android:exported="false" />
         <activity
             android:name=".MainActivity"

@@ -44,6 +44,7 @@
     <string name="disclaimer">Disclaimer</string>
 
     <!-- BMI -->
+    <string name="valuesForBMIAreIncomplete">Values for BMI are incomplete </string>
     <string name="severeUnderweight">Severe underweight</string>
     <string name="moderateUnderweight">Moderate underweight</string>
     <string name="slightUnderweight">Slight underweight</string>

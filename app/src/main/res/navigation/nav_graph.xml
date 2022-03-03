@@ -47,5 +47,10 @@
         android:id="@+id/resultsFragment"
         android:name="com.example.myroutine.ResultsFragment"
         android:label="fragment_results"
-        tools:layout="@layout/fragment_stats" />
+        tools:layout="@layout/fragment_stats" >
+        <argument
+            android:name="bmi"
+            app:argType="float"
+            android:defaultValue="0.0" />
+    </fragment>
 </navigation>

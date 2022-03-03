@@ -9,8 +9,9 @@ class Calculations {
     fun BMICategory(bmi: Int): String {
         var bmiCategory = ""
         when(bmi){
-            0-16 -> bmiCategory = "@string/severe_underweight"
-            16-17 -> bmiCategory = "@string/moderate_underweight"
+            0 -> bmiCategory = "@string/valuesForBMIAreIncomplete"
+            1-16 -> bmiCategory = "@string/severeUnderweight"
+            16-17 -> bmiCategory = "@string/moderateUnderweight"
         }
         return bmiCategory
     }
@@ -18,8 +19,9 @@ class Calculations {
     fun BMIColor(bmi: Int): String{
         var bmiColor = ""
         when(bmi){
-            0-16 -> bmiColor = "@color/severe_underweight"
-            16-17 -> bmiColor = "@color/moderate_underweight"
+            0 -> bmiColor= "@color/colorValuesForBMIAreIncomplete"
+            1-16 -> bmiColor = "@color/colorSevereUnderweight"
+            16-17 -> bmiColor = "@color/colorModerateUnderweight"
         }
         return bmiColor
     }
