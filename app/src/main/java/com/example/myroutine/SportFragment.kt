@@ -1,13 +1,24 @@
 package com.example.myroutine
+import adapter.ExerciseAdapter
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import androidx.navigation.NavOptions
 import androidx.navigation.Navigation
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.navOptions
+import api.ExerciseDto
+import api.ExerciseRepo
+import com.example.myroutine.databinding.FragmentSportBinding
+import data.Exercise
+import data.toExercise
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -20,36 +31,53 @@ private const val ARG_PARAM2 = "param2"
  * create an instance of this fragment.
  */
 class SportFragment : Fragment() {
+    private var _binding: FragmentSportBinding? = null
+    private val binding get() = _binding!!
 
+
+    private var workoutRepo = ExerciseRepo()
+    private var workout: MutableList<Exercise> = mutableListOf()
+    val exerciseAdapter = ExerciseAdapter(workout)
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_sport, container, false)
+        _binding = FragmentSportBinding.inflate(layoutInflater, container, false)
+        return binding.root
+        //inflater.inflate(R.layout.fragment_sport, container, false)
     }
 
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        //anim for side change
-        val options = navOptions {
-            anim {
-                enter = R.anim.slide_in_right
-                exit = R.anim.slide_out_left
-                popEnter = R.anim.slide_in_left
-                popExit = R.anim.slide_out_right
-            }
+
+
+        view.findViewById<Button>(R.id.btnMuscleBodyWeight)?.setOnClickListener {
+            val navOptions: NavOptions = NavOptions.Builder()
+                .setPopUpTo(R.id.homeFragment, inclusive = false, saveState = true)
+                //.setRestoreState(restoreState = true)
+                .build()
+                workout.clear()
+                //getWorkout()
+            (activity as RvSportHostFragment?)!!.getWorkoutMuscleBodyweight()
+            findNavController().navigate(HomeFragmentDirections.actionHomeToSport(), navOptions)
+            //findNavController().navigate(R.id.action_home_to_sport, null, navOptions)
         }
 
-        view.findViewById<Button>(R.id.animSport)?.setOnClickListener {
-            findNavController().navigate(R.id.action_home_to_sport, null, options)
+        view.findViewById<Button>(R.id.btnMuscleEquipment)?.setOnClickListener {
+            val navOptions: NavOptions = NavOptions.Builder()
+                .setPopUpTo(R.id.homeFragment, inclusive = false, saveState = true)
+                //.setRestoreState(restoreState = true)
+                .build()
+            workout.clear()
+            (activity as RvSportHostFragment?)!!.getWorkoutMuscleEquipment()
+            findNavController().navigate(HomeFragmentDirections.actionHomeToSport(), navOptions)
+            //findNavController().navigate(R.id.action_home_to_sport, null, navOptions)
         }
 
-        //NAvigate via action and not to page
-        view.findViewById<Button>(R.id.animMeTime)?.setOnClickListener(
-            Navigation.createNavigateOnClickListener(R.id.action_home_to_nutrition, null)
-        )
+
+
 
     }
 

@@ -33,4 +33,20 @@
     <string name="ctnCardioArea">ContainerCardio</string>
     <string name="ctnMuscleArea">ContainerMuscle</string>
     <string name="ctnstretchingArea">ContainerStretching</string>
+
+    <!--Item Exercise-->
+    <string name="tvExerciseName">Name of Exercise </string>
+    <string name="tvBodyPart">Body Part: </string>
+    <string name="tvTargetOfExercise">Target of Exercise: </string>
+    <string name="etBodyPart">Body Part</string>
+    <string name="etTargetOfExercise">Target of Exercise</string>
+    <string name="tvExerciseDescription">Description</string>
+    <string name="etExerciseDescription">et Description</string>
+    <string name="tvExerciseEquipment">Description</string>
+    <string name="etExerciseEqupment">et Description</string>
+
+    <!--Fragment Calling API-->
+    <string name="workoutHeadline">YOUR WORKOUT.</string>
+    <string name="exercise_api_error_on_failure">Could not connect to API. No data.</string>
+    <string name="exercise_api_error_unsuccessful_response">Sorry, the request to the API was not successful.</string>
 </resources>

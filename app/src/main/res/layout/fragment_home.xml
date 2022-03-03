@@ -50,25 +50,12 @@
             android:orientation="horizontal"
             app:layout_constraintGuide_percent="0.4" />
 
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/gl50PercentHor"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.5" />
-
-        <ImageView
-            android:id="@+id/picAPIGoodMood"
-            android:src="@drawable/img_cocktail_daiquiri"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/size_0"
-            android:layout_margin="@dimen/size_16"
-            app:layout_constraintTop_toTopOf="@id/gl005PercentHor"
-            app:layout_constraintBottom_toTopOf="@id/gl40PercentHor"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:contentDescription="@string/content_desc_API"
-            android:background="@drawable/sh_rectangle"/>
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gl50PercentHor"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="370dp" />
 
         <ImageView
             android:id="@+id/picUserEmoji"
@@ -81,7 +68,7 @@
             app:layout_constraintEnd_toEndOf="@id/gl66PercentVert"
             app:layout_constraintStart_toStartOf="@id/gl33PercentVert"
             app:layout_constraintTop_toTopOf="@id/gl005PercentHor"
-            app:layout_constraintVertical_bias="0.9" />
+            app:layout_constraintVertical_bias="0" />
 
         <ImageView
             android:id="@+id/cotnMeTime"

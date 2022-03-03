@@ -28,7 +28,11 @@
         android:id="@+id/sport"
         android:name="com.example.myroutine.SportFragment"
         android:label="fragment_sport"
-        tools:layout="@layout/fragment_sport" />
+        tools:layout="@layout/fragment_sport" >
+        <action
+            android:id="@+id/action_sport_to_rvSportHostFragment"
+            app:destination="@id/rvSportHostFragment" />
+    </fragment>
     <fragment
         android:id="@+id/nutrition"
         android:name="com.example.myroutine.NutritionFragment"
@@ -43,4 +47,9 @@
         android:name="com.example.myroutine.ProfileFragment"
         android:label="fragment_profil"
         tools:layout="@layout/fragment_profile" />
+    <fragment
+        android:id="@+id/rvSportHostFragment"
+        android:name="com.example.myroutine.RvSportHostFragment"
+        android:label="fragment_rvsporthost"
+        tools:layout="@layout/fragment_rvsporthost" />
 </navigation>
