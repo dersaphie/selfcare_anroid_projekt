@@ -55,24 +55,24 @@ class SportFragment : Fragment() {
 
         view.findViewById<Button>(R.id.btnMuscleBodyWeight)?.setOnClickListener {
             val navOptions: NavOptions = NavOptions.Builder()
-                .setPopUpTo(R.id.homeFragment, inclusive = false, saveState = true)
+                .setPopUpTo(R.id.home, inclusive = false, saveState = true)
                 //.setRestoreState(restoreState = true)
                 .build()
                 workout.clear()
                 //getWorkout()
             (activity as RvSportHostFragment?)!!.getWorkoutMuscleBodyweight()
-            findNavController().navigate(HomeFragmentDirections.actionHomeToSport(), navOptions)
+            findNavController().navigate(SportFragmentDirections.actionSportToRvSportHostFragment(), navOptions)
             //findNavController().navigate(R.id.action_home_to_sport, null, navOptions)
         }
 
         view.findViewById<Button>(R.id.btnMuscleEquipment)?.setOnClickListener {
             val navOptions: NavOptions = NavOptions.Builder()
-                .setPopUpTo(R.id.homeFragment, inclusive = false, saveState = true)
+                .setPopUpTo(R.id.home, inclusive = false, saveState = true)
                 //.setRestoreState(restoreState = true)
                 .build()
             workout.clear()
             (activity as RvSportHostFragment?)!!.getWorkoutMuscleEquipment()
-            findNavController().navigate(HomeFragmentDirections.actionHomeToSport(), navOptions)
+            findNavController().navigate(SportFragmentDirections.actionSportToRvSportHostFragment(), navOptions)
             //findNavController().navigate(R.id.action_home_to_sport, null, navOptions)
         }
 
