@@ -30,8 +30,14 @@
         android:label="fragment_sport"
         tools:layout="@layout/fragment_sport" >
         <action
-            android:id="@+id/action_sport_to_rvSportHostFragment"
-            app:destination="@id/rvSportHostFragment" />
+            android:id="@+id/action_sport_to_RVSportCardioCCFragment"
+            app:destination="@id/RVSportCardioCCFragment" />
+        <action
+            android:id="@+id/action_sport_to_RVSportMuscleBWFragment"
+            app:destination="@id/RVSportMuscleBWFragment" />
+        <action
+            android:id="@+id/action_sport_to_RVSportMuscleEQFragment"
+            app:destination="@id/RVSportMuscleEQFragment" />
     </fragment>
     <fragment
         android:id="@+id/nutrition"
@@ -48,8 +54,18 @@
         android:label="fragment_profil"
         tools:layout="@layout/fragment_profile" />
     <fragment
-        android:id="@+id/rvSportHostFragment"
-        android:name="com.example.myroutine.RvSportHostFragment"
-        android:label="fragment_rvsporthost"
-        tools:layout="@layout/fragment_rvsporthost" />
+        android:id="@+id/RVSportCardioCCFragment"
+        android:name="recyclerview.RVSportCardioCCFragment"
+        android:label="fragment_rvsportcardiocc"
+        tools:layout="@layout/fragment_rvsportcardiocc" />
+    <fragment
+        android:id="@+id/RVSportMuscleBWFragment"
+        android:name="recyclerview.RVSportMuscleBWFragment"
+        android:label="fragment_rvsportmusclebw"
+        tools:layout="@layout/fragment_rvsportmusclebw" />
+    <fragment
+        android:id="@+id/RVSportMuscleEQFragment"
+        android:name="recyclerview.RVSportMuscleEQFragment"
+        android:label="fragment_rvsportmuscleeq"
+        tools:layout="@layout/fragment_rvsportmuscleeq" />
 </navigation>

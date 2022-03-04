@@ -1,4 +1,4 @@
-package com.example.myroutine
+package recyclerview
 
 import adapter.ExerciseAdapter
 import android.os.Bundle
@@ -7,20 +7,20 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import api.ExerciseDto
 import api.ExerciseRepo
-import com.example.myroutine.databinding.FragmentRvsporthostBinding
+import com.example.myroutine.R
+import com.example.myroutine.databinding.FragmentRvsportmusclebwBinding
 import data.Exercise
 import data.toExercise
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class RvSportHostFragment : Fragment() {
-    private var _binding: FragmentRvsporthostBinding? = null
+class RVSportMuscleBWFragment : Fragment() {
+    private var _binding: FragmentRvsportmusclebwBinding? = null
     private val binding get() = _binding!!
 
 
@@ -34,7 +34,7 @@ class RvSportHostFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        _binding = FragmentRvsporthostBinding.inflate(layoutInflater, container,false)
+        _binding = FragmentRvsportmusclebwBinding.inflate(layoutInflater, container,false)
         return binding.root
         //inflater.inflate(R.layout.fragment_sport, container, false)
     }
@@ -44,6 +44,8 @@ class RvSportHostFragment : Fragment() {
 
         binding.rvWorkout.layoutManager = LinearLayoutManager(binding.root.context, RecyclerView.VERTICAL, false)
         binding.rvWorkout.adapter = exerciseAdapter
+        workout.clear()
+        getWorkoutMuscleBodyweight()
 
     }
 
@@ -213,5 +215,9 @@ class RvSportHostFragment : Fragment() {
             }
         })
     }
-
+/*
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
+    }*/
 }

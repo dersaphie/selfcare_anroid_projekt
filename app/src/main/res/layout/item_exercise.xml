@@ -29,7 +29,7 @@
         app:layout_constraintTop_toTopOf="@id/spaceHeadlineTop"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        tools:text="Sex on the beach" />
+        android:text="Sex on the beach" />
 
     <TextView
         android:id="@+id/tvBodyPart"
@@ -40,7 +40,7 @@
         app:layout_constraintStart_toStartOf="@id/gl10PercentVert"
         app:layout_constraintEnd_toStartOf="@id/gl90PercentVert"
         app:layout_constraintHorizontal_bias="0"
-        tools:text="@string/tvBodyPart" />
+        android:text="@string/tvBodyPart" />
 
     <TextView
         android:id="@+id/tvBodyPartInsertValue"
@@ -50,7 +50,7 @@
         app:layout_constraintTop_toBottomOf="@id/spaceHeadlineBottom"
         app:layout_constraintStart_toEndOf="@id/tvBodyPart"
         app:layout_constraintEnd_toEndOf="@id/gl90PercentVert"
-        tools:text="@string/etBodyPart" />
+        android:text="@string/etBodyPart" />
 
     <TextView
         android:id="@+id/tvTagret"
@@ -61,7 +61,7 @@
         app:layout_constraintStart_toStartOf="@id/gl10PercentVert"
         app:layout_constraintEnd_toStartOf="@id/gl90PercentVert"
         app:layout_constraintHorizontal_bias="0"
-        tools:text="@string/tvTargetOfExercise" />
+        android:text="@string/tvTargetOfExercise" />
 
     <TextView
         android:id="@+id/tvTargetInsertValue"
@@ -71,7 +71,7 @@
         app:layout_constraintTop_toBottomOf="@id/spaceBodyPartBottom"
         app:layout_constraintStart_toEndOf="@id/tvTagret"
         app:layout_constraintEnd_toEndOf="@id/gl90PercentVert"
-        tools:text="@string/etTargetOfExercise" />
+        android:text="@string/etTargetOfExercise" />
 
     <TextView
         android:id="@+id/tvEquipment"
@@ -82,7 +82,7 @@
         app:layout_constraintStart_toStartOf="@id/gl10PercentVert"
         app:layout_constraintEnd_toStartOf="@id/gl90PercentVert"
         app:layout_constraintHorizontal_bias="0"
-        tools:text="@string/tvExerciseEquipment" />
+        android:text="@string/tvExerciseEquipment" />
 
     <TextView
         android:id="@+id/tvEquipmentInsertValue"
@@ -92,7 +92,7 @@
         app:layout_constraintTop_toBottomOf="@id/spaceTargetBottom"
         app:layout_constraintStart_toEndOf="@id/tvEquipment"
         app:layout_constraintEnd_toEndOf="@id/gl90PercentVert"
-        tools:text="@string/etExerciseEqupment" />
+        android:text="@string/etExerciseEqupment" />
 <!--<pl.droidsonroids.gif.GifImageView
     android:id="@+id/ivExerciseGif"
     android:layout_width="wrap_content"
@@ -115,7 +115,7 @@
         app:layout_constraintRight_toRightOf="@id/gl90PercentVert"
         tools:tint="?attr/colorTertiary"
         tools:src="@drawable/ic_baseline_sports_kabaddi_24" />
-
+<!--
     <TextView
         android:id="@+id/tvID"
         style="@style/CocktailListText"
@@ -136,8 +136,7 @@
         app:layout_constraintStart_toStartOf="@id/gl10PercentVert"
         app:layout_constraintEnd_toEndOf="@id/gl90PercentVert"
         app:layout_constraintHorizontal_bias="1"
-        tools:text="@string/etExerciseDescription" />
-
+        tools:text="@string/etExerciseDescription" />-->
     <Space
         android:id="@+id/spaceHeadlineTop"
         android:layout_width="match_parent"

@@ -25,9 +25,9 @@
 
     <!--Sport Section-->
     <string name="btnCardioBodyWeight">Cardio - Body Weight</string>
-    <string name="btnCardioEquipment">Cardio - Equipment</string>
-    <string name="btnMuscleBodyWeight">Muscle - Body Weight</string>
-    <string name="btnMuscleEquipment">Muscle - Equipment</string>
+    <string name="btnCardioCombined">Cardio- Combined</string>
+    <string name="btnMuscleBodyWeight">Muscle- BodyWeight</string>
+    <string name="btnMuscleEquipment">Muscle- Equipment</string>
     <string name="btnStretchingBodyWeight">Stretching - Body Weight</string>
     <string name="btnStretchingEquipment">Stretching - Equipment</string>
     <string name="ctnCardioArea">ContainerCardio</string>
@@ -42,7 +42,7 @@
     <string name="etTargetOfExercise">Target of Exercise</string>
     <string name="tvExerciseDescription">Description</string>
     <string name="etExerciseDescription">et Description</string>
-    <string name="tvExerciseEquipment">Description</string>
+    <string name="tvExerciseEquipment">Equipment</string>
     <string name="etExerciseEqupment">et Description</string>
 
     <!--Fragment Calling API-->
