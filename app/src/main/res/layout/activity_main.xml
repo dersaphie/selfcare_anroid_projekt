@@ -93,16 +93,14 @@
 
     <ImageView
         android:id="@+id/picAPIGoodMood"
-        android:src="@drawable/img_cocktail_daiquiri"
         android:layout_width="match_parent"
         android:layout_height="@dimen/size_0"
-        android:layout_margin="@dimen/size_16"
+        android:layout_margin="@dimen/size_8"
         app:layout_constraintTop_toBottomOf="@id/gl008Percenthor"
         app:layout_constraintBottom_toTopOf="@id/gl35Percenthor"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:contentDescription="@string/content_desc_API"
-        android:background="@drawable/sh_rectangle"/>
+        android:contentDescription="@string/content_desc_API" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_nav_menu"
