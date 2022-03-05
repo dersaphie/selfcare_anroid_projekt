@@ -1,6 +1,7 @@
 package com.example.myroutine
 
 import android.content.res.Resources
+import android.graphics.drawable.AnimationDrawable
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -19,6 +20,7 @@ import com.google.android.material.navigation.NavigationView
 class MainActivity : ThemeChange() {
     private lateinit var binding: ActivityMainBinding
     private lateinit var navController: NavController
+    private lateinit var frameAnimation: AnimationDrawable
     private lateinit var appBarConfiguration: AppBarConfiguration
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -35,6 +37,8 @@ class MainActivity : ThemeChange() {
             R.id.nav_host_fragment
         ) as NavHostFragment
         navController = navHostFragment.navController
+
+
 
         // when clicking btn Theme is changed and Layout new created
         binding.changeThemeButton.setOnClickListener {
@@ -84,6 +88,13 @@ class MainActivity : ThemeChange() {
 
     }
 
+    override fun onStart() {
+        super.onStart()
+        //
+        binding.picAPIGoodMood.setBackgroundResource(R.drawable.animation_list_background)
+        frameAnimation = binding.picAPIGoodMood.background as AnimationDrawable
+        frameAnimation.start()
+    }
     override fun onSupportNavigateUp(): Boolean {
         return navController.navigateUp(appBarConfiguration)
     }

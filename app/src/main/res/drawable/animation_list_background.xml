@@ -1,38 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <animation-list xmlns:android="http://schemas.android.com/apk/res/android">
 
-        <item android:drawable="@drawable/img_pexel_body_food_sport1" android:duration="400" />
-    <item android:drawable="@drawable/img_pexel_body_food_sport1" android:duration="400" />
-    <item android:drawable="@drawable/img_pexel_body_food_sport1" android:duration="400" />
-    <item android:drawable="@drawable/img_pexel_body_food_sport1" android:duration="400" />
-    <item android:drawable="@drawable/img_pexel_body_food_sport1" android:duration="400" />
-    <item android:drawable="@drawable/img_pexel_body_food_sport1" android:duration="400" />
-    <item android:drawable="@drawable/img_pexel_body_food_sport1" android:duration="400" />
-    <item android:drawable="@drawable/img_pexel_body_food_sport1" android:duration="400" />
-    <item android:drawable="@drawable/img_pexel_body_food_sport1" android:duration="400" />
-    <item android:drawable="@drawable/img_pexel_body_food_sport1" android:duration="400" />
-    <item android:drawable="@drawable/img_pexel_body_food_sport1" android:duration="400" />
-    <item android:drawable="@drawable/img_pexel_body_food_sport1" android:duration="400" />
-    <item android:drawable="@drawable/img_pexel_body_food_sport1" android:duration="400" />
-    <item android:drawable="@drawable/img_pexel_body_food_sport1" android:duration="400" />
-    <item android:drawable="@drawable/img_pexel_body_food_sport1" android:duration="400" />
-    <item android:drawable="@drawable/img_pexel_body_food_sport1" android:duration="400" />
-    <item android:drawable="@drawable/img_pexel_body_food_sport1" android:duration="400" />
-    <item android:drawable="@drawable/img_pexel_body_food_sport1" android:duration="400" />
-    <item android:drawable="@drawable/img_pexel_body_food_sport1" android:duration="400" />
-    <item android:drawable="@drawable/img_pexel_body_food_sport1" android:duration="400" />
-    <item android:drawable="@drawable/img_pexel_body_food_sport1" android:duration="400" />
-    <item android:drawable="@drawable/img_pexel_body_food_sport1" android:duration="400" />
-    <item android:drawable="@drawable/img_pexel_body_food_sport1" android:duration="400" />
-    <item android:drawable="@drawable/img_pexel_body_food_sport1" android:duration="400" />
-    <item android:drawable="@drawable/img_pexel_body_food_sport1" android:duration="400" />
-    <item android:drawable="@drawable/img_pexel_body_food_sport1" android:duration="400" />
-    <item android:drawable="@drawable/img_pexel_body_food_sport1" android:duration="400" />
-    <item android:drawable="@drawable/img_pexel_body_food_sport1" android:duration="400" />
-    <item android:drawable="@drawable/img_pexel_body_food_sport1" android:duration="400" />
-    <item android:drawable="@drawable/img_pexel_body_food_sport1" android:duration="400" />
-    <item android:drawable="@drawable/img_pexel_body_food_sport1" android:duration="400" />
-    <item android:drawable="@drawable/img_pexel_body_food_sport1" android:duration="400" />
-    <item android:drawable="@drawable/img_pexel_body_food_sport1" android:duration="400" />
-
+    <item android:drawable="@drawable/img_pexel_body_food_sport2" android:duration="400" />
+    <item android:drawable="@drawable/img_pexel_body_food_sport24" android:duration="400" />
+    <item android:drawable="@drawable/img_pexel_body_food_sport25" android:duration="400" />
+    <item android:drawable="@drawable/img_pexel_body_food_sport27" android:duration="400" />
+    <item android:drawable="@drawable/img_pexel_body_food_sport7" android:duration="400" />
+    <item android:drawable="@drawable/img_pexel_body_food_sport48" android:duration="400" />
+    <item android:drawable="@drawable/img_pexel_body_food_sport28" android:duration="400" />
+    <item android:drawable="@drawable/img_pexel_body_food_sport34" android:duration="400" />
+    <item android:drawable="@drawable/img_pexel_body_food_sport15" android:duration="400" />
+    <item android:drawable="@drawable/img_pexel_body_food_sport36" android:duration="400" />
+    <item android:drawable="@drawable/img_pexel_body_food_sport37" android:duration="400" />
+    <item android:drawable="@drawable/img_pexel_body_food_sport18" android:duration="400" />
+    <item android:drawable="@drawable/img_pexel_body_food_sport51" android:duration="400" />
+    <item android:drawable="@drawable/img_pexel_body_food_sport38" android:duration="400" />
 </animation-list>
