@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:paddingTop="@dimen/size_8"
-    tools:context=".ResultsFragment">
+    tools:context=".BodyCalculationsFragment">
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/gl50PercentVert"

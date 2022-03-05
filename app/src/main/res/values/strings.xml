@@ -33,10 +33,19 @@
 
     <!-- Profile Section -->
     <string name="yourName">Your Name</string>
+    <string name="yourAge">Your Age</string>
+    <string name="yourWeight">Your Weight</string>
+    <string name="yourHeight">Your Height</string>
+    <string name="yourSex">Your Sex</string>
+    <string name="yourSport">Your Sport</string>
     <string name="btnSave">Save Button</string>
-    <string name="save">Save</string>
+    <string name="saveAndShowStats">Save and show Stats</string>
     <string name="enterYourNameHere">Enter your name here</string>
     <string name="enterYourAgeHere">Enter your age here</string>
+    <string name="enterYourWeightHere">Enter your weight here</string>
+    <string name="enterYourHeightHere">Enter your height here</string>
+    <string name="chooseYourSexHere">Choose your sex here</string>
+    <string name="chooseYourSportHere">Choose your sport here</string>
     <string name="show_stats">Show Stats</string>
     <string name="btn_show_stats">Button to show User Stats</string>
 
@@ -63,4 +72,6 @@
     <string name="sport">sport</string>
     <string name="nutrition">nutrition</string>
     <string name="profile">profile</string>
+    <string name="pickYourWorkEnergyNeed">Pick your work energy need</string>
+    <string name="energyCategories">Energy Categories</string>
 </resources>

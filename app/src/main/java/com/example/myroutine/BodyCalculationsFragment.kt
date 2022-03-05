@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import androidx.navigation.fragment.navArgs
 
 // TODO: Rename parameter arguments, choose names that match
@@ -17,12 +18,10 @@ private const val ARG_PARAM2 = "param2"
  * Use the [ResultsFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
-class ResultsFragment : Fragment() {
+class BodyCalculationsFragment : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
-    val safeArgs: ResultsFragmentArgs by navArgs()
-    val flowStepNumber = safeArgs.bmi
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -37,7 +36,15 @@ class ResultsFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_stats, container, false)
+        return inflater.inflate(R.layout.fragment_bodycalculations, container, false)
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        val safeArgs: BodyCalculationsFragmentArgs by navArgs()
+        val bmi = safeArgs.bmi
+
+        view.findViewById<TextView>(R.id.tv_your_bmi)?.text = bmi.toString()
     }
 
     companion object {
@@ -52,7 +59,7 @@ class ResultsFragment : Fragment() {
         // TODO: Rename and change types and number of parameters
         @JvmStatic
         fun newInstance(param1: String, param2: String) =
-            ResultsFragment().apply {
+            BodyCalculationsFragment().apply {
                 arguments = Bundle().apply {
                     putString(ARG_PARAM1, param1)
                     putString(ARG_PARAM2, param2)

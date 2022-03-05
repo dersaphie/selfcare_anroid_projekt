@@ -29,7 +29,11 @@
         android:id="@+id/nutritionFragment"
         android:name="com.example.myroutine.NutritionFragment"
         android:label="fragment_nutrition"
-        tools:layout="@layout/fragment_nutrition" />
+        tools:layout="@layout/fragment_nutrition" >
+        <action
+            android:id="@+id/action_nutritionFragment_to_bodyCalculationsFragment"
+            app:destination="@id/bodyCalculationsFragment" />
+    </fragment>
     <fragment
         android:id="@+id/settingsFragment"
         android:name="com.example.myroutine.SettingsFragment"
@@ -40,17 +44,21 @@
         android:label="fragment_profile"
         tools:layout="@layout/fragment_profile" >
         <action
-            android:id="@+id/action_profileFragment_to_resultsFragment"
-            app:destination="@id/resultsFragment" />
+            android:id="@+id/action_profileFragment_to_bodyCalculationsFragment"
+            app:destination="@id/bodyCalculationsFragment" />
     </fragment>
     <fragment
-        android:id="@+id/resultsFragment"
-        android:name="com.example.myroutine.ResultsFragment"
-        android:label="fragment_results"
-        tools:layout="@layout/fragment_stats" >
+        android:id="@+id/bodyCalculationsFragment"
+        android:name="com.example.myroutine.BodyCalculationsFragment"
+        android:label="fragment_bodycalculations"
+        tools:layout="@layout/fragment_bodycalculations" >
         <argument
             android:name="bmi"
-            app:argType="float"
-            android:defaultValue="0.0" />
+            app:argType="string"
+            android:defaultValue="Needed values for calculation are incomplete" />
+        <argument
+            android:name="dailyEnergyNeed"
+            app:argType="string"
+            android:defaultValue="Needed values for calculation are incomplete" />
     </fragment>
 </navigation>
