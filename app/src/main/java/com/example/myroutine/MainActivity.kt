@@ -1,21 +1,19 @@
 package com.example.myroutine
 
 import android.content.res.Resources
+import android.graphics.drawable.Animatable
 import android.graphics.drawable.AnimationDrawable
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import android.view.Menu
-import android.view.MenuItem
+import android.widget.ImageView
 import android.widget.Toast
 import androidx.appcompat.widget.Toolbar
 import androidx.navigation.NavController
-import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.*
 import com.example.myroutine.databinding.ActivityMainBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
-import com.google.android.material.navigation.NavigationView
 
 class MainActivity : ThemeChange() {
     private lateinit var binding: ActivityMainBinding
@@ -39,6 +37,13 @@ class MainActivity : ThemeChange() {
         navController = navHostFragment.navController
 
 
+        val rocketImage: ImageView = findViewById(R.id.picAPIGoodMood)
+        rocketImage.setBackgroundResource(R.drawable.animation_list_background)
+
+        val rocketAnimation = rocketImage.background
+        if (rocketAnimation is Animatable) {
+            rocketAnimation.start()
+        }
 
         // when clicking btn Theme is changed and Layout new created
         binding.changeThemeButton.setOnClickListener {
@@ -88,49 +93,17 @@ class MainActivity : ThemeChange() {
 
     }
 
-    override fun onStart() {
+   /* override fun onStart() {
         super.onStart()
         //
         binding.picAPIGoodMood.setBackgroundResource(R.drawable.animation_list_background)
         frameAnimation = binding.picAPIGoodMood.background as AnimationDrawable
         frameAnimation.start()
-    }
+    }*/
     override fun onSupportNavigateUp(): Boolean {
         return navController.navigateUp(appBarConfiguration)
     }
 
 
-    //Bottom funktioniert erweiterung in layout und Layout definiert die
-
-    /*private fun setupBottomNavMenu(navController: NavController) {
-        // TODO STEP 9.3 - Use NavigationUI to set up Bottom Nav
-        val bottomNav = findViewById<BottomNavigationView>(R.id.bottom_nav_view)
-        bottomNav?.setupWithNavController(navController)
-    }
-
-     */
-    /*
-    //inflating menu and nav_view which is layout for host fragment
-    override fun onCreateOptionsMenu(menu: Menu): Boolean {
-        val retValue = super.onCreateOptionsMenu(menu)
-        val navigationView = findViewById<NavigationView>(R.id.nav_view)
-        // The NavigationView already has these same navigation items, so we only add
-        // navigation items to the menu here if there isn't a NavigationView
-        if (navigationView == null) {
-            menuInflater.inflate(R.menu.overflow_menu, menu)
-            return true
-        }
-        return retValue
-    }
-
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        return item.onNavDestinationSelected(findNavController(R.id.nav_host_fragment))
-
-    }
-     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        return item.onNavDestinationSelected(findNavController(R.id.nav_host_fragment))
-
-    }
-*/
 
 }
