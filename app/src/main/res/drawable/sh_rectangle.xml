@@ -6,13 +6,12 @@
     <stroke
         android:width="4dp"
         android:color="#52B1E5" />
-    //Background color
-    <solid
-        androigid:color="#52B1E5"/>
-    // The corner radius, reduce it to make it more square
-    <corners android:radius="30dp"/>
 
-    // Add your desired padding
+    <solid
+        android:color="#52B1E5"/>
+     <corners android:radius="30dp"/>
+
+   
     <padding
         android:left="20dp"
         android:top="10dp"
