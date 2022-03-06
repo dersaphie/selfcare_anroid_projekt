@@ -1,10 +1,16 @@
 package com.example.myroutine
 
+import android.content.ContentValues
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import androidx.navigation.NavOptions
+import androidx.navigation.Navigation
+import androidx.navigation.fragment.findNavController
+import androidx.navigation.navOptions
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -37,23 +43,71 @@ class ProfileFragment : Fragment() {
         return inflater.inflate(R.layout.fragment_profile, container, false)
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment profilFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            ProfileFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        //anim for side change
+        val options = navOptions {
+            anim {
+                enter = R.anim.slide_in_right
+                exit = R.anim.slide_out_left
+                popEnter = R.anim.slide_in_left
+                popExit = R.anim.slide_out_right
             }
+        }
+
+        /*
+        *FEHLER!! Das neue Fragment wird zum Home Fragment -> eigentlich sollte Action aufruf es lösen
+        * aber absturz bis jetzt
+         */
+        //click for next fragment //change writing navigate_sport_button
+        view.findViewById<Button>(R.id.btn_save_user_data)?.setOnClickListener {
+            val cv = ContentValues()
+            //var userNameTV = view.findViewById<Button>(R.id.et_your_name)
+            //var userAgeTV = view.findViewById<Button>(R.id.et_your_age).text
+            cv.put("NAME", R.id.et_your_name.toString())
+            //cv.put("NAME", R.id.et_your_age.toString())
+            cv.put("AGE", R.id.et_your_age.toString())
+            //userNameTV.text = ""
+            //userAgeTV.text = ""
+            //binding.editTextNumberPassword.setText("")
+            (activity as MainActivity?)!!.saveUserDataInDB(cv)
+        }
+
+        view.findViewById<Button>(R.id.btn_show_user_stats)?.setOnClickListener {
+            val navOptions: NavOptions = NavOptions.Builder()
+                .setPopUpTo(R.id.profileFragment, inclusive = false, saveState = true)
+                //.setRestoreState(restoreState = true)
+                .build()
+            findNavController().navigate(ProfileFragmentDirections.actionProfileFragmentToResultsFragment(), navOptions)
+            //findNavController().navigate(R.id.action_home_to_sport, null, navOptions)
+        }
+
+        /*
+        // Navigate via destination
+        view.findViewById<Button>(R.id.btn_show_user_stats)?.setOnClickListener(
+        Navigation.createNavigateOnClickListener(R.id.resultsFragment, null)
+        )
+        */
+
     }
+
+companion object {
+    /**
+     * Use this factory method to create a new instance of
+     * this fragment using the provided parameters.
+     *
+     * @param param1 Parameter 1.
+     * @param param2 Parameter 2.
+     * @return A new instance of fragment profilFragment.
+     */
+    // TODO: Rename and change types and number of parameters
+    @JvmStatic
+    fun newInstance(param1: String, param2: String) =
+        ProfileFragment().apply {
+            arguments = Bundle().apply {
+                putString(ARG_PARAM1, param1)
+                putString(ARG_PARAM2, param2)
+            }
+        }
+}
 }

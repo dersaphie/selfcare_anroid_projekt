@@ -45,18 +45,18 @@
         android:background="@color/colorPrimary"
         android:theme="@style/ThemeOverlay.MaterialComponents.Dark.ActionBar">
 
-        <Button
-            android:id="@+id/changeThemeButton"
-            android:text="@string/btn_theme"
-            android:layout_gravity="right"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:contentDescription="@string/changeThemeSpinner"
-            style="@style/Widget.AppCompat.Button.Colored" />
+        <Spinner
+                android:id="@+id/spThemes"
+                style="?spinner"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:entries="@array/theme_array"
+                android:spinnerMode="dropdown" />
+      
         </androidx.appcompat.widget.Toolbar>
 
     <!--Background Animation Container-->

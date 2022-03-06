@@ -6,21 +6,23 @@ action to that certain Fragment-->
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    app:startDestination="@id/home">
+    app:startDestination="@id/homeFragment">
+
     <fragment
-        android:id="@+id/home"
+        android:id="@+id/homeFragment"
         android:name="com.example.myroutine.HomeFragment"
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" >
         <action
             android:id="@+id/action_home_to_sport"
-            app:destination="@id/sport"/>
-     <action
-         android:id="@+id/action_home_to_nutrition"
-         app:destination="@id/nutrition" />
+            app:destination="@id/sportFragment" />
+        <action
+            android:id="@+id/action_home_to_nutrition"
+            app:destination="@id/nutritionFragment" />
+
     </fragment>
     <fragment
-        android:id="@+id/sport"
+        android:id="@+id/sportFragment"
         android:name="com.example.myroutine.SportFragment"
         android:label="fragment_sport"
         tools:layout="@layout/fragment_sport" >
@@ -35,7 +37,7 @@ action to that certain Fragment-->
             app:destination="@id/RVSportMuscleEQFragment" />
     </fragment>
     <fragment
-        android:id="@+id/nutrition"
+        android:id="@+id/nutritionFragment"
         android:name="com.example.myroutine.NutritionFragment"
         android:label="fragment_nutrition"
         tools:layout="@layout/fragment_nutrition" />
@@ -44,10 +46,18 @@ action to that certain Fragment-->
         android:name="com.example.myroutine.SettingsFragment"
         android:label="SettingsFragment" />
     <fragment
-        android:id="@+id/profilFragment"
+        android:id="@+id/profileFragment"
         android:name="com.example.myroutine.ProfileFragment"
         android:label="fragment_profil"
         tools:layout="@layout/fragment_profile" />
+        <action
+            android:id="@+id/action_profileFragment_to_resultsFragment"
+            app:destination="@id/resultsFragment" />
+       <fragment
+        android:id="@+id/resultsFragment"
+        android:name="com.example.myroutine.ResultsFragment"
+        android:label="fragment_results"
+        tools:layout="@layout/fragment_stats" />
     <fragment
         android:id="@+id/RVSportCardioCCFragment"
         android:name="recyclerview.RVSportCardioCCFragment"
