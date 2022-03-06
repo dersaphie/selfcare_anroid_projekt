@@ -48,11 +48,11 @@
         app:layout_constraintGuide_percent="0.91" />
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/gl35Percenthor"
+        android:id="@+id/gl40Percenthor"
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.35" />
+        app:layout_constraintGuide_percent="0.40" />
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
@@ -85,7 +85,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        app:layout_constraintTop_toBottomOf="@id/gl35Percenthor"
+        app:layout_constraintTop_toBottomOf="@id/gl40Percenthor"
         app:layout_constraintBottom_toTopOf="@id/gl91Percenthor"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -93,13 +93,14 @@
 
     <ImageView
         android:id="@+id/picAPIGoodMood"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/size_0"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
         android:layout_margin="@dimen/size_8"
         app:layout_constraintTop_toBottomOf="@id/gl008Percenthor"
-        app:layout_constraintBottom_toTopOf="@id/gl35Percenthor"
+        app:layout_constraintBottom_toTopOf="@id/gl40Percenthor"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        android:scaleType="fitXY"
         android:contentDescription="@string/content_desc_API" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView

@@ -49,6 +49,13 @@
             android:layout_height="match_parent"
             android:orientation="horizontal"
             app:layout_constraintGuide_percent="0.4" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gl30PercentHor"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.3" />
+
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/gl50PercentHor"
@@ -57,7 +64,15 @@
         android:orientation="horizontal"
         app:layout_constraintGuide_begin="370dp" />
 
-        <ImageView
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gl80PercentHor"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.8" />
+
+
+    <ImageView
             android:id="@+id/picUserEmoji"
             android:layout_width="131dp"
             android:layout_height="130dp"
@@ -72,11 +87,10 @@
 
         <ImageView
             android:id="@+id/cotnMeTime"
-            android:src="@drawable/img_cocktail_daiquiri"
             android:layout_width="@dimen/size_0"
             android:layout_height="@dimen/size_0"
             android:layout_margin="@dimen/size_4"
-            app:layout_constraintTop_toTopOf="@id/gl50PercentHor"
+            app:layout_constraintTop_toBottomOf="@id/gl30PercentHor"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="@id/gl33PercentVert"
