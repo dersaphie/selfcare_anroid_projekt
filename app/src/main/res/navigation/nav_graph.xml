@@ -1,28 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
+
+<!--Navigation Graph with Home as Home Fragment. Every Fragment which can lead to another has an
+action to that certain Fragment-->
 <navigation
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-
     app:startDestination="@id/home">
-
     <fragment
         android:id="@+id/home"
         android:name="com.example.myroutine.HomeFragment"
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" >
-
         <action
             android:id="@+id/action_home_to_sport"
             app:destination="@id/sport"/>
-        <!-- app:enterAnim="@anim/slide_in_right"
-         app:exitAnim="@anim/slide_out_left"
-         app:popEnterAnim="@anim/slide_in_left"
-         app:popExitAnim="@anim/slide_out_right" />-->
      <action
          android:id="@+id/action_home_to_nutrition"
          app:destination="@id/nutrition" />
-
     </fragment>
     <fragment
         android:id="@+id/sport"
