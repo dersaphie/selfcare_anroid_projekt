@@ -60,8 +60,11 @@
     <string name="tvExerciseEquipment">Equipment</string>
     <string name="etExerciseEqupment">et Description</string>
 
-    <!--Fragment Calling API-->
+    <!--Fragment Calling API -> fragment_rvsport*-->
     <string name="workoutHeadline">YOUR WORKOUT.</string>
+    <string name="desc_Headline">RecyclerView Headline</string>
+    <string name="desc_RecyclerView">RecyclerView Container for received Workout</string>
+    <string name="desc_Error">TextView shown in case of error</string>
     <string name="exercise_api_error_on_failure">Could not connect to API. No data.</string>
     <string name="exercise_api_error_unsuccessful_response">Sorry, the request to the API was not successful.</string>
 </resources>
