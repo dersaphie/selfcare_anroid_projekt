@@ -146,7 +146,7 @@
         android:contentDescription="@string/btn_profile"
         android:background="@drawable/sh_rectangle"/>
 
-    <ImageView
+    <Button
         android:id="@+id/btnNutrition"
         android:layout_width="@dimen/size_0"
         android:layout_height="@dimen/size_0"
