@@ -19,11 +19,17 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
+/**
+ * Magic is happening here :D.. No.
+ * In the RVSportMuscleBW Fragment Adapter and Repo are brought together to
+ * get Data in form of the Workout
+ */
 class RVSportMuscleBWFragment : Fragment() {
+    //binding
     private var _binding: FragmentRvsportmusclebwBinding? = null
     private val binding get() = _binding!!
 
-
+    //Initializing for Api call
     private var workoutRepo = ExerciseRepo()
     private var workout: MutableList<Exercise> = mutableListOf()
     val exerciseAdapter = ExerciseAdapter(workout)
@@ -41,25 +47,27 @@ class RVSportMuscleBWFragment : Fragment() {
 
     override fun onResume() {
         super.onResume()
-
+        //funtionallity of ReceyclerView Workout
         binding.rvWorkout.layoutManager = LinearLayoutManager(binding.root.context, RecyclerView.VERTICAL, false)
         binding.rvWorkout.adapter = exerciseAdapter
+        //clear to get a new workout
         workout.clear()
+        //get new workout
         getWorkoutMuscleBodyweight()
 
     }
 
-    // Method to get a cocktail list - as the API-Call is set up with the fix parameter "a" this method will return all cocktails starting with A.
+    // Method to get a workout - as the API-Call is set up with the fix parameter Body Weight this method will return all exercises with Body Weight as Equipment.
     fun getWorkoutMuscleBodyweight() {
-        // Get the cocktail list from the drinks repo --> callback implementation is necessary
+        // Get the workout from the exercise repo --> callback implementation is necessary
         workoutRepo.getMuscleBodyweightExercise(object : Callback<List<ExerciseDto>> {
             // If the callback gets a response from the API the response can have two states: successful or unsuccessful
             override fun onResponse(
                 call: Call<List<ExerciseDto>?>,
                 response: Response<List<ExerciseDto>?>
             ) {
-                // If the response is successful we get back a list of cocktails
-                // --> We have to 1. set the visibility of the views accordingly 2. add the cocktails to the list 3. notify the adapter about the change
+                // If the response is successful we get back a workout
+                // --> We have to 1. set the visibility of the views accordingly 2. add exercise to the list 3. notify the adapter about the change
                 if (response.isSuccessful) {
                     Log.d("MainActivity", "getWorkout(): onResponse + isSuccessful")
                     binding.tvExerciseApiErrorText.setVisibility(View.GONE)
@@ -93,131 +101,4 @@ class RVSportMuscleBWFragment : Fragment() {
         })
     }
 
-    // Method to get a random cocktail list - as the API doesn't provide a free API-Call to get a random cocktail list we use a work-around here:
-    // We set up a for loop that requests 21 random cocktails from the API and put each of them into the cocktail list
-    // The implementation of the callback works the same way as in the getWorkout() method
-    fun getWorkoutMuscleEquipment() {
-        workoutRepo.getMuscleEquipmentExercise(object : Callback<List<ExerciseDto>> {
-            override fun onResponse(
-                call: Call<List<ExerciseDto>?>,
-                response: Response<List<ExerciseDto>?>
-            ) {
-                if (response.isSuccessful) {
-                    Log.d("MainActivity", "getWorkout(): onResponse + isSuccessful")
-                    binding.tvExerciseApiErrorText.setVisibility(View.GONE)
-                    binding.rvWorkout.setVisibility(View.VISIBLE)
-                    val exerciseApiResult = response.body()
-
-                    exerciseApiResult?.let { result ->
-                        for (i in 0..6) {
-                            workout.add(result[i].toExercise())
-                            //workout.addAll(result.map { it.toExercise() })
-                            exerciseAdapter.notifyDataSetChanged()
-                        }
-                    }
-                } else {
-                    binding.tvExerciseApiErrorText.setText(R.string.exercise_api_error_unsuccessful_response)
-                    binding.tvExerciseApiErrorText.setVisibility(View.VISIBLE)
-                    binding.rvWorkout.setVisibility(View.INVISIBLE)
-                }
-            }
-
-            override fun onFailure(call: Call<List<ExerciseDto>>, t: Throwable) {
-                binding.tvExerciseApiErrorText.setText(R.string.exercise_api_error_on_failure)
-                binding.tvExerciseApiErrorText.setVisibility(View.VISIBLE)
-                binding.rvWorkout.setVisibility(View.INVISIBLE)
-            }
-        })
-    }
-
-    fun getWorkoutCardioBodyweight() {
-        // Get the cocktail list from the drinks repo --> callback implementation is necessary
-        workoutRepo.getCardioBodyweightExercise(object : Callback<List<ExerciseDto>> {
-            // If the callback gets a response from the API the response can have two states: successful or unsuccessful
-            override fun onResponse(
-                call: Call<List<ExerciseDto>?>,
-                response: Response<List<ExerciseDto>?>
-            ) {
-                // If the response is successful we get back a list of cocktails
-                // --> We have to 1. set the visibility of the views accordingly 2. add the cocktails to the list 3. notify the adapter about the change
-                if (response.isSuccessful) {
-                    Log.d("MainActivity", "getWorkout(): onResponse + isSuccessful")
-                    binding.tvExerciseApiErrorText.setVisibility(View.GONE)
-                    binding.rvWorkout.setVisibility(View.VISIBLE)
-                    val exerciseApiResult = response.body()
-
-                    exerciseApiResult?.let { result ->
-                        for (i in 0..6) {
-                            workout.add(result[i].toExercise())
-                            //workout.addAll(result.map { it.toExercise() })
-                            exerciseAdapter.notifyDataSetChanged()
-                        }
-                    }
-
-                } else {
-                    // If the response wasn't successful (that means we reached the API but we didn't get back a valid object, e.g. because of a non-valid API key)
-                    // --> We have to inform the user about the problem
-                    binding.tvExerciseApiErrorText.setText(R.string.exercise_api_error_unsuccessful_response)
-                    binding.tvExerciseApiErrorText.setVisibility(View.VISIBLE)
-                    binding.rvWorkout.setVisibility(View.INVISIBLE)
-                }
-            }
-
-            // If the call wasn't successful we get no response back (that means we didn't reach the API e.g. because of a missing internet connection or permission)
-            // --> We have to inform the user about the problem
-            override fun onFailure(call: Call<List<ExerciseDto>>, t: Throwable) {
-                binding.tvExerciseApiErrorText.setText(R.string.exercise_api_error_on_failure)
-                binding.tvExerciseApiErrorText.setVisibility(View.VISIBLE)
-                binding.rvWorkout.setVisibility(View.INVISIBLE)
-            }
-        })
-    }
-
-    fun getWorkoutCardioEquipment() {
-        // Get the cocktail list from the drinks repo --> callback implementation is necessary
-        workoutRepo.getCardioEquipmentExercise(object : Callback<List<ExerciseDto>> {
-            // If the callback gets a response from the API the response can have two states: successful or unsuccessful
-            override fun onResponse(
-                call: Call<List<ExerciseDto>?>,
-                response: Response<List<ExerciseDto>?>
-            ) {
-                // If the response is successful we get back a list of cocktails
-                // --> We have to 1. set the visibility of the views accordingly 2. add the cocktails to the list 3. notify the adapter about the change
-                if (response.isSuccessful) {
-                    Log.d("MainActivity", "getWorkout(): onResponse + isSuccessful")
-                    binding.tvExerciseApiErrorText.setVisibility(View.GONE)
-                    binding.rvWorkout.setVisibility(View.VISIBLE)
-                    val exerciseApiResult = response.body()
-
-                    exerciseApiResult?.let { result ->
-                        for (i in 0..6) {
-                            workout.add(result[i].toExercise())
-                            //workout.addAll(result.map { it.toExercise() })
-                            exerciseAdapter.notifyDataSetChanged()
-                        }
-                    }
-
-                } else {
-                    // If the response wasn't successful (that means we reached the API but we didn't get back a valid object, e.g. because of a non-valid API key)
-                    // --> We have to inform the user about the problem
-                    binding.tvExerciseApiErrorText.setText(R.string.exercise_api_error_unsuccessful_response)
-                    binding.tvExerciseApiErrorText.setVisibility(View.VISIBLE)
-                    binding.rvWorkout.setVisibility(View.INVISIBLE)
-                }
-            }
-
-            // If the call wasn't successful we get no response back (that means we didn't reach the API e.g. because of a missing internet connection or permission)
-            // --> We have to inform the user about the problem
-            override fun onFailure(call: Call<List<ExerciseDto>>, t: Throwable) {
-                binding.tvExerciseApiErrorText.setText(R.string.exercise_api_error_on_failure)
-                binding.tvExerciseApiErrorText.setVisibility(View.VISIBLE)
-                binding.rvWorkout.setVisibility(View.INVISIBLE)
-            }
-        })
-    }
-/*
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
-    }*/
 }

@@ -26,13 +26,6 @@ interface ExerciseApi {
     )
     //API-Call to get cardio with bodyweigth
     @GET("/exercises/bodyPart/cardio")///bodyPart/cardio")
-    fun getCardioExerciseBodyweightFromApi(): Call<List<ExerciseDto>>
+    fun getCardioExerciseCombinedFromApi(): Call<List<ExerciseDto>>
 
-    @Headers(
-        "x-rapidapi-host: exercisedb.p.rapidapi.com",
-        "x-rapidapi-key: 1d45bebd9dmshbaad6bdabadea3ep1f7a2bjsn19c506b945fe"
-    )
-    //API-Call to get cardio with equipment
-    @GET("/exercises/equipment/band/bodyPart/cardio")
-    fun getCardioExerciseEquipmentFromApi(): Call<List<ExerciseDto>>
 }

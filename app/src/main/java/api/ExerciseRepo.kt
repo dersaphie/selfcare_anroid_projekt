@@ -38,15 +38,10 @@ class ExerciseRepo {
         exerciseApiResultCall.enqueue(callback)
     }
 
-    // Method for API-Call to get a cardio exercise with body weight
-    fun getCardioBodyweightExercise(callback: Callback<List<ExerciseDto>>) {
-        val exerciseApiResultCall = exerciseApi.getCardioExerciseBodyweightFromApi()
+    // Method for API-Call to get a cardio exercise with body weight and equipment
+    fun getCardioCombinedExercise(callback: Callback<List<ExerciseDto>>) {
+        val exerciseApiResultCall = exerciseApi.getCardioExerciseCombinedFromApi()
         exerciseApiResultCall.enqueue(callback)
     }
 
-    // Method for API-Call to get a cardio exercise with equipment
-    fun getCardioEquipmentExercise(callback: Callback<List<ExerciseDto>>) {
-        val exerciseApiResultCall = exerciseApi.getCardioExerciseEquipmentFromApi()
-        exerciseApiResultCall.enqueue(callback)
-    }
 }
