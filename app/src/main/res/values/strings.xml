@@ -71,4 +71,7 @@
     <string name="desc_Error">TextView shown in case of error</string>
     <string name="exercise_api_error_on_failure">Could not connect to API. No data.</string>
     <string name="exercise_api_error_unsuccessful_response">Sorry, the request to the API was not successful.</string>
+
+    <!--Nutrition Fragment-->
+    <string name="content_desc_profile">Sorry, the request to the API was not successful.</string>
 </resources>

@@ -103,7 +103,7 @@
         app:layout_constraintBottom_toTopOf="@id/gl44PercentHor"
         app:layout_constraintStart_toStartOf="@id/gl66PercentVert"
         app:layout_constraintEnd_toEndOf="parent"
-        android:contentDescription="@string/content_desc_Profile"
+        android:contentDescription="@string/content_desc_profile"
         android:background="@drawable/sh_button_frame_default" />
 
     <Button
