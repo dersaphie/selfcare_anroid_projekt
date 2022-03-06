@@ -4,6 +4,9 @@ import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Headers
 
+/**
+ * Header and specific call we want give to the API 
+ */
 interface ExerciseApi {
 
     @Headers(

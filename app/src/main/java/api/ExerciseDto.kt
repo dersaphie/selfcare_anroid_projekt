@@ -2,7 +2,7 @@ package api
 
 import com.google.gson.annotations.SerializedName
 
-//Infos to be received from api, everything apart of the id can be null
+//Infos to be received from api
 data class ExerciseDto (
     @SerializedName("bodyPart")
     val bodyPartOfEx : String,

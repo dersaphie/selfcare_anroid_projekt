@@ -1,7 +1,7 @@
 package data
 
 import api.ExerciseDto
-import com.google.gson.annotations.SerializedName
+
 
 data class Exercise(
     val bodyPartOfEx : String,
@@ -11,7 +11,7 @@ data class Exercise(
     val nameOfEx : String,
     val targetOfEx : String )
 
-/*  Mapping function (extension function) to map the CocktailDto to our app cocktail object */
+/*  Mapping function (extension function) to map the ExerciseDto to our app Exercise object */
 fun ExerciseDto.toExercise(): Exercise {
     val exerciseBodyPart = bodyPartOfEx //?: ""
     val exerciseEquipment = equipmentForEx //?: ""
