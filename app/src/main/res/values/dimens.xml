@@ -5,6 +5,7 @@
     <dimen name="size_8">8dp</dimen>
     <dimen name="size_16">16dp</dimen>
     <dimen name="size_130">130dp</dimen>
+    <dimen name="size_131">131dp</dimen>
     <dimen name="size_164">164dp</dimen>
 
     <!--Text size-->

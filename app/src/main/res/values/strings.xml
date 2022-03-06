@@ -1,4 +1,6 @@
 <resources>
+    <string name="app_name">MyRoutine</string>
+
     <!-- Main Activity -->
     <string name="toolbar">Toolbar</string>
     <string name="changeThemeSpinner">Change Theme Spinner</string>
@@ -8,15 +10,17 @@
     <string name="btn_theme">Change Theme</string>
 
     <!-- Home Fragment -->
-    <string name="app_name">MyRoutine</string>
+    <string name="img_user">User Image</string>
+    <string name="cotn_profile">Background Profile Button</string>
+    <string name="cotn_nutrition">Background Profile Nutrition</string>
+    <string name="cotn_sport">Background Profile Sport</string>
     <string name="btn_profile">Profile</string>
     <string name="btn_sport">Sport</string>
     <string name="btn_nutrition">Nutrition</string>
     <string name="placeholder">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci corporis culpa cum eaque eligendi ex excepturi illum itaque molestias nam natus obcaecati perferendis ratione recusandae sed, similique vel? Necessitatibus praesentium quae quis tempore. Beatae blanditiis corporis, culpa dolorem ea est inventore maxime necessitatibus obcaecati pariatur porro, quis repudiandae sapiente temporibus voluptatibus. At ducimus, laudantium? Ab ex impedit nulla perspiciatis veritatis?</string>
 
     <string name="button_menu">Main Menu</string>
-    <string name="content_desc_API">API GOOD MOOD PICTURE</string>
-    <string name="content_desc_Profile">API GOOD MOOD PICTURE</string>
+
     <!-- Preference Titles -->
     <string name="messages_header">Messages</string>
     <string name="sync_header">Sync</string>
