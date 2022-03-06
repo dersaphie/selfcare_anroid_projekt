@@ -73,7 +73,7 @@
         android:contentDescription="@string/animBackground" />
 
     <!--Host Fragment-->
-    <fragment
+    <androidx.fragment.app.FragmentContainerView
         android:id="@+id/nav_host_fragment"
         android:name="androidx.navigation.fragment.NavHostFragment"
         app:defaultNavHost="true"
