@@ -90,8 +90,8 @@ class MainActivity : ThemeChange() {
 
         super.onStart()
         //
-        binding.picAPIGoodMood.setBackgroundResource(R.drawable.animation_list_background)
-        frameAnimation = binding.picAPIGoodMood.background as AnimationDrawable
+        binding.anim_Background_Images.setBackgroundResource(R.drawable.animation_list_background)
+        frameAnimation = binding.anim_Background_Images.background as AnimationDrawable
         frameAnimation.start()
     }
 

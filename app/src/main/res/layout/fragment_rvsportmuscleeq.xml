@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
+
+<!-- RecyclerView Host for Cardio Combined -->
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -7,6 +9,7 @@
     android:layout_height="match_parent"
     tools:context="recyclerview.RVSportMuscleEQFragment">
 
+    <!-- Headline -->
     <TextView
         android:id="@+id/tvListHeadline"
         android:text="@string/workoutHeadline"
@@ -17,13 +20,7 @@
         app:layout_constraintTop_toTopOf="parent"
         style="@style/HeadlineText" />
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/gl95PercentHor"
-        android:layout_width="0dp"
-        android:layout_height="match_parent"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.95" />
-
+    <!-- RecyclerView for Cardio Combined -->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvWorkout"
         android:layout_width="match_parent"
@@ -38,6 +35,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         />
 
+    <!-- Error text im RV can't be shown -->
     <TextView
         android:id="@+id/tvExerciseApiErrorText"
         style="@style/NormalText"

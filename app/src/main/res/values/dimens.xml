@@ -7,5 +7,9 @@
     <dimen name="size_130">130dp</dimen>
     <dimen name="size_164">164dp</dimen>
 
+    <!--Text size-->
     <dimen name="text_14">14sp</dimen>
+
+    <!--int-->
+    <dimen name="int_1">1</dimen>
 </resources>

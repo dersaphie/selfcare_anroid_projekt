@@ -1,29 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!--
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:paddingTop="@dimen/size_8"
-    tools:context=".MainActivity">
-    <Button
-        android:id="@+id/changeThemeButton"
-        android:text="@string/button_theme"
-        android:layout_gravity="right"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        style="@style/Widget.AppCompat.Button.Colored" />
 
-
-</androidx.constraintlayout.widget.ConstraintLayout>
--->
-
+<!--Layout Main Activity + Background Animation + Fragment Host-->
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -33,27 +10,29 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
+    <!--Guidelines for fixed Layout Position-->
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/gl008Percenthor"
-        android:layout_width="0dp"
+        android:layout_width="@dimen/size_0"
         android:layout_height="match_parent"
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.08" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/gl91Percenthor"
-        android:layout_width="0dp"
+        android:layout_width="@dimen/size_0"
         android:layout_height="match_parent"
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.91" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/gl40Percenthor"
-        android:layout_width="0dp"
+        android:layout_width="@dimen/size_0"
         android:layout_height="match_parent"
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.40" />
 
+    <!--Toolbar with Theme Changer-->
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
@@ -62,12 +41,13 @@
         app:layout_constraintBottom_toTopOf="@id/gl008Percenthor"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        android:contentDescription="@string/toolbar"
         android:background="@color/colorPrimary"
         android:theme="@style/ThemeOverlay.MaterialComponents.Dark.ActionBar">
 
         <Button
             android:id="@+id/changeThemeButton"
-            android:text="@string/button_theme"
+            android:text="@string/btn_theme"
             android:layout_gravity="right"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -75,34 +55,39 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            android:contentDescription="@string/changeThemeSpinner"
             style="@style/Widget.AppCompat.Button.Colored" />
         </androidx.appcompat.widget.Toolbar>
 
-    <fragment
-        android:id="@+id/nav_host_fragment"
-        android:name="androidx.navigation.fragment.NavHostFragment"
-        app:defaultNavHost="true"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        app:layout_constraintTop_toBottomOf="@id/gl40Percenthor"
-        app:layout_constraintBottom_toTopOf="@id/gl91Percenthor"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:navGraph="@navigation/nav_graph" /> <!-- -->
-
+    <!--Background Animation Container-->
     <ImageView
-        android:id="@+id/picAPIGoodMood"
+        android:id="@+id/anim_Background_Images"
         android:layout_width="wrap_content"
-        android:layout_height="0dp"
+        android:layout_height="@dimen/size_0"
         android:layout_margin="@dimen/size_8"
         app:layout_constraintTop_toBottomOf="@id/gl008Percenthor"
         app:layout_constraintBottom_toTopOf="@id/gl40Percenthor"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:scaleType="fitXY"
-        android:contentDescription="@string/content_desc_API" />
+        android:contentDescription="@string/animBackground" />
 
+    <!--Host Fragment-->
+    <fragment
+        android:id="@+id/nav_host_fragment"
+        android:name="androidx.navigation.fragment.NavHostFragment"
+        app:defaultNavHost="true"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/size_0"
+        android:layout_weight="1"
+        app:layout_constraintTop_toBottomOf="@id/gl40Percenthor"
+        app:layout_constraintBottom_toTopOf="@id/gl91Percenthor"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:contentDescription="@string/hostFragment"
+        app:navGraph="@navigation/nav_graph" />
+
+    <!--Bottom Navigation-->
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_nav_menu"
         android:layout_width="match_parent"
@@ -111,7 +96,8 @@
         app:layout_constraintTop_toBottomOf="@id/gl91Percenthor"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintEnd_toEndOf="parent"
+        android:contentDescription="@string/nav_bottom"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 

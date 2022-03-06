@@ -5,7 +5,7 @@
     <item android:drawable="@drawable/img_pexel_body_food_sport38" android:duration="1000" />
     <item android:drawable="@drawable/img_pexel_body_food_sport25" android:duration="1000" />
     <item android:drawable="@drawable/img_pexel_body_food_sport28" android:duration="1000" />
-    <item android:drawable="@drawable/img_pexel_body_food_sport15" android:duration="1000" />
+    <item android:drawable="@drawable/img_pexel_body_food_sport18" android:duration="1000" />
     <item android:drawable="@drawable/img_pexel_body_food_sport2" android:duration="1000" />
 
 </animation-list>
