@@ -182,35 +182,6 @@
         android:hint="@string/enterYourHeightHere"
         android:inputType="textPersonName"
         app:layout_constraintTop_toBottomOf="@id/tv_your_height"
-        app:layout_constraintBottom_toTopOf="@id/tv_your_sex"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
-
-    <TextView
-        android:id="@+id/tv_your_sex"
-        android:layout_width="0dp"
-        android:layout_height="42dp"
-        android:layout_marginStart="34dp"
-        android:layout_marginEnd="34dp"
-        android:layout_marginBottom="4dp"
-        android:ems="10"
-        android:text="@string/yourSex"
-        app:layout_constraintTop_toBottomOf="@id/et_your_height"
-        app:layout_constraintBottom_toTopOf="@id/et_your_sex"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
-
-    <EditText
-        android:id="@+id/et_your_sex"
-        android:layout_width="0dp"
-        android:layout_height="42dp"
-        android:layout_marginStart="34dp"
-        android:layout_marginEnd="34dp"
-        android:layout_marginBottom="4dp"
-        android:ems="10"
-        android:hint="@string/chooseYourSexHere"
-        android:inputType="textPersonName"
-        app:layout_constraintTop_toBottomOf="@id/tv_your_sex"
         app:layout_constraintBottom_toTopOf="@id/tv_your_sport"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
@@ -224,7 +195,7 @@
         android:layout_marginBottom="4dp"
         android:ems="10"
         android:text="@string/yourSport"
-        app:layout_constraintTop_toBottomOf="@id/et_your_sex"
+        app:layout_constraintTop_toBottomOf="@id/et_your_height"
         app:layout_constraintBottom_toTopOf="@id/sp_your_sport"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
@@ -240,10 +211,65 @@
         android:hint="@string/chooseYourSportHere"
         android:inputType="textPersonName"
         app:layout_constraintTop_toBottomOf="@id/tv_your_sport"
-        app:layout_constraintBottom_toTopOf="@id/tv_work_energy_category"
+        app:layout_constraintBottom_toTopOf="@id/tv_hobby_energy_category"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
 
+        <TextView
+            android:id="@+id/tv_hobby_energy_category"
+            android:layout_width="0dp"
+            android:layout_height="42dp"
+            android:layout_marginStart="34dp"
+            android:layout_marginEnd="34dp"
+            android:layout_marginBottom="4dp"
+            android:ems="10"
+            android:text="@string/pickYourHobbyEnergyNeed"
+            app:layout_constraintTop_toBottomOf="@id/sp_your_sport"
+            app:layout_constraintBottom_toTopOf="@id/sp_hobby_energy_category"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <Spinner
+            android:id="@+id/sp_hobby_energy_category"
+            android:layout_width="0dp"
+            android:layout_height="42dp"
+            android:layout_marginStart="34dp"
+            android:layout_marginEnd="34dp"
+            android:layout_marginBottom="4dp"
+            android:ems="10"
+            android:hint="@string/energyCategories"
+            app:layout_constraintTop_toBottomOf="@id/tv_hobby_energy_category"
+            app:layout_constraintBottom_toTopOf="@id/tv_your_hobby_hours"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <TextView
+            android:id="@+id/tv_your_hobby_hours"
+            android:layout_width="0dp"
+            android:layout_height="42dp"
+            android:layout_marginStart="34dp"
+            android:layout_marginEnd="34dp"
+            android:layout_marginBottom="4dp"
+            android:ems="10"
+            android:text="@string/yourHobbyHours"
+            app:layout_constraintTop_toBottomOf="@id/sp_hobby_energy_category"
+            app:layout_constraintBottom_toTopOf="@id/et_your_hobby_hours"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <EditText
+            android:id="@+id/et_your_hobby_hours"
+            android:layout_width="0dp"
+            android:layout_height="42dp"
+            android:layout_marginStart="34dp"
+            android:layout_marginEnd="34dp"
+            android:layout_marginBottom="4dp"
+            android:ems="10"
+            android:hint="@string/enterYourHobbyHoursHere"
+            app:layout_constraintTop_toBottomOf="@id/tv_your_hobby_hours"
+            app:layout_constraintBottom_toTopOf="@id/tv_work_energy_category"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
 
     <TextView
         android:id="@+id/tv_work_energy_category"
@@ -254,7 +280,7 @@
         android:layout_marginBottom="4dp"
         android:ems="10"
         android:text="@string/pickYourWorkEnergyNeed"
-        app:layout_constraintTop_toBottomOf="@id/sp_your_sport"
+        app:layout_constraintTop_toBottomOf="@id/et_your_hobby_hours"
         app:layout_constraintBottom_toTopOf="@id/sp_work_energy_category"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
@@ -269,9 +295,36 @@
         android:ems="10"
         android:hint="@string/energyCategories"
         app:layout_constraintTop_toBottomOf="@id/tv_work_energy_category"
+        app:layout_constraintBottom_toTopOf="@id/tv_your_work_hours"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
 
+        <TextView
+            android:id="@+id/tv_your_work_hours"
+            android:layout_width="0dp"
+            android:layout_height="42dp"
+            android:layout_marginStart="34dp"
+            android:layout_marginEnd="34dp"
+            android:layout_marginBottom="4dp"
+            android:ems="10"
+            android:text="@string/yourWorkHours"
+            app:layout_constraintTop_toBottomOf="@id/sp_work_energy_category"
+            app:layout_constraintBottom_toTopOf="@id/et_your_work_hours"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <EditText
+            android:id="@+id/et_your_work_hours"
+            android:layout_width="0dp"
+            android:layout_height="42dp"
+            android:layout_marginStart="34dp"
+            android:layout_marginEnd="34dp"
+            android:layout_marginBottom="4dp"
+            android:ems="10"
+            android:hint="@string/enterYourHobbyHoursHere"
+            app:layout_constraintTop_toBottomOf="@id/tv_your_work_hours"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
 
     <Button
         android:id="@+id/btn_save_user_data_and_show_body_calculations"
@@ -280,7 +333,7 @@
         android:contentDescription="@string/btnSave"
         android:background="@drawable/sh_rectangle"
         android:text="@string/saveAndShowStats"
-        app:layout_constraintTop_toBottomOf="@id/sp_work_energy_category"
+        app:layout_constraintTop_toBottomOf="@id/et_your_work_hours"
         app:layout_constraintBottom_toTopOf="@id/glBottomHor"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/btn_navigate_to_body_calculations_fragment"/>
@@ -292,7 +345,7 @@
         android:contentDescription="@string/btn_show_stats"
         android:text="@string/show_stats"
         android:background="@drawable/sh_rectangle"
-        app:layout_constraintTop_toBottomOf="@id/sp_work_energy_category"
+        app:layout_constraintTop_toBottomOf="@id/et_your_work_hours"
         app:layout_constraintBottom_toTopOf="@id/glBottomHor"
         app:layout_constraintStart_toEndOf="@+id/btn_save_user_data_and_show_body_calculations"
         app:layout_constraintEnd_toEndOf="parent" />

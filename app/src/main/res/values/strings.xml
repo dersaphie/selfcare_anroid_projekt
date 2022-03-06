@@ -34,8 +34,8 @@
     <!-- Profile Section -->
     <string name="yourName">Your Name</string>
     <string name="yourAge">Your Age</string>
-    <string name="yourWeight">Your Weight</string>
-    <string name="yourHeight">Your Height</string>
+    <string name="yourWeight">Your Weight in kg</string>
+    <string name="yourHeight">Your Height in cm</string>
     <string name="yourSex">Your Sex</string>
     <string name="yourSport">Your Sport</string>
     <string name="btnSave">Save Button</string>
@@ -48,9 +48,25 @@
     <string name="chooseYourSportHere">Choose your sport here</string>
     <string name="show_stats">Show Stats</string>
     <string name="btn_show_stats">Button to show User Stats</string>
+    <string name="cardio_without_equipment">Cardio</string>
+    <string name="energyCategories">Energy Categories</string>
+    <string name="cardio_with_equipment">Cardio with Equipment</string>
+    <string name="muscle_building_without_equipment">Muscle building without equipment</string>
+    <string name="muscle_building_with_equipment">Muscle building with equipment</string>
+    <string name="lowEnergyNeed">Low energy need (2–4 kj)</string>
+    <string name="pickYourWorkEnergyNeed">Pick your work energy need</string>
+    <string name="yourWorkHours">Your work Hours</string>
+    <string name="enterYourWorkHoursHere">Enter your work hours here (e.g. 8)</string>
+    <string name="pickYourHobbyEnergyNeed">Pick your hobby energy need including sport</string>
+    <string name="yourHobbyHours">Your hobby Hours</string>
+    <string name="enterYourHobbyHoursHere">Enter your hobby hours here (e.g. 4)</string>
 
     <!-- Results Section -->
-    <string name="disclaimer">Disclaimer</string>
+    <string name="disclaimer">DISCLAIMER: Those values are indicators.</string>
+    <string name="yourBmi">Your BMI</string>
+    <string name="yourDailyEnergyNeed">Your Daily Energy Need</string>
+    <string name="yourBmiCategory">Your BMI Category</string>
+    <string name="bmiOutOfRange">BMI out of Range</string>
 
     <!-- BMI -->
     <string name="valuesForBMIAreIncomplete">Values for BMI are incomplete </string>
@@ -66,12 +82,12 @@
     <!-- Placeholder and Test -->
     <string name="tachjen">tachjen</string>
     <string name="btnTestCalculation">Test Calculation</string>
+    <string name="placeholderOneWord">Placeholder</string>
 
     <!-- Fragment Titles -->
     <string name="home">home</string>
     <string name="sport">sport</string>
     <string name="nutrition">nutrition</string>
     <string name="profile">profile</string>
-    <string name="pickYourWorkEnergyNeed">Pick your work energy need</string>
-    <string name="energyCategories">Energy Categories</string>
+
 </resources>

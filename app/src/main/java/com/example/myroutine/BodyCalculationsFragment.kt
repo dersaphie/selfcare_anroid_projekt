@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.core.graphics.toColor
 import androidx.navigation.fragment.navArgs
 
 // TODO: Rename parameter arguments, choose names that match
@@ -43,8 +44,11 @@ class BodyCalculationsFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         val safeArgs: BodyCalculationsFragmentArgs by navArgs()
         val bmi = safeArgs.bmi
-
-        view.findViewById<TextView>(R.id.tv_your_bmi)?.text = bmi.toString()
+        val bmiColor = safeArgs.bmiColor
+        val bmiCategory = safeArgs.bmiCategory
+        view.findViewById<TextView>(R.id.tv_your_bmi_value)?.text = bmi.toString()
+        view.findViewById<TextView>(R.id.tv_your_bmi_category_value)?.setTextColor(bmiColor.toInt())
+        view.findViewById<TextView>(R.id.tv_your_bmi_category_value)?.text = bmiCategory
     }
 
     companion object {
