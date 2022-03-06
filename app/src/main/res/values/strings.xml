@@ -1,4 +1,21 @@
 <resources>
+    <string name="app_name">MyRoutine</string>
+
+    <!-- Main Activity -->
+    <string name="toolbar">Toolbar</string>
+    <string name="animBackground">Animated Background</string>
+    <string name="hostFragment">Hosting Fragment</string>
+    <string name="nav_bottom">Location for Bottom NAvigation</string>
+
+    <!-- Home Fragment -->
+    <string name="img_user">User Image</string>
+    <string name="cotn_profile">Background Profile Button</string>
+    <string name="cotn_nutrition">Background Nutrition Button</string>
+    <string name="cotn_sport">Background Sport Button</string>
+    <string name="btn_profile">Profile</string>
+    <string name="btn_sport">Sport</string>
+    <string name="btn_nutrition">Nutrition</string>
+
     <string name="app_name">ThemeSwitcher</string>
     <string name="settings_text_select_theme">Select Theme:</string>
     <string name="settings_text_credentials">Credentials</string>
@@ -20,10 +37,9 @@
     <!--    alles vom code-->
 
     <string name="placeholder">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci corporis culpa cum eaque eligendi ex excepturi illum itaque molestias nam natus obcaecati perferendis ratione recusandae sed, similique vel? Necessitatibus praesentium quae quis tempore. Beatae blanditiis corporis, culpa dolorem ea est inventore maxime necessitatibus obcaecati pariatur porro, quis repudiandae sapiente temporibus voluptatibus. At ducimus, laudantium? Ab ex impedit nulla perspiciatis veritatis?</string>
-    <string name="button_theme">Change Theme</string>
+
     <string name="button_menu">Main Menu</string>
-    <string name="content_desc_API">API GOOD MOOD PICTURE</string>
-    <string name="content_desc_Profile">API GOOD MOOD PICTURE</string>
+
     <!-- Preference Titles -->
     <string name="messages_header">Messages</string>
     <string name="sync_header">Sync</string>
@@ -38,6 +54,42 @@
     <string name="attachment_summary_on">Automatically download attachments for incoming emails
     </string>
     <string name="attachment_summary_off">Only download attachments when manually requested</string>
+
+    <!--Sport Section-->
+    <string name="cotn_MEQ">Background M.EQ. Button</string>
+    <string name="cotn_MBW">Background M.BW. Button</string>
+    <string name="cotn_CCC">Background C.CC. Button</string>
+    <string name="btnCardioCombined">Cardio- Combined</string>
+    <string name="btnMuscleBodyWeight">Muscle- BodyWeight</string>
+    <string name="btnMuscleEquipment">Muscle- Equipment</string>
+
+
+
+    <!--Item Exercise-->
+    <string name="tvExerciseName">Name of Exercise </string>
+    <string name="tvBodyPart">Body Part: </string>
+    <string name="tvTargetOfExercise">Target of Exercise: </string>
+    <string name="tvExerciseEquipment">Equipment</string>
+    <string name="etBodyPart">Body Part</string>
+    <string name="etTargetOfExercise">Target of Exercise</string>
+    <string name="etExerciseEquipment">et Equipment</string>
+
+    <string name="descEtBodyPart">Inserted Api value for Body Part</string>
+    <string name="descEtTargetOfExercise">Inserted Api value for Target of Exercise</string>
+    <string name="descEtExerciseGif">Inserted Api value for Gif</string>
+    <string name="descEtExerciseEquipment">Inserted Api value for Exercise Equipment</string>
+
+
+    <!--Fragment Calling API -> fragment_rvsport*-->
+    <string name="workoutHeadline">YOUR WORKOUT.</string>
+    <string name="desc_Headline">RecyclerView Headline</string>
+    <string name="desc_RecyclerView">RecyclerView Container for received Workout</string>
+    <string name="desc_Error">TextView shown in case of error</string>
+    <string name="exercise_api_error_on_failure">Could not connect to API. No data.</string>
+    <string name="exercise_api_error_unsuccessful_response">Sorry, the request to the API was not successful.</string>
+
+    <!--Nutrition Fragment-->
+    <string name="content_desc_profile">Sorry, the request to the API was not successful.</string>
 
     <!-- Sport Section -->
     <string name="btnCardioBodyWeight">Cardio - Body Weight</string>

@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
+
+<!--Navigation Graph with Home as Home Fragment. Every Fragment which can lead to another has an
+action to that certain Fragment-->
 <navigation
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -10,21 +13,29 @@
         android:name="com.example.myroutine.HomeFragment"
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" >
-
         <action
             android:id="@+id/action_home_to_sport"
             app:destination="@id/sportFragment" />
-
-     <action
-         android:id="@+id/action_home_to_nutrition"
-         app:destination="@id/nutritionFragment" />
+        <action
+            android:id="@+id/action_home_to_nutrition"
+            app:destination="@id/nutritionFragment" />
 
     </fragment>
     <fragment
         android:id="@+id/sportFragment"
         android:name="com.example.myroutine.SportFragment"
         android:label="fragment_sport"
-        tools:layout="@layout/fragment_sport" />
+        tools:layout="@layout/fragment_sport" >
+        <action
+            android:id="@+id/action_sport_to_RVSportCardioCCFragment"
+            app:destination="@id/RVSportCardioCCFragment" />
+        <action
+            android:id="@+id/action_sport_to_RVSportMuscleBWFragment"
+            app:destination="@id/RVSportMuscleBWFragment" />
+        <action
+            android:id="@+id/action_sport_to_RVSportMuscleEQFragment"
+            app:destination="@id/RVSportMuscleEQFragment" />
+    </fragment>
     <fragment
         android:id="@+id/nutritionFragment"
         android:name="com.example.myroutine.NutritionFragment"
@@ -37,15 +48,29 @@
     <fragment
         android:id="@+id/profileFragment"
         android:name="com.example.myroutine.ProfileFragment"
-        android:label="fragment_profile"
-        tools:layout="@layout/fragment_profile" >
+        android:label="fragment_profil"
+        tools:layout="@layout/fragment_profile" />
         <action
             android:id="@+id/action_profileFragment_to_resultsFragment"
             app:destination="@id/resultsFragment" />
-    </fragment>
-    <fragment
+       <fragment
         android:id="@+id/resultsFragment"
         android:name="com.example.myroutine.ResultsFragment"
         android:label="fragment_results"
         tools:layout="@layout/fragment_stats" />
+    <fragment
+        android:id="@+id/RVSportCardioCCFragment"
+        android:name="recyclerview.RVSportCardioCCFragment"
+        android:label="fragment_rvsportcardiocc"
+        tools:layout="@layout/fragment_rvsportcardiocc" />
+    <fragment
+        android:id="@+id/RVSportMuscleBWFragment"
+        android:name="recyclerview.RVSportMuscleBWFragment"
+        android:label="fragment_rvsportmusclebw"
+        tools:layout="@layout/fragment_rvsportmusclebw" />
+    <fragment
+        android:id="@+id/RVSportMuscleEQFragment"
+        android:name="recyclerview.RVSportMuscleEQFragment"
+        android:label="fragment_rvsportmuscleeq"
+        tools:layout="@layout/fragment_rvsportmuscleeq" />
 </navigation>
