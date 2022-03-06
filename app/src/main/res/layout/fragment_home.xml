@@ -51,6 +51,13 @@
             app:layout_constraintGuide_percent="0.4" />
 
     <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gl90PercentHor"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.9" />
+
+    <androidx.constraintlayout.widget.Guideline
         android:id="@+id/gl50PercentHor"
         android:layout_width="0dp"
         android:layout_height="match_parent"
@@ -72,16 +79,16 @@
 
         <ImageView
             android:id="@+id/cotnMeTime"
-            android:src="@drawable/img_cocktail_daiquiri"
+            android:src="@drawable/img_pexel_body_food_sport48"
             android:layout_width="@dimen/size_0"
-            android:layout_height="@dimen/size_0"
+            android:layout_height=""
             android:layout_margin="@dimen/size_4"
-            app:layout_constraintTop_toTopOf="@id/gl50PercentHor"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/gl40PercentHor"
+            app:layout_constraintBottom_toBottomOf="gl80P"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="@id/gl33PercentVert"
             android:contentDescription="@string/content_desc_API"
-            android:background="@drawable/sh_container_rectangle"/>
+            android:background="@drawable/img_pexel_body_food_sport48"/>
 
         <ImageView
             android:id="@+id/cotnNutrition"
