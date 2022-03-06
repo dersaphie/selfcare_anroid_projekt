@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <attr name="pageBackground" format="reference" />
+    <attr name="textSubheader" format="reference" />
+    <attr name="textLarge" format="reference" />
+    <attr name="textRegular" format="reference" />
+    <attr name="whiteBackground" format="reference" />
+    <attr name="roseBackground" format="reference" />
+    <attr name="yellowBackground" format="reference" />
+    <attr name="greenBackground" format="reference" />
+    <attr name="button" format="reference" />
+    <attr name="spinner" format="reference" />
+    <attr name= "nav_bar_green" format="reference" />
+
+
+</resources>
