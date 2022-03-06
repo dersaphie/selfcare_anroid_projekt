@@ -20,49 +20,49 @@
     <!--Guidelines for fix position in Layout-->
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/gl33PercentVert"
-        android:layout_width="0dp"
+        android:layout_width="@dimen/size_0"
         android:layout_height="match_parent"
         android:orientation="vertical"
         app:layout_constraintGuide_percent="0.33" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/gl66PercentVert"
-        android:layout_width="0dp"
+        android:layout_width="@dimen/size_0"
         android:layout_height="match_parent"
         android:orientation="vertical"
         app:layout_constraintGuide_percent="0.66" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/gl99PercentVert"
-        android:layout_width="0dp"
+        android:layout_width="@dimen/size_0"
         android:layout_height="match_parent"
         android:orientation="vertical"
         app:layout_constraintGuide_percent="0.99" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/gl009PercentHor"
-        android:layout_width="0dp"
+        android:layout_width="@dimen/size_0"
         android:layout_height="match_parent"
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.09" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/gl89PercentHor"
-        android:layout_width="0dp"
+        android:layout_width="@dimen/size_0"
         android:layout_height="match_parent"
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.89" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/gl40PercentHor"
-        android:layout_width="0dp"
+        android:layout_width="@dimen/size_0"
         android:layout_height="match_parent"
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.44" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/gl65PercentHor"
-        android:layout_width="0dp"
+        android:layout_width="@dimen/size_0"
         android:layout_height="match_parent"
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.65" />
@@ -84,7 +84,7 @@
         app:layout_constraintBottom_toBottomOf="@id/gl89PercentHor"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="@id/gl33PercentVert"
-        android:contentDescription="@string/content_desc_API"
+        android:contentDescription="@string/cotn_MEQ"
         android:background="@drawable/img_pexel_body_food_sport31"/>
     <!--optional Bild 28 -->
 
@@ -97,7 +97,7 @@
         app:layout_constraintBottom_toBottomOf="@id/gl89PercentHor"
         app:layout_constraintStart_toStartOf="@id/gl33PercentVert"
         app:layout_constraintEnd_toEndOf="@id/gl66PercentVert"
-        android:contentDescription="@string/content_desc_API"
+        android:contentDescription="@string/cotn_MBW"
         android:background="@drawable/img_pexel_body_food_sport44"/>
 
     <ImageView
@@ -109,7 +109,7 @@
         app:layout_constraintBottom_toBottomOf="@id/gl89PercentHor"
         app:layout_constraintStart_toStartOf="@id/gl66PercentVert"
         app:layout_constraintEnd_toEndOf="@id/gl99PercentVert"
-        android:contentDescription="@string/content_desc_API"
+        android:contentDescription="@string/cotn_CCC"
         android:background="@drawable/img_pexel_body_food_sport5"/>
 
     <!--Button for Workouts -->
@@ -123,13 +123,13 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="@id/gl33PercentVert"
         android:text="@string/btnMuscleEquipment"
-        android:contentDescription="@string/btnCardioBodyWeight"
+        android:contentDescription="@string/btnMuscleEquipment"
         android:background="@drawable/sh_rectangle"/>
 
     <Button
         android:id="@+id/btnMuscleBodyWeight"
         android:layout_width="@dimen/size_0"
-        android:layout_height="0dp"
+        android:layout_height="@dimen/size_0"
         android:layout_margin="@dimen/size_4"
         app:layout_constraintTop_toTopOf="@id/gl65PercentHor"
         app:layout_constraintBottom_toTopOf="@id/gl89PercentHor"
@@ -143,14 +143,14 @@
     <Button
         android:id="@+id/btnCardioCombined"
         android:layout_width="@dimen/size_0"
-        android:layout_height="0dp"
+        android:layout_height="@dimen/size_0"
         android:layout_margin="@dimen/size_4"
         app:layout_constraintTop_toTopOf="@id/gl65PercentHor"
         app:layout_constraintBottom_toTopOf="@id/gl89PercentHor"
         app:layout_constraintStart_toStartOf="@id/gl66PercentVert"
         app:layout_constraintEnd_toEndOf="parent"
         android:text="@string/btnCardioCombined"
-        android:contentDescription="@string/btnStretchingBodyWeight"
+        android:contentDescription="@string/btnCardioCombined"
         android:background="@drawable/sh_rectangle" />
 <!--
     <Space

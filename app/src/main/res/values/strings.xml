@@ -12,8 +12,8 @@
     <!-- Home Fragment -->
     <string name="img_user">User Image</string>
     <string name="cotn_profile">Background Profile Button</string>
-    <string name="cotn_nutrition">Background Profile Nutrition</string>
-    <string name="cotn_sport">Background Profile Sport</string>
+    <string name="cotn_nutrition">Background Nutrition Button</string>
+    <string name="cotn_sport">Background Sport Button</string>
     <string name="btn_profile">Profile</string>
     <string name="btn_sport">Sport</string>
     <string name="btn_nutrition">Nutrition</string>
@@ -40,15 +40,14 @@
     <string name="your_name">Your Name</string>
 
     <!--Sport Section-->
-    <string name="btnCardioBodyWeight">Cardio - Body Weight</string>
+    <string name="cotn_MEQ">Background M.EQ. Button</string>
+    <string name="cotn_MBW">Background M.BW. Button</string>
+    <string name="cotn_CCC">Background C.CC. Button</string>
     <string name="btnCardioCombined">Cardio- Combined</string>
     <string name="btnMuscleBodyWeight">Muscle- BodyWeight</string>
     <string name="btnMuscleEquipment">Muscle- Equipment</string>
-    <string name="btnStretchingBodyWeight">Stretching - Body Weight</string>
-    <string name="btnStretchingEquipment">Stretching - Equipment</string>
-    <string name="ctnCardioArea">ContainerCardio</string>
-    <string name="ctnMuscleArea">ContainerMuscle</string>
-    <string name="ctnstretchingArea">ContainerStretching</string>
+
+
 
     <!--Item Exercise-->
     <string name="tvExerciseName">Name of Exercise </string>
