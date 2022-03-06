@@ -53,12 +53,16 @@
     <string name="tvExerciseName">Name of Exercise </string>
     <string name="tvBodyPart">Body Part: </string>
     <string name="tvTargetOfExercise">Target of Exercise: </string>
+    <string name="tvExerciseEquipment">Equipment</string>
     <string name="etBodyPart">Body Part</string>
     <string name="etTargetOfExercise">Target of Exercise</string>
-    <string name="tvExerciseDescription">Description</string>
-    <string name="etExerciseDescription">et Description</string>
-    <string name="tvExerciseEquipment">Equipment</string>
-    <string name="etExerciseEqupment">et Description</string>
+    <string name="etExerciseEquipment">et Equipment</string>
+
+    <string name="descEtBodyPart">Inserted Api value for Body Part</string>
+    <string name="descEtTargetOfExercise">Inserted Api value for Target of Exercise</string>
+    <string name="descEtExerciseGif">Inserted Api value for Gif</string>
+    <string name="descEtExerciseEquipment">Inserted Api value for Exercise Equipment</string>
+
 
     <!--Fragment Calling API -> fragment_rvsport*-->
     <string name="workoutHeadline">YOUR WORKOUT.</string>
