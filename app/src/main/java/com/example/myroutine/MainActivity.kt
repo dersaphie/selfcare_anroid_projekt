@@ -36,6 +36,7 @@ class MainActivity : ThemeChange() {
         ) as NavHostFragment
         navController = navHostFragment.navController
 
+
         // when clicking btn Theme is changed and Layout new created
         binding.changeThemeButton.setOnClickListener {
             switchTheme()
@@ -84,17 +85,8 @@ class MainActivity : ThemeChange() {
 
     }
 
+
     override fun onStart() {
-       /* super.onStart()
-
-
-        val rocketImage: ImageView = findViewById(R.id.picAPIGoodMood)
-        rocketImage.setBackgroundResource(R.drawable.animation_list_background)
-
-        val rocketAnimation = rocketImage.background
-        if (rocketAnimation is Animatable) {
-            rocketAnimation.start()
-        }*/
 
         super.onStart()
         //
@@ -102,6 +94,7 @@ class MainActivity : ThemeChange() {
         frameAnimation = binding.picAPIGoodMood.background as AnimationDrawable
         frameAnimation.start()
     }
+
     override fun onSupportNavigateUp(): Boolean {
         return navController.navigateUp(appBarConfiguration)
     }
