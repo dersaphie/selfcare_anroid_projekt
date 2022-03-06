@@ -7,6 +7,51 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="yellow">#FFEB3B</color>
+
+    <!--    Colors for BasicTheme-->
+    <color name="Button_wh_default">#FFCECFCE</color>
+    <color name="Button_pressed_Prim">#FF66CFE6</color>
+    <color name="Button_pressed_Sek">#FF207FB9</color>
+    <color name="Button_pressed_Tri">#FF0060B8</color>
+    <color name="Text_Large_Shadow">#888</color>
+    <color name="actionbar_wh">#AFAFAF</color>
+
+    <!--    Colors for Rose Theme-->
+
+    <color name="Background_rose">#ff99fc</color>
+    <color name="Button_rose_default">#ADC13A68</color>
+    <color name="Button_rose_pressed_Prim">#65489A</color>
+    <color name="Button_rose_pressed_Sek">#A555D8</color>
+    <color name="Button_rose_pressed_Tri">#B041C5</color>
+    <color name="Text_Large_Shadow_rose">#888</color>
+    <color name="actionbar_rose">#fa488f</color>
+
+    <!--    Colors for yellow Theme-->
+
+    <color name="Background_yellow">#FAF594</color>
+    <color name="Button_yellow_default">#DCD112</color>
+    <color name="Button_yellow_pressed_Prim">#FFEB3B</color>
+    <color name="Button_yellow_pressed_Sek">#FFE500</color>
+    <color name="Button_yellow_pressed_Tri">#FFEB3B</color>
+    <color name="Text_Large_Shadow_yellow">#888</color>
+    <color name="actionbar_yellow">#FFE500</color>
+
+    <!--    Colors for green Theme-->
+
+    <color name="Background_green">#92B865</color>
+    <color name="Button_green_default">#38E840</color>
+    <color name="Button_green_pressed_Prim">#255127</color>
+    <color name="Button_green_pressed_Sek">#3A5C3C</color>
+    <color name="Button_green_pressed_Tri">#1E5520</color>
+    <color name="Text_Large_Shadow_green">#888</color>
+    <color name="actionbar_green">#1E5520</color>
+
+
+
+    <!--    CODE-->
+
+
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
@@ -30,4 +75,5 @@
     <color name="colorObesityGradeOne">#fb0</color>
     <color name="colorObesityGradeTwo">#f60</color>
     <color name="colorObesityGradeThree">#f00</color>
+
 </resources>

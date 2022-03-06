@@ -1,44 +1,59 @@
 package com.example.myroutine
 
+
 import android.annotation.SuppressLint
 import android.content.ContentValues
 import android.content.res.Resources
 import android.os.Bundle
 import android.util.Log
+import android.view.View
+import android.widget.AdapterView
+import android.widget.Spinner
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
-import androidx.navigation.ui.*
+import androidx.navigation.ui.AppBarConfiguration
+import androidx.navigation.ui.navigateUp
+import androidx.navigation.ui.setupActionBarWithNavController
+import androidx.navigation.ui.setupWithNavController
 import com.example.myroutine.databinding.ActivityMainBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
-class MainActivity : ThemeChange() {
+
+class MainActivity : AppCompatActivity() {
+
     private lateinit var binding: ActivityMainBinding
     private lateinit var navController: NavController
     private lateinit var appBarConfiguration: AppBarConfiguration
 
+    // Here we set the theme for the activity
+    // Note `Utils.onActivityCreateSetTheme` must be called before `setContentView`
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        // MUST BE SET BEFORE setContentView
+        Utils.onActivityCreateSetTheme(this)
+
+        // AFTER SETTING THEME
+        setContentView(R.layout.activity_main)
+        setupSpinnerItemSelection()
+
+        //ENDE THEME CHANGER
+
         //define binding
-        binding = ActivityMainBinding.inflate(layoutInflater)
-        //start Theme is set
-        setTheme()
-        setContentView(binding.root)
-        val toolbar = findViewById<Toolbar>(R.id.toolbar)
-        setSupportActionBar(toolbar)
+        //*binding = ActivityMainBinding.inflate(layoutInflater)
+        //setContentView(binding.root)*/
+
+
+        /*val toolbar = findViewById<Toolbar>(R.id.toolbar)
+         setSupportActionBar(toolbar)*/
         // Set up Action Bar
         val navHostFragment = supportFragmentManager.findFragmentById(
             R.id.nav_host_fragment
         ) as NavHostFragment
         navController = navHostFragment.navController
-
-        // when clicking btn Theme is changed and Layout new created
-        binding.changeThemeButton.setOnClickListener {
-            switchTheme()
-        }
-
-
 
         /*
         setupBottomNavMenu(navController)
@@ -47,7 +62,7 @@ class MainActivity : ThemeChange() {
             val dest: String = try {
                 resources.getResourceName(destination.id)
             } catch (e: Resources.NotFoundException) {
-                Integer.toString(destination.id)
+                destination.id.toString()
             }
 
             Toast.makeText(this@MainActivity, "Navigated to $dest",
@@ -92,37 +107,23 @@ class MainActivity : ThemeChange() {
         db.insert("USER", null, cv)
     }
 
-    //Bottom funktioniert erweiterung in layout und Layout definiert die
 
-    /*private fun setupBottomNavMenu(navController: NavController) {
-        // TODO STEP 9.3 - Use NavigationUI to set up Bottom Nav
-        val bottomNav = findViewById<BottomNavigationView>(R.id.bottom_nav_view)
-        bottomNav?.setupWithNavController(navController)
-    }
+    private fun setupSpinnerItemSelection() {
+        val spThemes = findViewById<Spinner>(R.id.spThemes)
+        spThemes.setSelection(ThemeApplication.currentPosition)
+        ThemeApplication.currentPosition = spThemes.selectedItemPosition
+        spThemes.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+            override fun onItemSelected(
+                parent: AdapterView<*>?, view: View,
+                position: Int, id: Long
+            ) {
+                if (ThemeApplication.currentPosition != position) {
+                    Utils.changeToTheme(this@MainActivity, position)
+                }
+                ThemeApplication.currentPosition = position
+            }
 
-     */
-    /*
-    //inflating menu and nav_view which is layout for host fragment
-    override fun onCreateOptionsMenu(menu: Menu): Boolean {
-        val retValue = super.onCreateOptionsMenu(menu)
-        val navigationView = findViewById<NavigationView>(R.id.nav_view)
-        // The NavigationView already has these same navigation items, so we only add
-        // navigation items to the menu here if there isn't a NavigationView
-        if (navigationView == null) {
-            menuInflater.inflate(R.menu.overflow_menu, menu)
-            return true
+            override fun onNothingSelected(parent: AdapterView<*>?) {}
         }
-        return retValue
     }
-
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        return item.onNavDestinationSelected(findNavController(R.id.nav_host_fragment))
-
-    }
-     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        return item.onNavDestinationSelected(findNavController(R.id.nav_host_fragment))
-
-    }
-*/
-
 }

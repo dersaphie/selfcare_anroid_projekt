@@ -1,5 +1,24 @@
 <resources>
-    <string name="app_name">MyRoutine</string>
+    <string name="app_name">ThemeSwitcher</string>
+    <string name="settings_text_select_theme">Select Theme:</string>
+    <string name="settings_text_credentials">Credentials</string>
+    <string name="settings_text_username_hint">username</string>
+    <string name="settings_text_password_hint">password</string>
+    <string name="settings_text_sync_automatically">Sync automatically</string>
+    <string name="settings_text_location">Location</string>
+    <string name="settings_text_state_on">On</string>
+    <string name="settings_text_state_off">Off</string>
+    <string name="settings_text_clear_data">Clear Data</string>
+
+    <string-array name="theme_array">
+        <item>BasicTheme</item>
+        <item>RoseTheme</item>
+        <item>SunnyTheme</item>
+        <item>ForestTheme</item>
+    </string-array>
+
+    <!--    alles vom code-->
+
     <string name="placeholder">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci corporis culpa cum eaque eligendi ex excepturi illum itaque molestias nam natus obcaecati perferendis ratione recusandae sed, similique vel? Necessitatibus praesentium quae quis tempore. Beatae blanditiis corporis, culpa dolorem ea est inventore maxime necessitatibus obcaecati pariatur porro, quis repudiandae sapiente temporibus voluptatibus. At ducimus, laudantium? Ab ex impedit nulla perspiciatis veritatis?</string>
     <string name="button_theme">Change Theme</string>
     <string name="button_menu">Main Menu</string>
