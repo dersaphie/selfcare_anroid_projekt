@@ -94,80 +94,82 @@
 
         <ImageView
             android:id="@+id/cotnMeTime"
-            android:src="@drawable/img_pexel_body_food_sport48"
             android:layout_width="@dimen/size_0"
-            android:layout_height=""
+            android:layout_height="@dimen/size_0"
             android:layout_margin="@dimen/size_4"
-            app:layout_constraintTop_toTopOf="@+id/gl40PercentHor"
-            app:layout_constraintBottom_toBottomOf="gl80P"
+            app:layout_constraintTop_toTopOf="@id/gl30PercentHor"
+            app:layout_constraintBottom_toBottomOf="@id/gl90PercentHor"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="@id/gl33PercentVert"
             android:contentDescription="@string/content_desc_API"
-            android:background="@drawable/img_pexel_body_food_sport48"/>
+            android:background="@drawable/img_pexel_body_food_sport46"/>
+            <!--optional Bild 28 -->
 
         <ImageView
             android:id="@+id/cotnNutrition"
-            android:src="@drawable/img_cocktail_daiquiri"
             android:layout_width="@dimen/size_0"
             android:layout_height="@dimen/size_0"
             android:layout_margin="@dimen/size_4"
-            app:layout_constraintTop_toTopOf="@id/gl50PercentHor"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="@id/gl30PercentHor"
+            app:layout_constraintBottom_toBottomOf="@id/gl90PercentHor"
             app:layout_constraintStart_toStartOf="@id/gl33PercentVert"
             app:layout_constraintEnd_toEndOf="@id/gl66PercentVert"
             android:contentDescription="@string/content_desc_API"
-            android:background="@drawable/sh_container_rectangle"/>
+            android:background="@drawable/img_pexel_body_food_sport35"/>
 
         <ImageView
             android:id="@+id/cotnSport"
-            android:src="@drawable/img_cocktail_daiquiri"
             android:layout_width="@dimen/size_0"
             android:layout_height="@dimen/size_0"
             android:layout_margin="@dimen/size_4"
-            app:layout_constraintTop_toTopOf="@id/gl50PercentHor"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="@id/gl30PercentHor"
+            app:layout_constraintBottom_toBottomOf="@id/gl90PercentHor"
             app:layout_constraintStart_toStartOf="@id/gl66PercentVert"
             app:layout_constraintEnd_toEndOf="@id/gl99PercentVert"
             android:contentDescription="@string/content_desc_API"
-            android:background="@drawable/sh_container_rectangle"/>
+            android:background="@drawable/img_pexel_body_food_sport48"/>
 
-        <Button
-            android:id="@+id/animMeTime"
-            android:layout_width="0dp"
-            android:layout_height="@dimen/size_164"
-            android:layout_margin="@dimen/size_8"
-            app:layout_constraintTop_toTopOf="@id/gl50PercentHor"
-            app:layout_constraintBottom_toTopOf="@id/space"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="@id/gl33PercentVert"
-            android:contentDescription="@string/content_desc_Profile"
-            android:background="@drawable/sh_rectangle"/>
+    <Button
+        android:id="@+id/animMeTime"
+        android:layout_width="@dimen/size_0"
+        android:layout_height="@dimen/size_0"
+        android:layout_margin="@dimen/size_8"
+        android:background="@drawable/sh_rectangle"
+        android:contentDescription="@string/btn_profile"
+        android:text="@string/btn_profile"
+        app:layout_constraintTop_toTopOf="@id/gl80PercentHor"
+        app:layout_constraintBottom_toTopOf="@id/gl90PercentHor"
+        app:layout_constraintEnd_toEndOf="@id/gl33PercentVert"
+        app:layout_constraintStart_toStartOf="parent" />
 
-        <ImageView
-            android:id="@+id/animNutrition"
-            android:src="@drawable/img_cocktail_daiquiri"
-            android:layout_width="@dimen/size_0"
-            android:layout_height="@dimen/size_164"
-            android:layout_margin="@dimen/size_8"
-            app:layout_constraintTop_toTopOf="@id/gl50PercentHor"
-            app:layout_constraintBottom_toTopOf="@id/space"
-            app:layout_constraintStart_toStartOf="@id/gl33PercentVert"
-            app:layout_constraintEnd_toEndOf="@id/gl66PercentVert"
-            android:contentDescription="@string/content_desc_Profile"
-            android:background="@drawable/sh_rectangle"/>
+    <ImageView
+        android:id="@+id/animNutrition"
+        android:layout_width="@dimen/size_0"
+        android:layout_height="@dimen/size_0"
+        android:layout_margin="@dimen/size_8"
+        android:background="@drawable/sh_rectangle"
+        android:contentDescription="@string/btn_nutrition"
+        android:text="@string/btn_nutrition"
+        app:layout_constraintTop_toTopOf="@id/gl80PercentHor"
+        app:layout_constraintBottom_toTopOf="@id/gl90PercentHor"
+        app:layout_constraintStart_toStartOf="@id/gl33PercentVert"
+        app:layout_constraintEnd_toEndOf="@id/gl66PercentVert"
+        />
 
         <Button
             android:id="@+id/animSport"
             android:layout_width="@dimen/size_0"
-            android:layout_height="@dimen/size_164"
+            android:layout_height="@dimen/size_0"
             android:layout_margin="@dimen/size_8"
-            app:layout_constraintTop_toTopOf="@id/gl50PercentHor"
-            app:layout_constraintBottom_toTopOf="@id/space"
+            android:background="@drawable/sh_rectangle"
+            android:contentDescription="@string/btn_sport"
+            android:text="@string/btn_sport"
+            app:layout_constraintTop_toTopOf="@id/gl80PercentHor"
+            app:layout_constraintBottom_toTopOf="@id/gl90PercentHor"
             app:layout_constraintStart_toStartOf="@id/gl66PercentVert"
             app:layout_constraintEnd_toEndOf="parent"
-            android:contentDescription="@string/content_desc_Profile"
-            android:background="@drawable/sh_rectangle" />
-
+             />
+<!--
         <ImageView
             android:id="@+id/animMeTimeToday"
             android:src="@drawable/img_cocktail_daiquiri"
@@ -205,13 +207,13 @@
             app:layout_constraintStart_toStartOf="@id/gl66PercentVert"
             app:layout_constraintEnd_toEndOf="parent"
             android:contentDescription="@string/content_desc_Profile"
-            android:background="@drawable/sh_rectangle" />
+            android:background="@drawable/sh_rectangle" /
 
         <Space
             android:id="@+id/space"
             android:layout_width="match_parent"
             android:layout_height="10dp"
             app:layout_constraintTop_toBottomOf="@id/gl50PercentHor"
-            app:layout_constraintBottom_toBottomOf="parent"/><!---->
+            app:layout_constraintBottom_toBottomOf="parent"/>-->
 
 </androidx.constraintlayout.widget.ConstraintLayout>
