@@ -4,10 +4,12 @@ import android.os.Bundle
 import android.view.*
 import androidx.fragment.app.Fragment
 import android.widget.Button
-import androidx.navigation.Navigation
-import androidx.navigation.Navigation.findNavController
+import androidx.navigation.NavOptions
 import androidx.navigation.fragment.findNavController
-import androidx.navigation.navOptions
+
+/**
+ * functionallity of buttons is definded in Home Fragment
+ */
 
 class HomeFragment : Fragment(){
 
@@ -15,50 +17,38 @@ class HomeFragment : Fragment(){
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        //setHasOptionsMenu(true)
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_home, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        //anim for side change
-        val options = navOptions {
-            anim {
-                enter = R.anim.slide_in_right
-                exit = R.anim.slide_out_left
-                popEnter = R.anim.slide_in_left
-                popExit = R.anim.slide_out_right
-            }
+
+        //set on click Listener: Button Sport leads to Sport Fragment
+        view.findViewById<Button>(R.id.btnSport)?.setOnClickListener {
+            val navOptions: NavOptions = NavOptions.Builder()
+                .setPopUpTo(R.id.home, inclusive = false, saveState = true)
+                .build()
+            findNavController().navigate(HomeFragmentDirections.actionHomeToSport(), navOptions)
         }
 
-        /*
-        *FEHLER!! Das neue Fragment wird zum Home Fragment -> eigentlich sollte Action aufruf es lösen
-        * aber absturz bis jetzt
-         */
-        //click for next fragment //change writing navigate_sport_button
-        view.findViewById<Button>(R.id.animSport)?.setOnClickListener {
-            findNavController().navigate(R.id.action_home_to_sport, null, options)
+        //set on click Listener: Button Sport leads to Sport Fragment
+        view.findViewById<Button>(R.id.btnNutrition)?.setOnClickListener {
+            val navOptions: NavOptions = NavOptions.Builder()
+                .setPopUpTo(R.id.home, inclusive = false, saveState = true)
+                .build()
+            findNavController().navigate(HomeFragmentDirections.actionHomeToNutrition(), navOptions)
         }
 
-        // navigate with action for safe arguments
-        /*view.findViewById<Button>(R.id.animSport)?.setOnClickListener {
-            //val flowStepNumberArg = 1
-            val action = HomeFragmentDirections.actionHomeFragmentToSportFragment()
-            findNavController().navigate(action)
-        }
-        */
+        //set on click Listener: Button Sport leads to Sport Fragment
+      /*  view.findViewById<Button>(R.id.btnProfile)?.setOnClickListener {
+            val navOptions: NavOptions = NavOptions.Builder()
+                .setPopUpTo(R.id.home, inclusive = false, saveState = true)
+                .build()
+            findNavController().navigate(HomeFragmentDirections.actionHomeToProfile(), navOptions)
+        }*/
 
-        //NAvigate via action and not to page
-        view.findViewById<Button>(R.id.animMeTime)?.setOnClickListener(
-            Navigation.createNavigateOnClickListener(R.id.action_home_to_nutrition, null)
-        )
 
     }
 
-    /*
-    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
-        inflater.inflate(R.menu.overflow_menu, menu)
-    }
-    */
 }
