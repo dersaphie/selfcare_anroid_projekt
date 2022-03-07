@@ -105,7 +105,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="@id/gl33PercentVert"
         android:contentDescription="@string/cotn_profile"
-        android:background="@drawable/img_pexel_body_food_sport46"/>
+        android:background="@drawable/ic_tiger"/>
             <!--optional Bild 28 -->
 
     <ImageView
@@ -118,7 +118,7 @@
         app:layout_constraintStart_toStartOf="@id/gl33PercentVert"
         app:layout_constraintEnd_toEndOf="@id/gl66PercentVert"
         android:contentDescription="@string/cotn_nutrition"
-        android:background="@drawable/img_pexel_body_food_sport35"/>
+        android:background="@drawable/ic_tiger"/>
 
     <ImageView
         android:id="@+id/cotnSport"
@@ -130,7 +130,7 @@
         app:layout_constraintStart_toStartOf="@id/gl66PercentVert"
         app:layout_constraintEnd_toEndOf="@id/gl99PercentVert"
         android:contentDescription="@string/cotn_sport"
-        android:background="@drawable/img_pexel_body_food_sport48"/>
+        android:background="@drawable/ic_tiger"/>
 
     <!--Buttons for main sections-->
     <Button
