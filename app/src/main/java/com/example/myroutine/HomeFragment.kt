@@ -28,19 +28,21 @@ class HomeFragment : Fragment(){
 
         //set on click Listener: Button Sport leads to Sport Fragment
         view.findViewById<Button>(R.id.btnSport)?.setOnClickListener {
-            val navOptions: NavOptions = NavOptions.Builder()
-                .setPopUpTo(R.id.home, inclusive = false, saveState = true)
+            val navOptionsHomeFragmentToSportFragment: NavOptions = NavOptions.Builder()
+                .setPopUpTo(R.id.homeFragment, inclusive = false, saveState = true)
                 .build()
-            findNavController().navigate(HomeFragmentDirections.actionHomeToSport(), navOptions)
-            
-        //set on click Listener: Button Sport leads to Sport Fragment
-        view.findViewById<Button>(R.id.btnNutrition)?.setOnClickListener {
-            val navOptions: NavOptions = NavOptions.Builder()
-                .setPopUpTo(R.id.home, inclusive = false, saveState = true)
-                .build()
-            findNavController().navigate(HomeFragmentDirections.actionHomeToNutrition(), navOptions)
+            findNavController().navigate(
+                HomeFragmentDirections.actionHomeToSport(),
+                navOptionsHomeFragmentToSportFragment
+            )
         }
-
+            //set on click Listener: Button Sport leads to Sport Fragment
+        view.findViewById<Button>(R.id.btnNutrition)?.setOnClickListener {
+            val navOptionsHomeFragmentToNutritionFragment: NavOptions = NavOptions.Builder()
+                .setPopUpTo(R.id.homeFragment, inclusive = false, saveState = true)
+                .build()
+            findNavController().navigate(
+                HomeFragmentDirections.actionHomeToNutrition(), navOptionsHomeFragmentToNutritionFragment)
+        }
     }
-
 }

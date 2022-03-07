@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--Item description show in Workout Recycler View-->
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -25,7 +26,7 @@
     <!--Headline aka Name of Exercise-->
     <TextView
         android:id="@+id/tvExerciseName"
-        style="@style/CocktailListText"
+        style="?textRegular"
         android:layout_width="@dimen/size_0"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/size_10"
@@ -38,7 +39,7 @@
     <!--Initialization and Definition of BodyPart-->
     <TextView
         android:id="@+id/tvBodyPart"
-        style="@style/CocktailListText"
+        style="?textRegular"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@id/spaceHeadlineBottom"
@@ -50,7 +51,7 @@
 
     <TextView
         android:id="@+id/tvBodyPartInsertValue"
-        style="@style/CocktailListText"
+        style="?textRegular"
         android:layout_width="@dimen/size_0"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@id/spaceHeadlineBottom"
@@ -62,7 +63,7 @@
     <!--Initialization and Definition of Target-->
     <TextView
         android:id="@+id/tvTagret"
-        style="@style/CocktailListText"
+        style="?textRegular"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@id/spaceBodyPartBottom"
@@ -73,7 +74,7 @@
 
     <TextView
         android:id="@+id/tvTargetInsertValue"
-        style="@style/CocktailListText"
+        style="?textRegular"
         android:layout_width="@dimen/size_0"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@id/spaceBodyPartBottom"
@@ -85,7 +86,7 @@
     <!--Initialization and Definition of Equipment-->
     <TextView
         android:id="@+id/tvEquipment"
-        style="@style/CocktailListText"
+        style="?textRegular"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@id/spaceTargetBottom"
@@ -96,7 +97,7 @@
 
     <TextView
         android:id="@+id/tvEquipmentInsertValue"
-        style="@style/CocktailListText"
+        style="?textRegular"
         android:layout_width="@dimen/size_0"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@id/spaceTargetBottom"

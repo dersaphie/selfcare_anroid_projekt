@@ -57,7 +57,7 @@ class SportFragment : Fragment() {
 
         view.findViewById<Button>(R.id.btnMuscleEquipment)?.setOnClickListener {
             val navOptions: NavOptions = NavOptions.Builder()
-                .setPopUpTo(R.id.home, inclusive = false, saveState = true)
+                .setPopUpTo(R.id.homeFragment, inclusive = false, saveState = true)
                 //.setRestoreState(restoreState = true)
                 .build()
             //workout.clear()
@@ -69,7 +69,7 @@ class SportFragment : Fragment() {
 
         view.findViewById<Button>(R.id.btnMuscleBodyWeight)?.setOnClickListener {
             val navOptions: NavOptions = NavOptions.Builder()
-                .setPopUpTo(R.id.home, inclusive = false, saveState = true)
+                .setPopUpTo(R.id.homeFragment, inclusive = false, saveState = true)
                 //.setRestoreState(restoreState = true)
                 .build()
             //workout.clear()
@@ -80,7 +80,7 @@ class SportFragment : Fragment() {
 
         view.findViewById<Button>(R.id.btnCardioCombined)?.setOnClickListener {
             val navOptions: NavOptions = NavOptions.Builder()
-                .setPopUpTo(R.id.home, inclusive = false, saveState = true)
+                .setPopUpTo(R.id.homeFragment, inclusive = false, saveState = true)
                 //.setRestoreState(restoreState = true)
                 .build()
            // workout.clear()

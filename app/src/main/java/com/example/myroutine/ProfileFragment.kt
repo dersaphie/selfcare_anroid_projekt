@@ -70,7 +70,6 @@ class ProfileFragment : Fragment() {
             //userNameTV.text = ""
             //userAgeTV.text = ""
             //binding.editTextNumberPassword.setText("")
-            (activity as MainActivity?)!!.saveUserDataInDB(cv)
         }
 
         view.findViewById<Button>(R.id.btn_show_user_stats)?.setOnClickListener {

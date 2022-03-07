@@ -40,27 +40,20 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        //define binding
-        binding = ActivityMainBinding.inflate(layoutInflater)
-
-        //set toolbar and support
-        val toolbar = findViewById<Toolbar>(R.id.toolbar)
-        setSupportActionBar(toolbar)
-
-        //initialize support Fragment Manager and Nav Controller
-
         // MUST BE SET BEFORE setContentView
         Utils.onActivityCreateSetTheme(this)
 
-        // AFTER SETTING THEME
-        setContentView(R.layout.activity_main)
-        setupSpinnerItemSelection()
+
 
         //ENDE THEME CHANGER
 
         //define binding
-        //*binding = ActivityMainBinding.inflate(layoutInflater)
-        //setContentView(binding.root)*/
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
+        // AFTER SETTING THEME
+        //setContentView(R.layout.activity_main)
+        setupSpinnerItemSelection()
 
 
         /*val toolbar = findViewById<Toolbar>(R.id.toolbar)
@@ -72,7 +65,7 @@ class MainActivity : AppCompatActivity() {
         ) as NavHostFragment
         navController = navHostFragment.navController
 
-        // iTODO: check if this can be removed
+        // TODO: check if this can be removed
         // Setup the bottom navigation view with navController
         //val bottomNavigationView = findViewById<BottomNavigationView>(R.id.bottom_nav_menu)
         //bottomNavigationView.setupWithNavController(navController)
@@ -94,8 +87,9 @@ class MainActivity : AppCompatActivity() {
             Toast.makeText(this@MainActivity, "Navigated to $dest",
                 Toast.LENGTH_SHORT).show()
             Log.d("NavigationActivity", "Navigated to $dest")
+            */
         }
-*/
+
 
 /**on start set animation for background imageView, define as Animation and start*/
     override fun onStart() {

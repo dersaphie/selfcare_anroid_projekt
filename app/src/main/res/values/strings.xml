@@ -16,7 +16,6 @@
     <string name="btn_sport">Sport</string>
     <string name="btn_nutrition">Nutrition</string>
 
-    <string name="app_name">ThemeSwitcher</string>
     <string name="settings_text_select_theme">Select Theme:</string>
     <string name="settings_text_credentials">Credentials</string>
     <string name="settings_text_username_hint">username</string>
@@ -55,16 +54,6 @@
     </string>
     <string name="attachment_summary_off">Only download attachments when manually requested</string>
 
-    <!--Sport Section-->
-    <string name="cotn_MEQ">Background M.EQ. Button</string>
-    <string name="cotn_MBW">Background M.BW. Button</string>
-    <string name="cotn_CCC">Background C.CC. Button</string>
-    <string name="btnCardioCombined">Cardio- Combined</string>
-    <string name="btnMuscleBodyWeight">Muscle- BodyWeight</string>
-    <string name="btnMuscleEquipment">Muscle- Equipment</string>
-
-
-
     <!--Item Exercise-->
     <string name="tvExerciseName">Name of Exercise </string>
     <string name="tvBodyPart">Body Part: </string>
@@ -92,6 +81,10 @@
     <string name="content_desc_profile">Sorry, the request to the API was not successful.</string>
 
     <!-- Sport Section -->
+    <string name="cotn_MEQ">Background M.EQ. Button</string>
+    <string name="cotn_MBW">Background M.BW. Button</string>
+    <string name="cotn_CCC">Background C.CC. Button</string>
+    <string name="btnCardioCombined">Cardio- Combined</string>
     <string name="btnCardioBodyWeight">Cardio - Body Weight</string>
     <string name="btnCardioEquipment">Cardio - Equipment</string>
     <string name="btnMuscleBodyWeight">Muscle - Body Weight</string>

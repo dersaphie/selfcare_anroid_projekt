@@ -6,7 +6,6 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
 import data.Exercise
-import com.squareup.picasso.Picasso
 import com.bumptech.glide.Glide
 import com.example.myroutine.R
 import com.example.myroutine.databinding.ItemExerciseBinding

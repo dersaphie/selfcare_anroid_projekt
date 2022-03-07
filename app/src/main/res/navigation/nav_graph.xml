@@ -6,7 +6,8 @@ action to that certain Fragment-->
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    app:startDestination="@id/homeFragment">
+    app:startDestination="@id/homeFragment"
+    android:id="@+id/nav_graph">
 
     <fragment
         android:id="@+id/homeFragment"
@@ -41,10 +42,6 @@ action to that certain Fragment-->
         android:name="com.example.myroutine.NutritionFragment"
         android:label="fragment_nutrition"
         tools:layout="@layout/fragment_nutrition" />
-    <fragment
-        android:id="@+id/settingsFragment"
-        android:name="com.example.myroutine.SettingsFragment"
-        android:label="SettingsFragment" />
     <fragment
         android:id="@+id/profileFragment"
         android:name="com.example.myroutine.ProfileFragment"

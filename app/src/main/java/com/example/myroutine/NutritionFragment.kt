@@ -22,10 +22,6 @@ class NutritionFragment: Fragment(){
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        view.findViewById<Button>(R.id.btnMassurement)?.setOnClickListener {
-            val intent = Intent(view.context, Massurements::class.java)
-            startActivity(intent)
-        }
         //anim for side change
     }
    /* override fun onDestroyView() {

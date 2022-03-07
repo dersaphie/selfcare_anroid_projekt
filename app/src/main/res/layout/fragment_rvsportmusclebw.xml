@@ -19,7 +19,7 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:contentDescription="@string/desc_Headline"
-        style="@style/HeadlineText" />
+        style="?textSubheader" />
 
     <!-- RecyclerView for Cardio Combined -->
     <androidx.recyclerview.widget.RecyclerView
@@ -40,7 +40,7 @@
     <!-- Error text im RV can't be shown -->
     <TextView
         android:id="@+id/tvExerciseApiErrorText"
-        style="@style/NormalText"
+        style="?textSubheader"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintLeft_toLeftOf="parent"
