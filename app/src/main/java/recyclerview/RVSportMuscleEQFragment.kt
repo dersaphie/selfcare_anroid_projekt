@@ -47,7 +47,7 @@ class RVSportMuscleEQFragment : Fragment() {
 
     override fun onResume() {
         super.onResume()
-        //funtionallity of ReceyclerView Workout
+        //functionality of RecyclerView Workout
         binding.rvWorkout.layoutManager = LinearLayoutManager(binding.root.context, RecyclerView.VERTICAL, false)
         binding.rvWorkout.adapter = exerciseAdapter
         //clear to get a new workout

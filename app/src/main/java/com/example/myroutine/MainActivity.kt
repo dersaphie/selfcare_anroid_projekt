@@ -67,14 +67,14 @@ class MainActivity : AppCompatActivity() {
 
         // TODO: check if this can be removed
         // Setup the bottom navigation view with navController
-        //val bottomNavigationView = findViewById<BottomNavigationView>(R.id.bottom_nav_menu)
-        //bottomNavigationView.setupWithNavController(navController)
+        val bottomNavigationView = findViewById<BottomNavigationView>(R.id.bottom_nav_menu)
+        bottomNavigationView.setupWithNavController(navController)
 
         // Setup the ActionBar with navController and 3 top level destinations
-        //appBarConfiguration = AppBarConfiguration(
-        //    setOf(R.id.home, R.id.sport,  R.id.nutrition)
-        //)
-        //setupActionBarWithNavController(navController, appBarConfiguration)
+        appBarConfiguration = AppBarConfiguration(
+            setOf(R.id.homeFragment, R.id.sportFragment,  R.id.nutritionFragment)
+        )
+        setupActionBarWithNavController(navController, appBarConfiguration)
 
         /*
         navController.addOnDestinationChangedListener { _, destination, _ ->

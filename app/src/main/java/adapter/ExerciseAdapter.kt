@@ -29,13 +29,6 @@ class ExerciseAdapter (val workout : List<Exercise>) : RecyclerView.Adapter<Exer
         holder.binding.tvExerciseName.text = w.nameOfEx
         holder.binding.tvTargetInsertValue.text = w.targetOfEx
 
-        //?
-/*
-        holder.binding.root.setOnClickListener {
-            val i = Intent(context, DetailsActivity::class.java)
-            i.putExtra("id", w.id)
-            context.startActivity(i)
-        }*/
     }
 
     override fun getItemCount(): Int {

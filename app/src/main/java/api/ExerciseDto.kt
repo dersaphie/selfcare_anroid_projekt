@@ -13,9 +13,6 @@ data class ExerciseDto (
     @SerializedName("gifUrl")
     val gifurlOfEx : String,
 
-  // @SerializedName("id")
-    //val idOfEx : String,
-
     @SerializedName("name")
     val nameOfEx : String,
 
