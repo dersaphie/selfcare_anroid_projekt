@@ -32,16 +32,6 @@ class HomeFragment : Fragment(){
                 popExit = R.anim.slide_out_right
             }
         }
-
-        /*
-        *FEHLER!! Das neue Fragment wird zum Home Fragment -> eigentlich sollte Action aufruf es lösen
-        * aber absturz bis jetzt
-         */
-        // click for sport fragment
-        // change writing navigate_sport_button
-        // animation in action is ignored and back button of device acts as back to home button \
-        // back button of device ignores navigation steps between home and sport \
-        // Problems could be resolved by replacing the navbar with regular buttons in the MainActivity
         view.findViewById<Button>(R.id.btnSport)?.setOnClickListener {
             val navOptions: NavOptions = NavOptions.Builder()
                 .setPopUpTo(R.id.homeFragment, inclusive = false, saveState = true)

@@ -182,55 +182,83 @@
         android:hint="@string/enterYourHeightHere"
         android:inputType="textPersonName"
         app:layout_constraintTop_toBottomOf="@id/tv_your_height"
-        app:layout_constraintBottom_toTopOf="@id/tv_your_sport"
+        app:layout_constraintBottom_toTopOf="@id/tv_your_sex"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
 
     <TextView
-        android:id="@+id/tv_your_sport"
+        android:id="@+id/tv_your_sex"
         android:layout_width="0dp"
         android:layout_height="42dp"
         android:layout_marginStart="34dp"
         android:layout_marginEnd="34dp"
         android:layout_marginBottom="4dp"
         android:ems="10"
-        android:text="@string/yourSport"
+        android:text="@string/yourSex"
         app:layout_constraintTop_toBottomOf="@id/et_your_height"
-        app:layout_constraintBottom_toTopOf="@id/sp_your_sport"
+        app:layout_constraintBottom_toTopOf="@id/sp_your_sex"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
 
     <Spinner
-        android:id="@+id/sp_your_sport"
+        android:id="@+id/sp_your_sex"
         android:layout_width="0dp"
         android:layout_height="42dp"
         android:layout_marginStart="34dp"
         android:layout_marginEnd="34dp"
         android:layout_marginBottom="4dp"
         android:ems="10"
-        android:hint="@string/chooseYourSportHere"
+        android:hint="@string/pickYourSex"
+        app:layout_constraintTop_toBottomOf="@id/tv_your_sex"
+        app:layout_constraintBottom_toTopOf="@id/tv_your_sleep_hours"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <TextView
+        android:id="@+id/tv_your_sleep_hours"
+        android:layout_width="0dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="34dp"
+        android:layout_marginEnd="34dp"
+        android:layout_marginBottom="4dp"
+        android:ems="10"
+        android:text="@string/yourSleepHours"
+        app:layout_constraintTop_toBottomOf="@id/sp_your_sex"
+        app:layout_constraintBottom_toTopOf="@id/et_your_sleep_hours"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <EditText
+        android:id="@+id/et_your_sleep_hours"
+        android:layout_width="0dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="34dp"
+        android:layout_marginEnd="34dp"
+        android:layout_marginBottom="4dp"
+        android:ems="10"
+        android:hint="@string/enterYourSleepHoursHere"
         android:inputType="textPersonName"
-        app:layout_constraintTop_toBottomOf="@id/tv_your_sport"
-        app:layout_constraintBottom_toTopOf="@id/tv_hobby_energy_category"
+        app:layout_constraintTop_toBottomOf="@id/tv_your_sleep_hours"
+        app:layout_constraintBottom_toTopOf="@id/tv_sport_energy_category"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
 
         <TextView
-            android:id="@+id/tv_hobby_energy_category"
+            android:id="@+id/tv_sport_energy_category"
             android:layout_width="0dp"
             android:layout_height="42dp"
             android:layout_marginStart="34dp"
             android:layout_marginEnd="34dp"
             android:layout_marginBottom="4dp"
             android:ems="10"
-            android:text="@string/pickYourHobbyEnergyNeed"
-            app:layout_constraintTop_toBottomOf="@id/sp_your_sport"
-            app:layout_constraintBottom_toTopOf="@id/sp_hobby_energy_category"
+            android:text="@string/pickYourSportEnergyNeed"
+            app:layout_constraintTop_toBottomOf="@id/et_your_sleep_hours"
+            app:layout_constraintBottom_toTopOf="@id/sp_sport_pal_value"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"/>
 
         <Spinner
-            android:id="@+id/sp_hobby_energy_category"
+            android:id="@+id/sp_sport_pal_value"
             android:layout_width="0dp"
             android:layout_height="42dp"
             android:layout_marginStart="34dp"
@@ -238,35 +266,35 @@
             android:layout_marginBottom="4dp"
             android:ems="10"
             android:hint="@string/energyCategories"
-            app:layout_constraintTop_toBottomOf="@id/tv_hobby_energy_category"
-            app:layout_constraintBottom_toTopOf="@id/tv_your_hobby_hours"
+            app:layout_constraintTop_toBottomOf="@id/tv_sport_energy_category"
+            app:layout_constraintBottom_toTopOf="@id/tv_your_sport_hours"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"/>
 
         <TextView
-            android:id="@+id/tv_your_hobby_hours"
+            android:id="@+id/tv_your_sport_hours"
             android:layout_width="0dp"
             android:layout_height="42dp"
             android:layout_marginStart="34dp"
             android:layout_marginEnd="34dp"
             android:layout_marginBottom="4dp"
             android:ems="10"
-            android:text="@string/yourHobbyHours"
-            app:layout_constraintTop_toBottomOf="@id/sp_hobby_energy_category"
-            app:layout_constraintBottom_toTopOf="@id/et_your_hobby_hours"
+            android:text="@string/yourSportHours"
+            app:layout_constraintTop_toBottomOf="@id/sp_sport_pal_value"
+            app:layout_constraintBottom_toTopOf="@id/et_your_sport_hours"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"/>
 
         <EditText
-            android:id="@+id/et_your_hobby_hours"
+            android:id="@+id/et_your_sport_hours"
             android:layout_width="0dp"
             android:layout_height="42dp"
             android:layout_marginStart="34dp"
             android:layout_marginEnd="34dp"
             android:layout_marginBottom="4dp"
             android:ems="10"
-            android:hint="@string/enterYourHobbyHoursHere"
-            app:layout_constraintTop_toBottomOf="@id/tv_your_hobby_hours"
+            android:hint="@string/enterYourSportHoursHere"
+            app:layout_constraintTop_toBottomOf="@id/tv_your_sport_hours"
             app:layout_constraintBottom_toTopOf="@id/tv_work_energy_category"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent" />
@@ -280,13 +308,13 @@
         android:layout_marginBottom="4dp"
         android:ems="10"
         android:text="@string/pickYourWorkEnergyNeed"
-        app:layout_constraintTop_toBottomOf="@id/et_your_hobby_hours"
-        app:layout_constraintBottom_toTopOf="@id/sp_work_energy_category"
+        app:layout_constraintTop_toBottomOf="@id/et_your_sport_hours"
+        app:layout_constraintBottom_toTopOf="@id/sp_work_pal_value"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
 
     <Spinner
-        android:id="@+id/sp_work_energy_category"
+        android:id="@+id/sp_work_pal_value"
         android:layout_width="0dp"
         android:layout_height="42dp"
         android:layout_marginStart="34dp"
@@ -308,7 +336,7 @@
             android:layout_marginBottom="4dp"
             android:ems="10"
             android:text="@string/yourWorkHours"
-            app:layout_constraintTop_toBottomOf="@id/sp_work_energy_category"
+            app:layout_constraintTop_toBottomOf="@id/sp_work_pal_value"
             app:layout_constraintBottom_toTopOf="@id/et_your_work_hours"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"/>
@@ -321,7 +349,7 @@
             android:layout_marginEnd="34dp"
             android:layout_marginBottom="4dp"
             android:ems="10"
-            android:hint="@string/enterYourHobbyHoursHere"
+            android:hint="@string/enterYourSportHoursHere"
             app:layout_constraintTop_toBottomOf="@id/tv_your_work_hours"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent" />

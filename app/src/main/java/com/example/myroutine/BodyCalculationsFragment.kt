@@ -6,32 +6,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
-import androidx.core.graphics.toColor
 import androidx.navigation.fragment.navArgs
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
 
-/**
- * A simple [Fragment] subclass.
- * Use the [ResultsFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class BodyCalculationsFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -46,28 +24,12 @@ class BodyCalculationsFragment : Fragment() {
         val bmi = safeArgs.bmi
         val bmiColor = safeArgs.bmiColor
         val bmiCategory = safeArgs.bmiCategory
+        val dailyEnergyNeedKcal = safeArgs.dailyEnergyNeedKcal
+        val dailyEnergyNeedKj = safeArgs.dailyEnergyNeedKj
+        val dailyEnergyKcalAndKjString = dailyEnergyNeedKcal.toString() + " " + context?.getString(R.string.spacerBetweenKcalValueAndKjValue) + " " + dailyEnergyNeedKj + " " + context?.getString(R.string.unitForKjValue)
         view.findViewById<TextView>(R.id.tv_your_bmi_value)?.text = bmi.toString()
-        view.findViewById<TextView>(R.id.tv_your_bmi_category_value)?.setTextColor(bmiColor.toInt())
+        view.findViewById<TextView>(R.id.tv_your_bmi_category_value)?.setTextColor(bmiColor)
         view.findViewById<TextView>(R.id.tv_your_bmi_category_value)?.text = bmiCategory
-    }
-
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment ResultsFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            BodyCalculationsFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
+        view.findViewById<TextView>(R.id.tv_your_daily_energy_need_value)?.text = dailyEnergyKcalAndKjString
     }
 }

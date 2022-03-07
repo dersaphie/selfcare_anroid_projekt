@@ -1,16 +1,14 @@
 package com.example.myroutine
 
 import android.app.Activity
-import java.math.RoundingMode
-import java.text.DecimalFormat
 
 class BodyCalculations {
-    fun BMICalculator(weight: Float, height: Float):Float{
+    fun bmiCalculator(weight: Float, height: Float):Float{
         return "%.2f".format(weight / (height/100.0f * height/100.0f)).toFloat()
         // BMI tables https://www.foodspring.de/bmi#vorteil
     }
 
-    fun BMICategory(bmi: Float, context: Activity): String {
+    fun bmiCategory(bmi: Float, context: Activity): String {
         val bmiCategory = when(bmi){
             0.0f -> context.getString(R.string.valuesForBMIAreIncomplete)
             in 0.01f..16.0f -> context.getString(R.string.severeUnderweight)
@@ -26,7 +24,7 @@ class BodyCalculations {
         return bmiCategory
     }
 
-    fun BMIColor(bmi: Float, context: Activity): Int{
+    fun bmiColor(bmi: Float, context: Activity): Int{
         val bmiColor = when(bmi){
             0.0f -> context.getColor(R.color.black)
             in 0.01f..16.0f -> context.getColor(R.color.colorSevereUnderweight)
@@ -42,18 +40,67 @@ class BodyCalculations {
         return bmiColor
     }
 
-    fun EnergyNeedCalculator(weight: Float, workNeedPerKgAndHourInKj: Float, workHoursADay: Float, hobbyNeedPerKgAndHourInKj: Float, hobbyHoursADay: Float){
+    fun energyNeedCalculatorKcal(weight: Float, height: Float, sex: String, age: Float, sleepHoursADay: Float, workPalValue: Float, workHoursADay: Float, sportPalValue: Float, sportHoursADay: Float):Float{
         // Grundumsatz (GU): 4 kJ x Gewicht in kg x 24h
         // leichte Arbeit (2-4 kJ)
-        // TODO: lookup a value for Freizeitpauschale and work and free time activity categories
-        val baseNeedPerKgAndHourInKj = 4.0
-        val hoursADay = 24
-        val baseNeed = baseNeedPerKgAndHourInKj * weight * hoursADay
-        val workNeed = workNeedPerKgAndHourInKj * weight * workHoursADay
-        val hobbyNeed = hobbyNeedPerKgAndHourInKj * weight * hobbyHoursADay
-        // Gesamtenergiebedarf (GEB) = Grundumsatz (GU) + Leistungsumsatz (LU)
-        val energyNeedPerDayInKj = baseNeed + workNeed + hobbyNeed
-        //1 kcal = 4,1868 kJ
-        val energyNeedPerDayInKc = energyNeedPerDayInKj/4.1868
+        val energyNeedPerDayInKcal: Float
+        val awakeWithoutSportAndWorkHours = 24.0f - sleepHoursADay - workHoursADay - sportHoursADay
+        val sleepPalValue = 0.95f
+        val awakeWithoutSportAndWorkPalValue = 1.6f
+        val combinedPalValue = ((sleepHoursADay * sleepPalValue) + (awakeWithoutSportAndWorkHours * awakeWithoutSportAndWorkPalValue) + (workHoursADay * workPalValue) + (sportHoursADay * sportPalValue)) / 24
+        val energyBaseNeedPerDayInKcal: Float = when (sex) {
+            "Man" -> {
+                // 66,47 + (13,7 × Körpergewicht in kg) + (5 × Körpergröße in cm) – (6,8 × Alter in Jahren) = Grundumsatz [kcal/24 h]
+                (66.47f + (13.7f * weight) + (5f * height) - (6.8f * age))
+            }
+            "Woman" -> {
+                // 655,1 + (9,6 × Körpergewicht in kg) + (1,8 × Körpergröße in cm) – (4,7 × Alter in Jahren) = Grundumsatz [kcal/24 h]
+                (655.1f + (9.6f * weight) + (1.8f * height) - (4.7f * age))
+            }
+            else -> {
+                0.0f
+            }
+        }
+        energyNeedPerDayInKcal = "%.2f".format(energyBaseNeedPerDayInKcal * combinedPalValue).toFloat()
+        return energyNeedPerDayInKcal
+    }
+
+    fun energyNeedCalculatorKj(weight: Float, height: Float, sex: String, age: Float, sleepHoursADay: Float, workPalValue: Float, workHoursADay: Float, sportPalValue: Float, sportHoursADay: Float):Float{
+        val kcalToKjFactor = 4.1868f
+        return "%.2f".format(energyNeedCalculatorKcal(weight, height, sex, age, sleepHoursADay, workPalValue, workHoursADay, sportPalValue, sportHoursADay) * kcalToKjFactor).toFloat()
+    }
+
+    fun kcalToKjConverter(kcalValue: Float):Float{
+        val kcalToKjFactor = 4.1868f
+        return "%.2f".format(kcalValue * kcalToKjFactor).toFloat()
+    }
+
+    fun palCategoryToPalValueWork(palCategory: String, context: Activity): Float
+    {
+        val palValue = when(palCategory){
+            context.getString(R.string.palSleep) -> 0.95f
+            context.getString(R.string.palJustSittingOrLayingActivity) -> 1.2f
+            context.getString(R.string.palMostlySittingOrLayingActivity) -> 1.4f
+            context.getString(R.string.palSomeWalkingActivity) -> 1.6f
+            context.getString(R.string.palMostlyWalkingOrStandingActivity) -> 1.8f
+            context.getString(R.string.palPhysicalDemandingActivity) -> 2.0f
+            context.getString(R.string.palPhysicalVeryDemandingActivity) -> 2.4f
+            else -> 0.0f
+        }
+        return palValue
+    }
+
+    fun palCategoryToPalValueSport(palCategory: String, context: Activity): Float
+    {
+        val palValue = when(palCategory){
+            context.getString(R.string.palVeryLightSport) -> 1.6f
+            context.getString(R.string.palLightSport) -> 1.8f
+            context.getString(R.string.palModerateSport) -> 2.0f
+            context.getString(R.string.palPhysicalDemandingSport) -> 2.4f
+            context.getString(R.string.palPhysicalVeryDemandingSport) -> 2.7f
+            context.getString(R.string.palCompetitiveSport) -> 3.0f
+            else -> 0.0f
+        }
+        return palValue
     }
 }

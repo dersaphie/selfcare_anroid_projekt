@@ -38,8 +38,6 @@ class MainActivity : ThemeChange() {
             switchTheme()
         }
 
-
-
         /*
         setupBottomNavMenu(navController)
          */
