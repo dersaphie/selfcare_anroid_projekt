@@ -41,20 +41,19 @@ action to that certain Fragment-->
         android:id="@+id/nutritionFragment"
         android:name="com.example.myroutine.NutritionFragment"
         android:label="fragment_nutrition"
-        tools:layout="@layout/fragment_nutrition" />
+        tools:layout="@layout/fragment_nutrition" >
+        <action
+            android:id="@+id/action_nutritionFragment_to_bodyCalculationsFragment"
+            app:destination="@id/bodyCalculationsFragment" />
+    </fragment>
     <fragment
         android:id="@+id/profileFragment"
         android:name="com.example.myroutine.ProfileFragment"
         android:label="fragment_profil"
         tools:layout="@layout/fragment_profile" />
         <action
-            android:id="@+id/action_profileFragment_to_resultsFragment"
-            app:destination="@id/resultsFragment" />
-       <fragment
-        android:id="@+id/resultsFragment"
-        android:name="com.example.myroutine.ResultsFragment"
-        android:label="fragment_results"
-        tools:layout="@layout/fragment_stats" />
+            android:id="@+id/action_profileFragment_to_bodyCalculationsFragment"
+            app:destination="@id/bodyCalculationsFragment" />
     <fragment
         android:id="@+id/RVSportCardioCCFragment"
         android:name="recyclerview.RVSportCardioCCFragment"
@@ -70,4 +69,30 @@ action to that certain Fragment-->
         android:name="recyclerview.RVSportMuscleEQFragment"
         android:label="fragment_rvsportmuscleeq"
         tools:layout="@layout/fragment_rvsportmuscleeq" />
+    <fragment
+        android:id="@+id/bodyCalculationsFragment"
+        android:name="com.example.myroutine.BodyCalculationsFragment"
+        android:label="fragment_bodycalculations"
+        tools:layout="@layout/fragment_bodycalculations" >
+        <argument
+            android:name="bmi"
+            app:argType="float"
+            android:defaultValue="0.0" />
+        <argument
+            android:name="bmiColor"
+            app:argType="integer"
+            android:defaultValue="0" />
+        <argument
+            android:name="bmiCategory"
+            app:argType="string"
+            android:defaultValue="Needed values for calculation are incomplete" />
+        <argument
+            android:name="dailyEnergyNeedKcal"
+            app:argType="float"
+            android:defaultValue="0.0" />
+        <argument
+            android:name="dailyEnergyNeedKj"
+            app:argType="float"
+            android:defaultValue="0.0" />
+    </fragment>
 </navigation>

@@ -25,8 +25,6 @@ class HomeFragment : Fragment(){
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-        //set on click Listener: Button Sport leads to Sport Fragment
         view.findViewById<Button>(R.id.btnSport)?.setOnClickListener {
             val navOptionsHomeFragmentToSportFragment: NavOptions = NavOptions.Builder()
                 .setPopUpTo(R.id.homeFragment, inclusive = false, saveState = true)

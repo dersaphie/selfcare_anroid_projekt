@@ -90,20 +90,40 @@ class MainActivity : AppCompatActivity() {
             */
         }
 
-
 /**on start set animation for background imageView, define as Animation and start*/
     override fun onStart() {
         super.onStart()
         binding.animBackgroundImages.setBackgroundResource(R.drawable.animation_list_background)
         frameAnimation = binding.animBackgroundImages.background as AnimationDrawable
         frameAnimation.start()
+
+        /*
+        // Setup the bottom navigation view with navController
+        val bottomNavigationView = findViewById<BottomNavigationView>(R.id.bottom_nav_menu)
+        bottomNavigationView.setupWithNavController(navController)
+
+        // Setup the ActionBar with navController and 3 top level destinations
+        appBarConfiguration = AppBarConfiguration(
+            setOf(R.id.homeFragment, R.id.sportFragment,  R.id.nutritionFragment)
+        )
+        setupActionBarWithNavController(navController, appBarConfiguration)
+
+        ///DB
+        Utility.helper = DBHelper(applicationContext)
+        //DB
+        Utility.db = Utility.helper.readableDatabase
+        //cursor
+        var rd = Utility.db.rawQuery("SELECT * FROM CARDIO", null)
+        //if DB created
+        if (rd.moveToNext())
+            Toast.makeText(applicationContext, rd.getString(1), Toast.LENGTH_LONG).show()
+         */
     }
 
 
     override fun onSupportNavigateUp(): Boolean {
         return navController.navigateUp(appBarConfiguration)
     }
-
 
     private fun setupSpinnerItemSelection() {
         val spThemes = findViewById<Spinner>(R.id.spThemes)

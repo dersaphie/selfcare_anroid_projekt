@@ -1,40 +1,16 @@
 package com.example.myroutine
 
+import android.app.Activity
 import android.content.ContentValues
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
+import android.widget.*
+import androidx.fragment.app.Fragment
 import androidx.navigation.NavOptions
-import androidx.navigation.Navigation
 import androidx.navigation.fragment.findNavController
-import androidx.navigation.navOptions
-
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- * Use the [ProfileFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class ProfileFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -45,22 +21,17 @@ class ProfileFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        //anim for side change
-        val options = navOptions {
-            anim {
-                enter = R.anim.slide_in_right
-                exit = R.anim.slide_out_left
-                popEnter = R.anim.slide_in_left
-                popExit = R.anim.slide_out_right
-            }
-        }
 
-        /*
-        *FEHLER!! Das neue Fragment wird zum Home Fragment -> eigentlich sollte Action aufruf es lösen
-        * aber absturz bis jetzt
-         */
-        //click for next fragment //change writing navigate_sport_button
-        view.findViewById<Button>(R.id.btn_save_user_data)?.setOnClickListener {
+        // TODO: Strings
+        val sexSpinnerOptions = arrayOf(getString(R.string.pickYourSex),getString(R.string.woman),getString(R.string.man),getString(R.string.divers))
+        val workEnergyNeedSpinnerOptions = arrayOf(getString(R.string.palSleep), getString(R.string.palJustSittingOrLayingActivity), getString(R.string.palMostlySittingOrLayingActivity), getString(R.string.palSomeWalkingActivity), getString(R.string.palMostlyWalkingOrStandingActivity), getString(R.string.palPhysicalDemandingActivity), getString(R.string.palPhysicalVeryDemandingActivity))
+        val sportEnergyNeedSpinnerOptions = arrayOf(getString(R.string.palVeryLightSport), getString(R.string.palLightSport), getString(R.string.palModerateSport), getString(R.string.palPhysicalDemandingSport), getString(R.string.palVeryLightSport), getString(R.string.palCompetitiveSport))
+        createSpinnerFunction(spinnerViewId = R.id.sp_your_sex, spinnerOptions = sexSpinnerOptions)
+        createSpinnerFunction(spinnerViewId = R.id.sp_work_pal_value, spinnerOptions = workEnergyNeedSpinnerOptions)
+        createSpinnerFunction(spinnerViewId = R.id.sp_sport_pal_value, spinnerOptions = sportEnergyNeedSpinnerOptions)
+
+        // save user data into db
+        view.findViewById<Button>(R.id.btn_save_user_data_and_show_body_calculations)?.setOnClickListener {
             val cv = ContentValues()
             //var userNameTV = view.findViewById<Button>(R.id.et_your_name)
             //var userAgeTV = view.findViewById<Button>(R.id.et_your_age).text
@@ -70,16 +41,20 @@ class ProfileFragment : Fragment() {
             //userNameTV.text = ""
             //userAgeTV.text = ""
             //binding.editTextNumberPassword.setText("")
+            updateAndShowBodyCalculations()
         }
 
-        view.findViewById<Button>(R.id.btn_show_user_stats)?.setOnClickListener {
-            val navOptions: NavOptions = NavOptions.Builder()
-                .setPopUpTo(R.id.profileFragment, inclusive = false, saveState = true)
-                //.setRestoreState(restoreState = true)
-                .build()
-            findNavController().navigate(ProfileFragmentDirections.actionProfileFragmentToResultsFragment(), navOptions)
-            //findNavController().navigate(R.id.action_home_to_sport, null, navOptions)
+        view.findViewById<Button>(R.id.btn_navigate_to_body_calculations_fragment)?.setOnClickListener {
+            updateAndShowBodyCalculations()
         }
+/*
+        view.findViewById<Button>(R.id.btn_show_user_stats)?.setOnClickListener {
+            val bmi = 1
+            val action = ProfileFragmentDirections.actionProfileFragmentToResultsFragment(bmi)
+            findNavController().navigate(action)
+        }
+ */
+
 
         /*
         // Navigate via destination
@@ -90,23 +65,69 @@ class ProfileFragment : Fragment() {
 
     }
 
-companion object {
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment profilFragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    @JvmStatic
-    fun newInstance(param1: String, param2: String) =
-        ProfileFragment().apply {
-            arguments = Bundle().apply {
-                putString(ARG_PARAM1, param1)
-                putString(ARG_PARAM2, param2)
+    private fun updateAndShowBodyCalculations(){
+        // TODO: Strings
+        val context = requireContext()
+        val calculations = BodyCalculations()
+        val regexFloat = "-?\\d+(\\.\\d+)?".toRegex()
+        var bmi = 0.0f
+        var bmiColor = 0
+        var bmiCategory = context.getString(R.string.valuesForBMIAreIncomplete)
+        var dailyEnergyNeedKcal = 0.0f
+        var dailyEnergyNeedKj = 0.0f
+
+        // get values from user input
+        val weight = view?.findViewById<EditText>(R.id.et_your_weight)?.text
+        val height = view?.findViewById<EditText>(R.id.et_your_height)?.text
+        val age = view?.findViewById<EditText>(R.id.et_your_age)?.text
+        val sex = view?.findViewById<Spinner>(R.id.sp_your_sex)?.selectedItem.toString()
+        val sleepHoursADay = view?.findViewById<EditText>(R.id.et_your_sleep_hours)?.text
+        val workPalValue = view?.findViewById<Spinner>(R.id.sp_work_pal_value)?.selectedItem.toString()
+        val workHoursADay = view?.findViewById<EditText>(R.id.et_your_work_hours)?.text
+        val sportPalValue = view?.findViewById<Spinner>(R.id.sp_sport_pal_value)?.selectedItem.toString()
+        val sportHoursADay = view?.findViewById<EditText>(R.id.et_your_sport_hours)?.text
+
+        if (weight != null && weight.matches(regexFloat) && height != null && height.matches(regexFloat)){
+                bmi = calculations.bmiCalculator(weight = weight.toString().toFloat(), height = height.toString().toFloat())
+                bmiColor = calculations.bmiColor(bmi = bmi, context = context as Activity)
+                bmiCategory = calculations.bmiCategory(bmi = bmi, context = context)
+
+            if (age != null && age.matches(regexFloat) && (sex == "Man" || sex == "Woman")){
+                dailyEnergyNeedKcal = calculations.energyNeedCalculatorKcal(weight = weight.toString().toFloat(), height = height.toString().toFloat(), sex = sex, age = age.toString().toFloat(), sleepHoursADay = sleepHoursADay.toString().toFloat(), workPalValue = calculations.palCategoryToPalValueWork(workPalValue,context), workHoursADay = workHoursADay.toString().toFloat(), calculations.palCategoryToPalValueWork(sportPalValue,context), sportHoursADay = sportHoursADay.toString().toFloat())
+                dailyEnergyNeedKj = calculations.kcalToKjConverter(dailyEnergyNeedKcal)
             }
         }
-}
+        val action = ProfileFragmentDirections.actionProfileFragmentToBodyCalculationsFragment(bmi, bmiColor, bmiCategory, dailyEnergyNeedKcal, dailyEnergyNeedKj)
+        val navOptions: NavOptions = NavOptions.Builder()
+            .setPopUpTo(R.id.profileFragment, inclusive = false, saveState = true)
+            .build()
+        findNavController().navigate(action, navOptions)
+    }
+
+    private fun createSpinnerFunction(spinnerViewId: Int, spinnerOptions: Array<String>)
+    {
+        // sport selection
+        // find spinner view
+        val spinner = view?.findViewById(spinnerViewId) as Spinner
+
+        // array of options
+        //val spinnerOptions = arrayOf(getString(R.string.cardio_without_equipment),getString(R.string.cardio_with_equipment),getString(R.string.muscle_building_without_equipment),getString(R.string.muscle_building_with_equipment))
+
+        // layout for spinner
+        val spinnerLayout = android.R.layout.simple_spinner_dropdown_item
+
+        // set array in adapter
+        val adapter = ArrayAdapter(requireContext(),spinnerLayout,spinnerOptions)
+
+        // set adapter for spinner
+        spinner.adapter=adapter
+
+        // create listener for user selection
+        spinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+            override fun onNothingSelected(p0: AdapterView<*>?) {
+            }
+            override fun onItemSelected(p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {
+            }
+        }
+    }
 }

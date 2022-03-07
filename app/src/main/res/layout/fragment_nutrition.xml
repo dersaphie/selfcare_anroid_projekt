@@ -107,7 +107,7 @@
         android:background="@drawable/sh_button_frame_default" />
 
     <Button
-        android:id="@+id/btnMassurement"
+        android:id="@+id/btnMeasurement"
         android:text="KÖRPERWERTE"
         android:layout_width="119dp"
         android:layout_height="116dp"
