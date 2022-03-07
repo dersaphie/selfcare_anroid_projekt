@@ -32,8 +32,19 @@
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.40" />
 
+    <Spinner
+        android:id="@+id/spThemes"
+        style="?spinner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:entries="@array/theme_array"
+        android:spinnerMode="dropdown" />
     <!--Toolbar with Theme Changer-->
-    <androidx.appcompat.widget.Toolbar
+    <!--<androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -57,7 +68,7 @@
                 android:entries="@array/theme_array"
                 android:spinnerMode="dropdown" />
       
-        </androidx.appcompat.widget.Toolbar>
+        </androidx.appcompat.widget.Toolbar>-->
 
     <!--Background Animation Container-->
     <ImageView
