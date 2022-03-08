@@ -105,7 +105,7 @@
     <string name="btnSave">Save Button</string>
     <string name="saveAndShowStats">Save and show Stats</string>
     <string name="enterYourNameHere">Enter your name here</string>
-    <string name="enterYourAgeHere">Enter your age here</string>
+    <string name="enterYourAgeHere">Enter your age here (e.g. 20)</string>
     <string name="enterYourWeightHere">Enter your weight here</string>
     <string name="enterYourHeightHere">Enter your height here</string>
     <string name="chooseYourSexHere">Choose your sex here</string>

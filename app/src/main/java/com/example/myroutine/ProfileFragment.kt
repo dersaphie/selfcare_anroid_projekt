@@ -92,7 +92,7 @@ class ProfileFragment : Fragment() {
                 bmiColor = calculations.bmiColor(bmi = bmi, context = context as Activity)
                 bmiCategory = calculations.bmiCategory(bmi = bmi, context = context)
 
-            if (age != null && age.matches(regexFloat) && (sex == "Man" || sex == "Woman")){
+            if (age != null && age.matches(regexFloat) && (sex == "Man" || sex == "Woman") && sleepHoursADay != null && sleepHoursADay.matches(regexFloat) && workHoursADay != null && workHoursADay.matches(regexFloat) && sportHoursADay != null && sportHoursADay.matches(regexFloat)){
                 dailyEnergyNeedKcal = calculations.energyNeedCalculatorKcal(weight = weight.toString().toFloat(), height = height.toString().toFloat(), sex = sex, age = age.toString().toFloat(), sleepHoursADay = sleepHoursADay.toString().toFloat(), workPalValue = calculations.palCategoryToPalValueWork(workPalValue,context), workHoursADay = workHoursADay.toString().toFloat(), calculations.palCategoryToPalValueWork(sportPalValue,context), sportHoursADay = sportHoursADay.toString().toFloat())
                 dailyEnergyNeedKj = calculations.kcalToKjConverter(dailyEnergyNeedKcal)
             }
