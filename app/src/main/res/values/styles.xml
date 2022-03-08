@@ -46,7 +46,7 @@
     </style>
 
     <!-- Buttonstyle for Theme Basic-->
-    <style name="button_wh" parent="text_large_wh">
+    <style name="button_wh" parent="text_regular_wh">
         <item name="android:background">@drawable/button_wh</item>
         <item name="android:layout_marginTop">@dimen/view_margin</item>
     </style>
@@ -102,7 +102,7 @@
     </style>
 
     <!-- Buttonstyle for Theme Rose-->
-    <style name="button_rose" parent="text_large_wh">
+    <style name="button_rose" parent="text_regular_wh">
         <item name="android:background">@drawable/button_rose</item>
         <item name="android:layout_marginTop">@dimen/view_margin</item>
     </style>
@@ -158,7 +158,7 @@
     </style>
 
     <!-- Buttonstyle for Theme Sunny-->
-    <style name="button_yellow" parent="text_large_wh">
+    <style name="button_yellow" parent="text_regular_wh">
         <item name="android:background">@drawable/button_yellow</item>
         <item name="android:layout_marginTop">@dimen/view_margin</item>
     </style>
@@ -214,7 +214,7 @@
     </style>
 
     <!-- Buttonstyle for Theme Forrest-->
-    <style name="button_green" parent="text_large_wh">
+    <style name="button_green" parent="text_regular_wh">
         <item name="android:background">@drawable/button_green</item>
         <item name="android:layout_marginTop">@dimen/view_margin</item>
     </style>
