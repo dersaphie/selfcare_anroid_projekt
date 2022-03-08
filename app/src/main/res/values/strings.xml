@@ -47,7 +47,7 @@
     <string name="tvExerciseName">Name of Exercise </string>
     <string name="tvBodyPart">Body Part: </string>
     <string name="tvTargetOfExercise">Target of Exercise: </string>
-    <string name="tvExerciseEquipment">Equipment</string>
+    <string name="tvExerciseEquipment">Equipment: </string>
     <string name="etBodyPart">Body Part</string>
     <string name="etTargetOfExercise">Target of Exercise</string>
     <string name="etExerciseEquipment">et Equipment</string>

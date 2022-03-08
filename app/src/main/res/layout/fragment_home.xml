@@ -77,20 +77,9 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="@id/gl33PercentVert"
         android:contentDescription="@string/cotn_profile"
-        android:background="@drawable/ic_tiger"/>
+        android:background="@drawable/ic_cranium_2028555"/>
             <!--optional Bild 28 -->
 
-    <ImageView
-        android:id="@+id/cotnNutrition"
-        android:layout_width="@dimen/size_0"
-        android:layout_height="@dimen/size_0"
-        android:layout_margin="@dimen/size_4"
-        app:layout_constraintTop_toTopOf="@id/gl009PercentHor"
-        app:layout_constraintBottom_toBottomOf="@id/gl89PercentHor"
-        app:layout_constraintStart_toStartOf="@id/gl33PercentVert"
-        app:layout_constraintEnd_toEndOf="@id/gl66PercentVert"
-        android:contentDescription="@string/cotn_nutrition"
-        android:background="@drawable/ic_tiger"/>
 
     <ImageView
         android:id="@+id/cotnSport"
@@ -102,7 +91,7 @@
         app:layout_constraintStart_toStartOf="@id/gl66PercentVert"
         app:layout_constraintEnd_toEndOf="@id/gl99PercentVert"
         android:contentDescription="@string/cotn_sport"
-        android:background="@drawable/ic_tiger"/>
+        android:background="@drawable/ic_boy_2029661"/>
 
     <!--Buttons for main sections-->
     <Button
@@ -118,18 +107,6 @@
         app:layout_constraintStart_toStartOf="parent"
         android:contentDescription="@string/btn_profile"/>
 
-    <Button
-        android:id="@+id/btnNutrition"
-        android:layout_width="@dimen/size_0"
-        android:layout_height="@dimen/size_0"
-        android:layout_margin="@dimen/size_8"
-        android:text="@string/btn_nutrition"
-        app:layout_constraintTop_toTopOf="@id/gl65PercentHor"
-        app:layout_constraintBottom_toTopOf="@id/gl89PercentHor"
-        app:layout_constraintStart_toStartOf="@id/gl33PercentVert"
-        app:layout_constraintEnd_toEndOf="@id/gl66PercentVert"
-        style="?button"
-        android:contentDescription="@string/btn_nutrition"/>
 
     <Button
         android:id="@+id/btnSport"
