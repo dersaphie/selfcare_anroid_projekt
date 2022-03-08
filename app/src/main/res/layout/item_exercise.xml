@@ -31,8 +31,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/size_10"
         app:layout_constraintTop_toTopOf="@id/spaceHeadlineTop"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/gl10PercentVert"
+        app:layout_constraintEnd_toStartOf="@id/gl90PercentVert"
         android:text="@string/tvExerciseName"
         android:contentDescription="@string/tvExerciseName"/>
 
