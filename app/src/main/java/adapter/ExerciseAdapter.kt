@@ -12,10 +12,12 @@ import com.example.myroutine.databinding.ItemExerciseBinding
 
 
 class ExerciseAdapter (val workout : List<Exercise>) : RecyclerView.Adapter<ExerciseAdapter.ExerciseViewHolder>() {
-    inner class ExerciseViewHolder(val binding : ItemExerciseBinding) : RecyclerView.ViewHolder(binding.root)
+    inner class ExerciseViewHolder(val binding: ItemExerciseBinding) :
+        RecyclerView.ViewHolder(binding.root)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ExerciseViewHolder {
-        val binding : ItemExerciseBinding = ItemExerciseBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        val binding: ItemExerciseBinding =
+            ItemExerciseBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return ExerciseViewHolder(binding)
     }
 
@@ -26,7 +28,9 @@ class ExerciseAdapter (val workout : List<Exercise>) : RecyclerView.Adapter<Exer
         holder.binding.tvEquipmentInsertValue.text = w.equipmentForEx
         var gif = w.gifurlOfEx
         gif = gif.replace("http", "https", true)
-        Glide.with(context).load(gif).override(1000).error(R.drawable.giphy).placeholder(R.drawable.ic_baseline_sports_kabaddi_24).into(holder.binding.ivExerciseGif)
+        Glide.with(context).load(gif).override(1000).error(R.drawable.giphy)
+            .placeholder(R.drawable.ic_baseline_sports_kabaddi_24)
+            .into(holder.binding.ivExerciseGif)
         holder.binding.tvExerciseName.text = w.nameOfEx
         holder.binding.tvTargetInsertValue.text = w.targetOfEx
     }
@@ -34,5 +38,4 @@ class ExerciseAdapter (val workout : List<Exercise>) : RecyclerView.Adapter<Exer
     override fun getItemCount(): Int {
         return workout.size
     }
-
 }
