@@ -38,35 +38,6 @@
         app:layout_constraintGuide_percent="0.99" />
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/gl005PercentHor"
-        android:layout_width="@dimen/size_0"
-        android:layout_height="match_parent"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.05" />
-<!--
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/gl40PercentHor"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.4" />-->
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/gl30PercentHor"
-        android:layout_width="@dimen/size_0"
-        android:layout_height="match_parent"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.3" />
-
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/gl90PercentHor"
-        android:layout_width="@dimen/size_0"
-        android:layout_height="match_parent"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.9" />
-
-    <androidx.constraintlayout.widget.Guideline
         android:id="@+id/gl50PercentHor"
         android:layout_width="0dp"
         android:layout_height="match_parent"
@@ -74,13 +45,28 @@
         app:layout_constraintGuide_percent="0.5" />
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/gl80PercentHor"
+        android:id="@+id/gl009PercentHor"
         android:layout_width="@dimen/size_0"
         android:layout_height="match_parent"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.8" />
+        app:layout_constraintGuide_percent="0.09" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gl89PercentHor"
+        android:layout_width="@dimen/size_0"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.89" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gl65PercentHor"
+        android:layout_width="@dimen/size_0"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.65" />
 
     <!--User Picture-->
+    <!--
     <ImageView
         android:id="@+id/img_User"
         android:layout_width="@dimen/size_131"
@@ -93,6 +79,7 @@
         app:layout_constraintTop_toTopOf="@id/gl005PercentHor"
         android:contentDescription="@string/img_user"
         app:layout_constraintVertical_bias="0" />
+        -->
 
     <!--Background Images for Buttons to Sections-->
     <ImageView
@@ -100,8 +87,8 @@
         android:layout_width="@dimen/size_0"
         android:layout_height="@dimen/size_0"
         android:layout_margin="@dimen/size_4"
-        app:layout_constraintTop_toTopOf="@id/gl30PercentHor"
-        app:layout_constraintBottom_toBottomOf="@id/gl90PercentHor"
+        app:layout_constraintTop_toTopOf="@id/gl009PercentHor"
+        app:layout_constraintBottom_toBottomOf="@id/gl89PercentHor"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="@id/gl33PercentVert"
         android:contentDescription="@string/cotn_profile"
@@ -113,8 +100,8 @@
         android:layout_width="@dimen/size_0"
         android:layout_height="@dimen/size_0"
         android:layout_margin="@dimen/size_4"
-        app:layout_constraintTop_toTopOf="@id/gl30PercentHor"
-        app:layout_constraintBottom_toBottomOf="@id/gl90PercentHor"
+        app:layout_constraintTop_toTopOf="@id/gl009PercentHor"
+        app:layout_constraintBottom_toBottomOf="@id/gl89PercentHor"
         app:layout_constraintStart_toStartOf="@id/gl33PercentVert"
         app:layout_constraintEnd_toEndOf="@id/gl66PercentVert"
         android:contentDescription="@string/cotn_nutrition"
@@ -125,8 +112,8 @@
         android:layout_width="@dimen/size_0"
         android:layout_height="@dimen/size_0"
         android:layout_margin="@dimen/size_4"
-        app:layout_constraintTop_toTopOf="@id/gl30PercentHor"
-        app:layout_constraintBottom_toBottomOf="@id/gl90PercentHor"
+        app:layout_constraintTop_toTopOf="@id/gl009PercentHor"
+        app:layout_constraintBottom_toBottomOf="@id/gl89PercentHor"
         app:layout_constraintStart_toStartOf="@id/gl66PercentVert"
         app:layout_constraintEnd_toEndOf="@id/gl99PercentVert"
         android:contentDescription="@string/cotn_sport"
@@ -139,8 +126,8 @@
         android:layout_height="@dimen/size_0"
         android:layout_margin="@dimen/size_8"
         android:text="@string/btn_profile"
-        app:layout_constraintTop_toTopOf="@id/gl80PercentHor"
-        app:layout_constraintBottom_toTopOf="@id/gl90PercentHor"
+        app:layout_constraintTop_toTopOf="@id/gl65PercentHor"
+        app:layout_constraintBottom_toTopOf="@id/gl89PercentHor"
         app:layout_constraintEnd_toEndOf="@id/gl33PercentVert"
         app:layout_constraintStart_toStartOf="parent"
         android:contentDescription="@string/btn_profile"
@@ -152,8 +139,8 @@
         android:layout_height="@dimen/size_0"
         android:layout_margin="@dimen/size_8"
         android:text="@string/btn_nutrition"
-        app:layout_constraintTop_toTopOf="@id/gl80PercentHor"
-        app:layout_constraintBottom_toTopOf="@id/gl90PercentHor"
+        app:layout_constraintTop_toTopOf="@id/gl65PercentHor"
+        app:layout_constraintBottom_toTopOf="@id/gl89PercentHor"
         app:layout_constraintStart_toStartOf="@id/gl33PercentVert"
         app:layout_constraintEnd_toEndOf="@id/gl66PercentVert"
         android:contentDescription="@string/btn_nutrition"
@@ -165,58 +152,11 @@
         android:layout_height="@dimen/size_0"
         android:layout_margin="@dimen/size_8"
         android:text="@string/btn_sport"
-        app:layout_constraintTop_toTopOf="@id/gl80PercentHor"
-        app:layout_constraintBottom_toTopOf="@id/gl90PercentHor"
+        app:layout_constraintTop_toTopOf="@id/gl65PercentHor"
+        app:layout_constraintBottom_toTopOf="@id/gl89PercentHor"
         app:layout_constraintStart_toStartOf="@id/gl66PercentVert"
         app:layout_constraintEnd_toEndOf="parent"
         android:contentDescription="@string/btn_sport"
         android:background="@drawable/sh_rectangle"
         />
-<!--
-        <ImageView
-            android:id="@+id/btnToday"
-            android:src="@drawable/img_cocktail_daiquiri"
-            android:layout_width="0dp"
-            android:layout_height="@dimen/size_164"
-            android:layout_margin="@dimen/size_8"
-            app:layout_constraintTop_toBottomOf="@id/space"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="@id/gl33PercentVert"
-            android:contentDescription="@string/content_desc_Profile"
-            android:background="@drawable/sh_rectangle"/>
-
-        <ImageView
-            android:id="@+id/animNutritionToday"
-            android:src="@drawable/img_cocktail_daiquiri"
-            android:layout_width="@dimen/size_0"
-            android:layout_height="@dimen/size_164"
-            android:layout_margin="@dimen/size_8"
-            app:layout_constraintTop_toBottomOf="@id/space"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="@id/gl33PercentVert"
-            app:layout_constraintEnd_toEndOf="@id/gl66PercentVert"
-            android:contentDescription="@string/content_desc_Profile"
-            android:background="@drawable/sh_rectangle"/>
-
-        <ImageView
-            android:id="@+id/animSportToday"
-            android:src="@drawable/img_cocktail_daiquiri"
-            android:layout_width="@dimen/size_0"
-            android:layout_height="@dimen/size_164"
-            android:layout_margin="@dimen/size_8"
-            app:layout_constraintTop_toBottomOf="@id/space"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="@id/gl66PercentVert"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:contentDescription="@string/content_desc_Profile"
-            android:background="@drawable/sh_rectangle" /
-
-        <Space
-            android:id="@+id/space"
-            android:layout_width="match_parent"
-            android:layout_height="10dp"
-            app:layout_constraintTop_toBottomOf="@id/gl50PercentHor"
-            app:layout_constraintBottom_toBottomOf="parent"/>-->
-
 </androidx.constraintlayout.widget.ConstraintLayout>

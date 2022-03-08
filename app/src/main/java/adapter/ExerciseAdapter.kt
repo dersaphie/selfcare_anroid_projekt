@@ -24,8 +24,9 @@ class ExerciseAdapter (val workout : List<Exercise>) : RecyclerView.Adapter<Exer
         val w = workout[position]
         holder.binding.tvBodyPartInsertValue.text = w.bodyPartOfEx
         holder.binding.tvEquipmentInsertValue.text = w.equipmentForEx
-        Glide.with(context).load(w.gifurlOfEx).error(R.drawable.giphy).placeholder(R.drawable.ic_baseline_sports_kabaddi_24).into(holder.binding.ivExerciseGif)
-       // Picasso.get().load(w.gifurlOfEx).error(R.drawable.ic_error).placeholder(R.drawable.ic_baseline_sports_kabaddi_24).into(holder.binding.ivExerciseGif)
+        //Glide.with(context).load(w.gifurlOfEx).error(R.drawable.giphy).placeholder(R.drawable.giphy).into(holder.binding.ivExerciseGif)
+        Glide.with(context).load(w.gifurlOfEx).thumbnail(Glide.with(context).load(w.gifurlOfEx)).error(R.drawable.giphy).placeholder(R.drawable.ic_baseline_sports_kabaddi_24).into(holder.binding.ivExerciseGif)
+        //Picasso.get().load(w.gifurlOfEx).error(R.drawable.ic_error).placeholder(R.drawable.ic_baseline_sports_kabaddi_24).into(holder.binding.ivExerciseGif)
         holder.binding.tvExerciseName.text = w.nameOfEx
         holder.binding.tvTargetInsertValue.text = w.targetOfEx
 

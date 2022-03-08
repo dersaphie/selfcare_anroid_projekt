@@ -1,5 +1,4 @@
-<resources
-        >
+<resources>
 
     <style name="Theme.Basic_Theme" parent="Theme.AppCompat.Light">
         <item name="pageBackground">@style/page_background_wh</item>
