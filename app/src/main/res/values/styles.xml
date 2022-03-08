@@ -1,51 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!--
-        Base application theme, dependent on API level. This theme is replaced
-        by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
-    -->
-    <style name="AppBaseTheme" parent="Theme.AppCompat.Light">
-    </style>
 
-
-    <!--
-    <style name="NormalText" parent="TextAppearance.Material3.BodyMedium">
-        <item name="android:textSize">16sp</item>
-    </style>
-
-    <style name="HeadlineText" parent="TextAppearance.Material3.HeadlineMedium">
-        <item name="android:layout_width">wrap_content</item>
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:textSize">25sp</item>
-        <item name="android:textStyle">bold</item>
-        <item name="android:textColor">?attr/colorSecondary</item>
-    </style>
-
-    <style name="CocktailListText" parent="NormalText">
-        <item name="android:layout_width">0dp</item>
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:layout_marginTop">10dp</item>
-        <item name="android:ellipsize">end</item>
-        <item name="android:gravity">center</item>
-        <item name="android:maxLines">1</item>
-        <item name="android:textSize">20sp</item>
-        <item name="android:textStyle">bold</item>
-    </style>-->
+    <style name="AppBaseTheme" parent="Theme.AppCompat.Light"></style>
 
     <style name="switch_text_appearance" parent="@android:style/TextAppearance.Holo.Small">
         <item name="android:textColor">#FFF</item>
     </style>
 
+    <!-- Style for every spinner -->
+    <style name="spinner_wh">
+        <item name="android:background">@drawable/spinner_wh_background</item>
+    </style>
+
     <!-- =============================================================== -->
-    <!-- Basic styles -->
+                            <!-- Basic styles -->
     <!-- =============================================================== -->
 
     <style name="page_background_wh">
-        <item name="android:background">@drawable/gray_gradient_background</item>
+        <item name="android:background">@color/black</item>
         <item name="android:paddingLeft">@dimen/activity_horizontal_padding</item>
         <item name="android:paddingRight">@dimen/activity_horizontal_padding</item>
     </style>
-    <!-- große Schrift 16 sp-->
+    <!-- Textstyles for Theme Basic-->
     <style name="text_subheader_wh">
         <item name="android:textColor">#000</item>
         <item name="android:textSize">@dimen/text_subheader_text_size</item>
@@ -54,7 +30,6 @@
         <item name="android:shadowColor">#000</item>
     </style>
 
-    <!-- größte Schrift 18 sp-->
     <style name="text_large_wh">
         <item name="android:textColor">@android:color/background_dark</item>
         <item name="android:textSize">@dimen/text_large_text_size</item>
@@ -64,68 +39,36 @@
         <item name="android:textStyle">bold</item>
         <item name="android:layout_marginTop">@dimen/text_large_margin_top</item>
     </style>
-    <!--  normale Schrift 15 sp-->
+
     <style name="text_regular_wh">
         <item name="android:textColor">@android:color/background_dark</item>
         <item name="android:textSize">@dimen/text_regular_text_size</item>
     </style>
 
-    <!-- TODO: Mit diesen Styles war das Layout der Sport-Unterseiten so wies aussehen sollte -->
-    <style name="NormalText" parent="TextAppearance.Material3.BodyMedium">
-        <item name="android:textSize">16sp</item>
-    </style>
-
-    <style name="HeadlineText" parent="TextAppearance.Material3.HeadlineMedium">
-        <item name="android:layout_width">wrap_content</item>
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:textSize">25sp</item>
-        <item name="android:textStyle">bold</item>
-        <item name="android:textColor">?attr/colorSecondary</item>
-    </style>
-
-    <style name="ExerciseListText" parent="NormalText">
-        <item name="android:layout_width">0dp</item>
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:layout_marginTop">10dp</item>
-        <item name="android:ellipsize">end</item>
-        <item name="android:gravity">center</item>
-        <item name="android:maxLines">1</item>
-        <item name="android:textSize">20sp</item>
-        <item name="android:textStyle">bold</item>
-    </style>
-
-    <!-- für die credentials-->
-    <style name="white_background_wh">
-        <item name="android:background">@android:drawable/dialog_holo_light_frame</item>
-        <item name="android:layout_marginTop">@dimen/card_margin_top</item>
-        <item name="android:layout_marginBottom">@dimen/card_margin_top</item>
-        <item name="android:padding">@dimen/white_background_padding</item>
-    </style>
-
-
-    <!-- Buttonstyle-->
+    <!-- Buttonstyle for Theme Basic-->
     <style name="button_wh" parent="text_large_wh">
         <item name="android:background">@drawable/button_wh</item>
         <item name="android:layout_marginTop">@dimen/view_margin</item>
-    </style>
-
-
-    <style name="spinner_wh">
-        <item name="android:background">@drawable/spinner_wh_background</item>
     </style>
 
     <style name="horizontal_line_wh">
         <item name="android:background">@color/actionbar_wh</item>
     </style>
 
-    <!-- actionbar-->
+    <!-- Actionbar for Theme Basic-->
     <style name="action_bar_wh" parent="@style/Widget.AppCompat.Light.ActionBar.Solid.Inverse">
         <item name="android:background">@color/actionbar_wh</item>
         <item name="background">@color/actionbar_wh</item>
     </style>
 
+    <!-- Navigationbar for Theme Basic-->
+    <style name="nav_bar_wh" parent="text_large_wh">
+        <item name="android:background">@color/actionbar_wh</item>
+        <item name="android:layout_marginTop">@dimen/view_margin</item>
+    </style>
+
     <!-- =============================================================== -->
-    <!--                     Rose styles -->
+                             <!--Rose styles -->
     <!-- =============================================================== -->
     <!--     Background of whole screen-->
     <style name="page_background_rose">
@@ -134,7 +77,7 @@
         <item name="android:paddingRight">@dimen/activity_horizontal_padding</item>
     </style>
 
-    <!--    TEXT_STYLES_ROSE-->
+    <!--    Textstyles for Theme Rose-->
     <style name="text_subheader_rose">
         <item name="android:textColor">@color/black</item>
         <item name="android:textSize">@dimen/text_subheader_text_size</item>
@@ -158,7 +101,7 @@
         <item name="android:textSize">@dimen/text_regular_text_size</item>
     </style>
 
-
+    <!-- Buttonstyle for Theme Rose-->
     <style name="button_rose" parent="text_large_wh">
         <item name="android:background">@drawable/button_rose</item>
         <item name="android:layout_marginTop">@dimen/view_margin</item>
@@ -168,16 +111,21 @@
         <item name="android:background">@color/Background_rose</item>
     </style>
 
-    <!--ganz obere Actionbarfarbe für Theme Rose-->
-
+    <!--Actionbar for Theme Rose-->
     <style name="actionbar_rose" parent="@style/Widget.AppCompat.Light.ActionBar.Solid.Inverse">
         <item name="android:background">@color/actionbar_rose</item>
         <item name="background">@color/actionbar_rose</item>
     </style>
 
+    <!-- Navigationbar for Theme Rose-->
+    <style name="nav_bar_rose" parent="text_large_wh">
+        <item name="android:background">@color/actionbar_rose</item>
+        <item name="android:layout_marginTop">@dimen/view_margin</item>
+    </style>
+
 
     <!-- =============================================================== -->
-    <!--    THEME SUNNY STYLES-->
+                            <!--THEME SUNNY STYLES-->
     <!-- =============================================================== -->
 
     <style name="page_background_yellow">
@@ -185,7 +133,7 @@
         <item name="android:paddingLeft">@dimen/activity_horizontal_padding</item>
         <item name="android:paddingRight">@dimen/activity_horizontal_padding</item>
     </style>
-    <!--    TEXT_STYLES_Sunny-->
+    <!--    Textstyles for Theme Sunny-->
     <style name="text_subheader_yellow">
         <item name="android:textColor">@color/black</item>
         <item name="android:textSize">@dimen/text_subheader_text_size</item>
@@ -209,7 +157,7 @@
         <item name="android:textSize">@dimen/text_regular_text_size</item>
     </style>
 
-
+    <!-- Buttonstyle for Theme Sunny-->
     <style name="button_yellow" parent="text_large_wh">
         <item name="android:background">@drawable/button_yellow</item>
         <item name="android:layout_marginTop">@dimen/view_margin</item>
@@ -219,16 +167,21 @@
         <item name="android:background">@color/Background_yellow</item>
     </style>
 
-    <!--ganz obere Actionbarfarbe für Theme Rose-->
-
+    <!--Actionbar for Theme Rose-->
     <style name="actionbar_yellow" parent="@style/Widget.AppCompat.Light.ActionBar.Solid.Inverse">
         <item name="android:background">@color/actionbar_yellow</item>
         <item name="background">@color/actionbar_yellow</item>
     </style>
 
+    <!-- Navigationbar for Theme Sunny-->
+    <style name="nav_bar_yellow" parent="text_large_wh">
+        <item name="android:background">@color/actionbar_yellow</item>
+        <item name="android:layout_marginTop">@dimen/view_margin</item>
+    </style>
+
 
     <!-- =============================================================== -->
-    <!--    THEME FORREST STYLES-->
+                        <!--  THEME FORREST STYLES-->
     <!-- =============================================================== -->
 
     <style name="page_background_green">
@@ -236,7 +189,7 @@
         <item name="android:paddingLeft">@dimen/activity_horizontal_padding</item>
         <item name="android:paddingRight">@dimen/activity_horizontal_padding</item>
     </style>
-    <!--    TEXT_STYLES_FORREST-->
+    <!--    Textstyles for Theme Forrest-->
     <style name="text_subheader_green">
         <item name="android:textColor">@color/black</item>
         <item name="android:textSize">@dimen/text_subheader_text_size</item>
@@ -260,7 +213,7 @@
         <item name="android:textSize">@dimen/text_regular_text_size</item>
     </style>
 
-
+    <!-- Buttonstyle for Theme Forrest-->
     <style name="button_green" parent="text_large_wh">
         <item name="android:background">@drawable/button_green</item>
         <item name="android:layout_marginTop">@dimen/view_margin</item>
@@ -270,14 +223,45 @@
         <item name="android:background">@color/Background_green</item>
     </style>
 
-    <!--ganz obere Actionbarfarbe für Theme Rose-->
-
+    <!-- Actionbar for Theme Forrest-->
     <style name="actionbar_green" parent="@style/Widget.AppCompat.Light.ActionBar.Solid.Inverse">
         <item name="android:background">@color/actionbar_green</item>
         <item name="background">@color/actionbar_green</item>
     </style>
+    <!-- Navigationbar for Theme Forrest-->
+    <style name="nav_bar_green" parent="text_large_wh">
+        <item name="android:background">@color/actionbar_green</item>
+        <item name="android:layout_marginTop">@dimen/view_margin</item>
+    </style>
 
 
-    <!--    alles vom code-->
+
+    <!-- Textstyles specially for sport subpages
+    TODO: Mit diesen Styles war das Layout der Sport-Unterseiten so wies aussehen sollte -->
+
+    <style name="NormalText" parent="TextAppearance.Material3.BodyMedium">
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="HeadlineText" parent="TextAppearance.Material3.HeadlineMedium">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">25sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">?attr/colorSecondary</item>
+    </style>
+
+    <style name="ExerciseListText" parent="NormalText">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">10dp</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:gravity">center</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+
 
 </resources>

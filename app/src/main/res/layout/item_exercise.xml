@@ -105,17 +105,6 @@
         app:layout_constraintEnd_toEndOf="@id/gl90PercentVert"
         android:text="@string/etExerciseEquipment"
         android:contentDescription="@string/descEtExerciseEquipment"/>
-<!--<pl.droidsonroids.gif.GifImageView
-    android:id="@+id/ivExerciseGif"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:adjustViewBounds="true"
-    android:scaleType="centerCrop"
-    app:layout_constraintTop_toBottomOf="@id/spaceEquipmentBottom"
-    app:layout_constraintLeft_toLeftOf="@id/gl10PercentVert"
-    app:layout_constraintRight_toRightOf="@id/gl90PercentVert"
-    tools:tint="?attr/colorTertiary"
-    tools:src="@drawable/ic_baseline_sports_kabaddi_24" />-->
 
     <!--Gif of Exercise-->
     <ImageView
@@ -129,28 +118,6 @@
         tools:tint="?attr/colorTertiary"
         tools:src="@drawable/ic_baseline_sports_kabaddi_24"
         android:contentDescription="@string/descEtExerciseGif"/>
-<!--
-    <TextView
-        android:id="@+id/tvID"
-        style="@style/CocktailListText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/spaceGifBottom"
-        app:layout_constraintStart_toStartOf="@id/gl10PercentVert"
-        app:layout_constraintEnd_toStartOf="@id/tvIDInsertValue"
-        app:layout_constraintHorizontal_bias="1"
-        tools:text="@string/tvExerciseDescription" />
-
-    <TextView
-        android:id="@+id/tvIDInsertValue"
-        style="@style/CocktailListText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/spaceGifBottom"
-        app:layout_constraintStart_toStartOf="@id/gl10PercentVert"
-        app:layout_constraintEnd_toEndOf="@id/gl90PercentVert"
-        app:layout_constraintHorizontal_bias="1"
-        tools:text="@string/etExerciseDescription" />-->
 
     <!--Spearation Spaces for Layout-->
     <Space

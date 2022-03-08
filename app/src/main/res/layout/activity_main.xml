@@ -32,37 +32,7 @@
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.40" />
 
-    <!--
-    <Spinner
-        android:id="@+id/spThemes"
-        style="?spinner"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="right"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:entries="@array/theme_array"
-        android:spinnerMode="dropdown" />
-        -->
-    <!--Toolbar with Theme Changer-->
-    <!--
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/gl008Percenthor"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:contentDescription="@string/toolbar"
-        android:background="@color/colorPrimary"
-        android:theme="@style/ThemeOverlay.MaterialComponents.Dark.ActionBar">
-
-
-      
-        </androidx.appcompat.widget.Toolbar>
-        -->
+    <!-- Spinner for changing Themes-->
     <Spinner
         android:id="@+id/spThemes"
         style="?spinner"
@@ -116,7 +86,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:backgroundTint="@color/teal_200"
+            style="?navBar"
         android:contentDescription="@string/nav_bottom"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

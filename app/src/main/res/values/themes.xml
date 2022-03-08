@@ -1,51 +1,55 @@
-<resources
-        >
+<resources>
+
+    <!--  theme simply defines the correct style references for each attribute we defined earlier
+    and acts as a "style controller"-->
+    <!--the "name" in each line is an attribute that can be found in attrs.xml-->
 
     <style name="Theme.Basic_Theme" parent="Theme.AppCompat.Light">
+        <!-- Basic Theme -->
         <item name="pageBackground">@style/page_background_wh</item>
         <item name="textSubheader">@style/text_subheader_wh</item>
         <item name="textLarge">@style/text_large_wh</item>
         <item name="textRegular">@style/text_regular_wh</item>
-        <item name="whiteBackground">@style/white_background_wh</item>
         <item name="button">@style/button_wh</item>
         <item name="spinner">@style/spinner_wh</item>
         <item name="actionBarStyle">@style/action_bar_wh</item>
+        <item name="navBar">@style/nav_bar_wh</item>
     </style>
 
     <style name="Theme.RoseTheme" parent="Theme.AppCompat.Light">
-        <!-- Define styles for YOUR_CUSTOM_THEME here. -->
+        <!-- Rose theme -->
         <item name="pageBackground">@style/page_background_rose</item>
         <item name="textSubheader">@style/text_subheader_wh</item>
         <item name="textLarge">@style/text_large_wh</item>
         <item name="textRegular">@style/text_regular_wh</item>
-        <item name="roseBackground">@style/white_background_wh</item>
         <item name="button">@style/button_rose</item>
         <item name="spinner">@style/spinner_wh</item>
         <item name="actionBarStyle">@style/actionbar_rose</item>
+        <item name="navBar">@style/nav_bar_rose</item>
     </style>
 
     <style name="Theme.SunnyTheme" parent="Theme.AppCompat.Light">
-        <!-- Define styles for YOUR_CUSTOM_THEME here. -->
+        <!-- Sunny theme-->
         <item name="pageBackground">@style/page_background_yellow</item>
         <item name="textSubheader">@style/text_subheader_wh</item>
         <item name="textLarge">@style/text_large_wh</item>
         <item name="textRegular">@style/text_regular_wh</item>
-        <item name="roseBackground">@style/white_background_wh</item>
         <item name="button">@style/button_yellow</item>
         <item name="spinner">@style/spinner_wh</item>
         <item name="actionBarStyle">@style/actionbar_yellow</item>
+        <item name="navBar">@style/nav_bar_yellow</item>
     </style>
 
     <style name="Theme.ForestTheme" parent="Theme.AppCompat.Light">
-        <!-- Define styles for YOUR_CUSTOM_THEME here. -->
+        <!-- Forrest theme -->
         <item name="pageBackground">@style/page_background_green</item>
         <item name="textSubheader">@style/text_subheader_wh</item>
         <item name="textLarge">@style/text_large_wh</item>
         <item name="textRegular">@style/text_regular_wh</item>
-        <item name="roseBackground">@style/white_background_wh</item>
         <item name="button">@style/button_green</item>
         <item name="spinner">@style/spinner_wh</item>
         <item name="actionBarStyle">@style/actionbar_green</item>
+        <item name="navBar">@style/nav_bar_green</item>
     </style>
 
 </resources>

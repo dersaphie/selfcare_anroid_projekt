@@ -15,13 +15,14 @@
         android:text="@string/workoutHeadline"
         android:paddingEnd="@dimen/size_10"
         android:paddingStart="@dimen/size_10"
+        style="@style/ExerciseListText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:contentDescription="@string/desc_Headline"
-        style="?textSubheader"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+       />
 
     <!-- RecyclerView for Cardio Combined -->
     <androidx.recyclerview.widget.RecyclerView
@@ -31,6 +32,7 @@
         android:layout_marginTop="@dimen/size_20"
         tools:listitem="@layout/item_exercise"
         android:scrollbars="vertical"
+        style="@style/ExerciseListText"
         android:layout_gravity="center_horizontal"
         app:layout_constraintTop_toBottomOf="@id/tvListHeadline"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -42,7 +44,7 @@
     <!-- Error text im RV can't be shown -->
     <TextView
         android:id="@+id/tvExerciseApiErrorText"
-        style="?textRegular"
+        style="@style/NormalText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintLeft_toLeftOf="parent"
