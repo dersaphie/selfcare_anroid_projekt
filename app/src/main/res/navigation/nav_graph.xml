@@ -100,7 +100,7 @@ action to that certain Fragment-->
     </fragment>
     <fragment
         android:id="@+id/diaryFragment"
-        android:name="recyclerview.DiaryFragment"
+        android:name="com.example.myroutine.DiaryFragment"
         android:label="fragment_diary"
         tools:layout="@layout/fragment_diary" />
 </navigation>

@@ -40,7 +40,7 @@ class HomeFragment : Fragment(){
                 .setPopUpTo(R.id.homeFragment, inclusive = false, saveState = true)
                 .build()
             findNavController().navigate(
-                HomeFragmentDirections.actionHomeToNutrition(), navOptionsHomeFragmentToNutritionFragment)
+                HomeFragmentDirections.actionHomeFragmentToDiaryFragment(), navOptionsHomeFragmentToNutritionFragment)
         }
     }
 }
