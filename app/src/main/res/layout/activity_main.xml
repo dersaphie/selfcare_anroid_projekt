@@ -116,7 +116,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:backgroundTint="@color/teal_200"
+        style="@style/action_bar_wh"
         android:contentDescription="@string/nav_bottom"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

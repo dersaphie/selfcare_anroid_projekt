@@ -4,6 +4,7 @@ package com.example.myroutine
 import android.annotation.SuppressLint
 import android.content.ContentValues
 import android.content.res.Resources
+import android.database.sqlite.SQLiteDatabase
 import android.graphics.drawable.AnimationDrawable
 import android.os.Bundle
 import android.util.Log
@@ -103,5 +104,24 @@ class MainActivity : AppCompatActivity() {
 
             override fun onNothingSelected(parent: AdapterView<*>?) {}
         }
+    }
+
+    fun dbTest()
+    {
+        /// DB
+        //pass context
+        //db?.execSQL("CREATE TABLE USER(USERID INTEGER PRIMARY KEY, NAME TEXT, AGE FLOAT, WEIGHT FLOAT, HEIGHT FLOAT, SEX FLOAT, SLEEP_HOURS_A_DAY FLOAT, WORK_HOURS_A_DAY FLOAT, WORK_PAL_VALUE FLOAT, SPORT_HOURS FLOAT_A_DAY, SPORT_PAL_VALUE FLOAT, BMI FLOAT, DAILY_ENERGY_NEED_KCAL FLOAT)")
+        Utility.helper = DBHelper(applicationContext)
+        //Utility.helper.onCreate(db = SQLiteDatabase.create(SQLiteDatabase.CursorFactory()))
+        // get write access to db
+        Utility.db = Utility.helper.writableDatabase
+        //cursor
+        val rd = Utility.db.rawQuery("CREATE TABLE USER(USERID INTEGER PRIMARY KEY, NAME TEXT, AGE FLOAT, WEIGHT FLOAT, HEIGHT FLOAT, SEX FLOAT, SLEEP_HOURS_A_DAY FLOAT, WORK_HOURS_A_DAY FLOAT, WORK_PAL_VALUE FLOAT, SPORT_HOURS FLOAT_A_DAY, SPORT_PAL_VALUE FLOAT, BMI FLOAT, DAILY_ENERGY_NEED_KCAL FLOAT)", null)
+        //if DB created
+        if (rd.moveToNext())
+            Toast.makeText(applicationContext, rd.getString(1), Toast.LENGTH_LONG).show()
+    }
+    fun writeIntoDb(query: String){
+
     }
 }
