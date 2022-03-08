@@ -34,13 +34,5 @@ class HomeFragment : Fragment(){
                 navOptionsHomeFragmentToSportFragment
             )
         }
-            //set on click Listener: Button Sport leads to Sport Fragment
-        view.findViewById<Button>(R.id.btnNutrition)?.setOnClickListener {
-            val navOptionsHomeFragmentToNutritionFragment: NavOptions = NavOptions.Builder()
-                .setPopUpTo(R.id.homeFragment, inclusive = false, saveState = true)
-                .build()
-            findNavController().navigate(
-                HomeFragmentDirections.actionHomeToNutrition(), navOptionsHomeFragmentToNutritionFragment)
-        }
     }
 }

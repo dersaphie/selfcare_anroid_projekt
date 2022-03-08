@@ -17,9 +17,6 @@ action to that certain Fragment-->
         <action
             android:id="@+id/action_home_to_sport"
             app:destination="@id/sportFragment" />
-        <action
-            android:id="@+id/action_home_to_nutrition"
-            app:destination="@id/nutritionFragment" />
 
     </fragment>
     <fragment
@@ -36,15 +33,6 @@ action to that certain Fragment-->
         <action
             android:id="@+id/action_sport_to_RVSportMuscleEQFragment"
             app:destination="@id/RVSportMuscleEQFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/nutritionFragment"
-        android:name="com.example.myroutine.NutritionFragment"
-        android:label="fragment_nutrition"
-        tools:layout="@layout/fragment_nutrition" >
-        <action
-            android:id="@+id/action_nutritionFragment_to_bodyCalculationsFragment"
-            app:destination="@id/bodyCalculationsFragment" />
     </fragment>
     <fragment
         android:id="@+id/profileFragment"
