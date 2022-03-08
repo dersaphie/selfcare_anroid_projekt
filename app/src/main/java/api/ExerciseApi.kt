@@ -11,21 +11,21 @@ interface ExerciseApi {
 
     @Headers(
         "x-rapidapi-host: exercisedb.p.rapidapi.com",
-        "x-rapidapi-key: 1d45bebd9dmshbaad6bdabadea3ep1f7a2bjsn19c506b945fe"
+        "x-rapidapi-key: 4d120b45ebmsh0fb0d42c089a67dp1a34f3jsn30529912b963"
     )
     @GET("/exercises/equipment/body%20weight")
     fun getMuscleExerciseBodyweightFromApi(): Call<List<ExerciseDto>>
 
     @Headers(
         "x-rapidapi-host: exercisedb.p.rapidapi.com",
-        "x-rapidapi-key: 1d45bebd9dmshbaad6bdabadea3ep1f7a2bjsn19c506b945fe"
+        "x-rapidapi-key: 4d120b45ebmsh0fb0d42c089a67dp1a34f3jsn30529912b963"
     )
     @GET("/exercises/equipment/band")
     fun getMuscleExerciseEquipmentFromApi(): Call<List<ExerciseDto>>
 
     @Headers(
         "x-rapidapi-host: exercisedb.p.rapidapi.com",
-        "x-rapidapi-key: 1d45bebd9dmshbaad6bdabadea3ep1f7a2bjsn19c506b945fe"
+        "x-rapidapi-key: 4d120b45ebmsh0fb0d42c089a67dp1a34f3jsn30529912b963"
     )
     //API-Call to get cardio with combined
     @GET("/exercises/bodyPart/cardio")
