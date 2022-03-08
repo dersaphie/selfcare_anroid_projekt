@@ -384,10 +384,10 @@
         app:layout_constraintTop_toBottomOf="@id/et_your_work_hours"
         app:layout_constraintBottom_toTopOf="@id/glBottomHor"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/btn_navigate_to_body_calculations_fragment"/>
+        app:layout_constraintEnd_toStartOf="@+id/btn_show_body_calculations"/>
 
     <Button
-        android:id="@+id/btn_navigate_to_body_calculations_fragment"
+        android:id="@+id/btn_show_body_calculations"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:contentDescription="@string/btn_show_stats"
