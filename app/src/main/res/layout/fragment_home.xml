@@ -77,7 +77,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="@id/gl33PercentVert"
         android:contentDescription="@string/cotn_profile"
-        android:background="@drawable/ic_tiger"/>
+        android:background="@drawable/ic_cranium_2028555"/>
             <!--optional Bild 28 -->
 
 
@@ -91,7 +91,7 @@
         app:layout_constraintStart_toStartOf="@id/gl66PercentVert"
         app:layout_constraintEnd_toEndOf="@id/gl99PercentVert"
         android:contentDescription="@string/cotn_sport"
-        android:background="@drawable/ic_tiger"/>
+        android:background="@drawable/ic_boy_2029661"/>
 
     <!--Buttons for main sections-->
     <Button

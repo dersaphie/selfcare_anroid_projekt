@@ -85,7 +85,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="@id/gl33PercentVert"
         android:contentDescription="@string/cotn_MEQ"
-        android:background="@drawable/ic_tiger"/>
+        android:background="@drawable/img_pexel_body_food31"/>
     <!--optional Bild 28 -->
 
     <ImageView
@@ -98,7 +98,7 @@
         app:layout_constraintStart_toStartOf="@id/gl33PercentVert"
         app:layout_constraintEnd_toEndOf="@id/gl66PercentVert"
         android:contentDescription="@string/cotn_MBW"
-        android:background="@drawable/ic_tiger"/>
+        android:background="@drawable/img_pexel_body_food48"/>
 
     <ImageView
         android:id="@+id/cotnCardioCC"
@@ -110,7 +110,7 @@
         app:layout_constraintStart_toStartOf="@id/gl66PercentVert"
         app:layout_constraintEnd_toEndOf="@id/gl99PercentVert"
         android:contentDescription="@string/cotn_CCC"
-        android:background="@drawable/ic_tiger"/>
+        android:background="@drawable/img_pexel_body_food13"/>
 
     <!--Button for Workouts -->
     <Button
