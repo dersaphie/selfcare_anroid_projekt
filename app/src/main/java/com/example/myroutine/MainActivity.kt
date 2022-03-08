@@ -34,28 +34,19 @@ class MainActivity : AppCompatActivity() {
     private lateinit var frameAnimation: AnimationDrawable
     private lateinit var appBarConfiguration: AppBarConfiguration
 
-    // Here we set the theme for the activity
-    // Note `Utils.onActivityCreateSetTheme` must be called before `setContentView`
 
+    // Here the theme for the activity will be setted
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        // MUST BE SET BEFORE setContentView
         Utils.onActivityCreateSetTheme(this)
-        //ENDE THEME CHANGER
-
         //define binding
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
-        // AFTER SETTING THEME
-        //setContentView(R.layout.activity_main)
+        //
         setupSpinnerItemSelection()
 
-        //val toolbar = findViewById<Toolbar>(R.id.toolbar)
-        //setSupportActionBar(toolbar)
         // Set up Action Bar
-
         val navHostFragment = supportFragmentManager.findFragmentById(
             R.id.nav_host_fragment
         ) as NavHostFragment
@@ -73,20 +64,21 @@ class MainActivity : AppCompatActivity() {
         setupActionBarWithNavController(navController, appBarConfiguration)
     }
 
-/**on start set animation for background imageView, define as Animation and start*/
+    /*on start set animation for background imageView,
+    define as Animation and start*/
     override fun onStart() {
         super.onStart()
         binding.animBackgroundImages.setBackgroundResource(R.drawable.animation_list_background)
         frameAnimation = binding.animBackgroundImages.background as AnimationDrawable
         frameAnimation.start()
     }
-
-
     override fun onSupportNavigateUp(): Boolean {
         return navController.navigateUp(appBarConfiguration)
     }
 
     private fun setupSpinnerItemSelection() {
+        //firstly getting current position which has no value in the first round, therefore every comparison
+        // will cause a theme change
         val spThemes = findViewById<Spinner>(R.id.spThemes)
         spThemes.setSelection(ThemeApplication.currentPosition)
         ThemeApplication.currentPosition = spThemes.selectedItemPosition
@@ -95,9 +87,13 @@ class MainActivity : AppCompatActivity() {
                 parent: AdapterView<*>?, view: View,
                 position: Int, id: Long
             ) {
+                //checking if a different position value is passed if yes,
+                //pass wanted theme value to changeToTheme()
                 if (ThemeApplication.currentPosition != position) {
+                    //passes position value to changeToTheme()
                     Utils.changeToTheme(this@MainActivity, position)
                 }
+                //setting current position to changed position value 0-3
                 ThemeApplication.currentPosition = position
             }
 

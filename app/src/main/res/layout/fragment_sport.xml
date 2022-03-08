@@ -118,40 +118,40 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_margin="@dimen/size_4"
+        style="?button"
         app:layout_constraintTop_toTopOf="@id/gl65PercentHor"
         app:layout_constraintBottom_toTopOf="@id/gl89PercentHor"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="@id/gl33PercentVert"
         android:text="@string/btnMuscleEquipment"
-        android:contentDescription="@string/btnMuscleEquipment"
-        android:background="@drawable/sh_rectangle"/>
+        android:contentDescription="@string/btnMuscleEquipment" />
 
     <Button
         android:id="@+id/btnMuscleBodyWeight"
         android:layout_width="@dimen/size_0"
         android:layout_height="@dimen/size_0"
         android:layout_margin="@dimen/size_4"
+        style="?button"
         app:layout_constraintTop_toTopOf="@id/gl65PercentHor"
         app:layout_constraintBottom_toTopOf="@id/gl89PercentHor"
         app:layout_constraintStart_toStartOf="@id/gl33PercentVert"
         app:layout_constraintEnd_toEndOf="@id/gl66PercentVert"
         android:text="@string/btnMuscleBodyWeight"
         android:contentDescription="@string/btnMuscleBodyWeight"
-        app:layout_constraintVertical_bias="1"
-        android:background="@drawable/sh_rectangle"/>
+        app:layout_constraintVertical_bias="1" />
 
     <Button
         android:id="@+id/btnCardioCombined"
         android:layout_width="@dimen/size_0"
         android:layout_height="@dimen/size_0"
         android:layout_margin="@dimen/size_4"
+        style="?button"
         app:layout_constraintTop_toTopOf="@id/gl65PercentHor"
         app:layout_constraintBottom_toTopOf="@id/gl89PercentHor"
         app:layout_constraintStart_toStartOf="@id/gl66PercentVert"
         app:layout_constraintEnd_toEndOf="parent"
         android:text="@string/btnCardioCombined"
-        android:contentDescription="@string/btnCardioCombined"
-        android:background="@drawable/sh_rectangle" />
+        android:contentDescription="@string/btnCardioCombined" />
 <!--
     <Space
         android:id="@+id/space"

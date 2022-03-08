@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
+    <!--dimens for Themes-->
     <dimen name="activity_horizontal_padding">16dp</dimen>
     <dimen name="content_left_margin_wh">8sp</dimen>
     <dimen name="text_large_margin_top">40dp</dimen>
@@ -13,7 +13,7 @@
     <dimen name="spinner_margin_left">10dp</dimen>
     <dimen name="card_margin_top">40dp</dimen>
 
-    <!--code-->
+    <!--generally applied dimens on code-->
     <dimen name="size_0">0dp</dimen>
     <dimen name="size_4">4dp</dimen>
     <dimen name="size_8">8dp</dimen>

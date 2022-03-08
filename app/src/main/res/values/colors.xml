@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
+    <!-- Colors for night Theme-->
     <color name="purple_200">#FFBB86FC</color>
     <color name="purple_500">#FF6200EE</color>
     <color name="purple_700">#FF3700B3</color>
@@ -16,6 +18,7 @@
     <color name="Button_pressed_Tri">#FF0060B8</color>
     <color name="Text_Large_Shadow">#888</color>
     <color name="actionbar_wh">#AFAFAF</color>
+    <color name="navbar_wh">#AFAFAF</color>
 
     <!--    Colors for Rose Theme-->
 
@@ -26,8 +29,9 @@
     <color name="Button_rose_pressed_Tri">#B041C5</color>
     <color name="Text_Large_Shadow_rose">#888</color>
     <color name="actionbar_rose">#fa488f</color>
+    <color name="navbar_rose">#fa488f</color>
 
-    <!--    Colors for yellow Theme-->
+    <!--    Colors for sunny Theme-->
 
     <color name="Background_yellow">#FAF594</color>
     <color name="Button_yellow_default">#DCD112</color>
@@ -36,8 +40,9 @@
     <color name="Button_yellow_pressed_Tri">#FFEB3B</color>
     <color name="Text_Large_Shadow_yellow">#888</color>
     <color name="actionbar_yellow">#FFE500</color>
+    <color name="navbar_yellow">#FFE500</color>
 
-    <!--    Colors for green Theme-->
+    <!--    Colors for forrest Theme-->
 
     <color name="Background_green">#92B865</color>
     <color name="Button_green_default">#38E840</color>
@@ -46,25 +51,8 @@
     <color name="Button_green_pressed_Tri">#1E5520</color>
     <color name="Text_Large_Shadow_green">#888</color>
     <color name="actionbar_green">#1E5520</color>
+    <color name="navbar_green">#1E5520</color>
 
-
-
-    <!--    CODE-->
-
-
-    <color name="colorPrimary">#3F51B5</color>
-    <color name="colorPrimaryDark">#303F9F</color>
-    <color name="colorAccent">#FF4081</color>
-    <!-- Teal Theme Colors -->
-    <color name="colorPrimaryTeal">#008577</color>
-    <color name="colorPrimaryDarkTeal">#00574B</color>
-    <color name="colorAccentTeal">#D81B60</color>
-    <color name="colorAccentRose">#d15b8f</color>
-
-    <!-- Cyan Theme Colors -->
-    <color name="colorPrimaryCyan">#26c6da</color>
-    <color name="colorPrimaryDarkCyan">#0095a8</color>
-    <color name="colorAccentCyan">#ffca28</color>
 
     <!-- BMI colors -->
     <color name="colorValuesForBMIAreIncomplete">#f5f</color>

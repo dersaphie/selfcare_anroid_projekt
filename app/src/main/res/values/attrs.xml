@@ -1,16 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
+    <!--These attributes are used in themes.xml,
+    they can be used to adjust the Themes on pre settet layout components
+    like buttons and so on-->
+    <!-- to set attributes on a component use style="?ATTRIBUTENAME"-->
     <attr name="pageBackground" format="reference" />
     <attr name="textSubheader" format="reference" />
     <attr name="textLarge" format="reference" />
     <attr name="textRegular" format="reference" />
-    <attr name="whiteBackground" format="reference" />
-    <attr name="roseBackground" format="reference" />
-    <attr name="yellowBackground" format="reference" />
-    <attr name="greenBackground" format="reference" />
     <attr name="button" format="reference" />
     <attr name="spinner" format="reference" />
-    <attr name= "nav_bar_green" format="reference" />
-
-
+    <attr name="navBar" format="reference" />
 </resources>
