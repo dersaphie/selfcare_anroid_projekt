@@ -42,9 +42,6 @@ class MainActivity : AppCompatActivity() {
 
         // MUST BE SET BEFORE setContentView
         Utils.onActivityCreateSetTheme(this)
-
-
-
         //ENDE THEME CHANGER
 
         //define binding
@@ -55,9 +52,8 @@ class MainActivity : AppCompatActivity() {
         //setContentView(R.layout.activity_main)
         setupSpinnerItemSelection()
 
-
-        /*val toolbar = findViewById<Toolbar>(R.id.toolbar)
-         setSupportActionBar(toolbar)*/
+        //val toolbar = findViewById<Toolbar>(R.id.toolbar)
+        //setSupportActionBar(toolbar)
         // Set up Action Bar
 
         val navHostFragment = supportFragmentManager.findFragmentById(
@@ -75,20 +71,7 @@ class MainActivity : AppCompatActivity() {
             setOf(R.id.homeFragment, R.id.sportFragment,  R.id.nutritionFragment)
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
-
-        /*
-        navController.addOnDestinationChangedListener { _, destination, _ ->
-            val dest: String = try {
-                resources.getResourceName(destination.id)
-            } catch (e: Resources.NotFoundException) {
-                destination.id.toString()
-            }
-
-            Toast.makeText(this@MainActivity, "Navigated to $dest",
-                Toast.LENGTH_SHORT).show()
-            Log.d("NavigationActivity", "Navigated to $dest")
-            */
-        }
+    }
 
 /**on start set animation for background imageView, define as Animation and start*/
     override fun onStart() {
@@ -96,28 +79,6 @@ class MainActivity : AppCompatActivity() {
         binding.animBackgroundImages.setBackgroundResource(R.drawable.animation_list_background)
         frameAnimation = binding.animBackgroundImages.background as AnimationDrawable
         frameAnimation.start()
-
-        /*
-        // Setup the bottom navigation view with navController
-        val bottomNavigationView = findViewById<BottomNavigationView>(R.id.bottom_nav_menu)
-        bottomNavigationView.setupWithNavController(navController)
-
-        // Setup the ActionBar with navController and 3 top level destinations
-        appBarConfiguration = AppBarConfiguration(
-            setOf(R.id.homeFragment, R.id.sportFragment,  R.id.nutritionFragment)
-        )
-        setupActionBarWithNavController(navController, appBarConfiguration)
-
-        ///DB
-        Utility.helper = DBHelper(applicationContext)
-        //DB
-        Utility.db = Utility.helper.readableDatabase
-        //cursor
-        var rd = Utility.db.rawQuery("SELECT * FROM CARDIO", null)
-        //if DB created
-        if (rd.moveToNext())
-            Toast.makeText(applicationContext, rd.getString(1), Toast.LENGTH_LONG).show()
-         */
     }
 
 
