@@ -35,12 +35,12 @@ class HomeFragment : Fragment(){
             )
         }
         view.findViewById<Button>(R.id.btnProfile)?.setOnClickListener {
-            val navOptionsHomeFragmentToSportFragment: NavOptions = NavOptions.Builder()
+            val navOptionsHomeFragmentToProfileFragment: NavOptions = NavOptions.Builder()
                 .setPopUpTo(R.id.homeFragment, inclusive = false, saveState = true)
                 .build()
             findNavController().navigate(
-                HomeFragmentDirections.actionHomeToSport(),
-                navOptionsHomeFragmentToSportFragment
+                HomeFragmentDirections.actionHomeFragmentToProfileFragment(),
+                navOptionsHomeFragmentToProfileFragment
             )
         }
     }
