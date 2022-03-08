@@ -27,10 +27,7 @@ class SportFragment : Fragment() {
     private var _binding: FragmentSportBinding? = null
     private val binding get() = _binding!!
 
-
-    private var workoutRepo = ExerciseRepo()
     private var workout: MutableList<Exercise> = mutableListOf()
-    val exerciseAdapter = ExerciseAdapter(workout)
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -38,7 +35,6 @@ class SportFragment : Fragment() {
         // Inflate the layout for this fragment
         _binding = FragmentSportBinding.inflate(layoutInflater, container, false)
         return binding.root
-        //inflater.inflate(R.layout.fragment_sport, container, false)
     }
 
 

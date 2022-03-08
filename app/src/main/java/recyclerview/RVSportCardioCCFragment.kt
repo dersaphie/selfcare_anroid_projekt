@@ -46,7 +46,7 @@ class RVSportCardioCCFragment : Fragment() {
 
     override fun onResume() {
         super.onResume()
-        //functionality of RecyclerView Workout
+
         binding.rvWorkout.layoutManager = LinearLayoutManager(binding.root.context, RecyclerView.VERTICAL, false)
         binding.rvWorkout.adapter = exerciseAdapter
         //clear to get a new workout

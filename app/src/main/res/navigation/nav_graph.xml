@@ -20,6 +20,9 @@ action to that certain Fragment-->
         <action
             android:id="@+id/action_home_to_nutrition"
             app:destination="@id/nutritionFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_diaryFragment"
+            app:destination="@id/diaryFragment" />
 
     </fragment>
     <fragment
@@ -95,4 +98,9 @@ action to that certain Fragment-->
             app:argType="float"
             android:defaultValue="0.0" />
     </fragment>
+    <fragment
+        android:id="@+id/diaryFragment"
+        android:name="recyclerview.DiaryFragment"
+        android:label="fragment_diary"
+        tools:layout="@layout/fragment_diary" />
 </navigation>
