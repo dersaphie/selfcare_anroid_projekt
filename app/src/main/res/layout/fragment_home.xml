@@ -13,14 +13,14 @@
         android:layout_width="@dimen/size_0"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.33" />
+        app:layout_constraintGuide_percent="0.5" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/gl66PercentVert"
         android:layout_width="@dimen/size_0"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.66" />
+        app:layout_constraintGuide_percent="0.5" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/gl99PercentVert"
@@ -80,17 +80,6 @@
         android:background="@drawable/ic_tiger"/>
             <!--optional Bild 28 -->
 
-    <ImageView
-        android:id="@+id/cotnNutrition"
-        android:layout_width="@dimen/size_0"
-        android:layout_height="@dimen/size_0"
-        android:layout_margin="@dimen/size_4"
-        app:layout_constraintTop_toTopOf="@id/gl009PercentHor"
-        app:layout_constraintBottom_toBottomOf="@id/gl89PercentHor"
-        app:layout_constraintStart_toStartOf="@id/gl33PercentVert"
-        app:layout_constraintEnd_toEndOf="@id/gl66PercentVert"
-        android:contentDescription="@string/cotn_nutrition"
-        android:background="@drawable/ic_tiger"/>
 
     <ImageView
         android:id="@+id/cotnSport"
@@ -117,19 +106,6 @@
         app:layout_constraintEnd_toEndOf="@id/gl33PercentVert"
         app:layout_constraintStart_toStartOf="parent"
         android:contentDescription="@string/btn_profile"/>
-
-    <Button
-        android:id="@+id/btnNutrition"
-        android:layout_width="@dimen/size_0"
-        android:layout_height="@dimen/size_0"
-        android:layout_margin="@dimen/size_8"
-        android:text="@string/btn_nutrition"
-        app:layout_constraintTop_toTopOf="@id/gl65PercentHor"
-        app:layout_constraintBottom_toTopOf="@id/gl89PercentHor"
-        app:layout_constraintStart_toStartOf="@id/gl33PercentVert"
-        app:layout_constraintEnd_toEndOf="@id/gl66PercentVert"
-        style="?button"
-        android:contentDescription="@string/btn_nutrition"/>
 
     <Button
         android:id="@+id/btnSport"
