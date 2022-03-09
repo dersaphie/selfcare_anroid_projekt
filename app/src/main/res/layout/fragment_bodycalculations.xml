@@ -1,12 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
+<ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:paddingTop="@dimen/size_8"
-    tools:context=".BodyCalculationsFragment">
+    tools:context=".ProfileFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/gl50PercentVert"
@@ -79,7 +83,7 @@
         android:layout_marginEnd="34dp"
         android:layout_marginBottom="4dp"
         android:ems="10"
-        style="@style/ExerciseListText"
+        style="@style/NormalText"
         android:text="@string/disclaimer"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toTopOf="@id/gl009PercentHor"
@@ -111,8 +115,8 @@
         android:ems="10"
         android:text="@string/placeholderOneWord"
         style="@style/NormalText"
-        app:layout_constraintTop_toTopOf="@+id/tv_your_bmi"
-        app:layout_constraintBottom_toBottomOf="@+id/tv_your_bmi_category"
+        app:layout_constraintTop_toBottomOf="@+id/tv_your_bmi"
+        app:layout_constraintBottom_toTopOf="@+id/tv_your_bmi_category"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
 
@@ -126,7 +130,7 @@
         android:ems="10"
         style="@style/NormalText"
         android:text="@string/yourBmiCategory"
-        app:layout_constraintTop_toTopOf="@+id/tv_your_bmi_value"
+        app:layout_constraintTop_toBottomOf="@+id/tv_your_bmi_value"
         app:layout_constraintBottom_toTopOf="@id/tv_your_bmi_category_value"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
@@ -139,10 +143,10 @@
         android:layout_marginEnd="34dp"
         android:layout_marginBottom="4dp"
         android:ems="10"
-        style="@style/ExerciseListText"
+        style="@style/NormalText"
         android:text="@string/placeholderOneWord"
-        app:layout_constraintTop_toTopOf="@+id/tv_your_bmi_category"
-        app:layout_constraintBottom_toBottomOf="@+id/tv_your_daily_energy_need"
+        app:layout_constraintTop_toBottomOf="@+id/tv_your_bmi_category"
+        app:layout_constraintBottom_toTopOf="@+id/tv_your_daily_energy_need"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
 
@@ -156,7 +160,7 @@
         android:ems="10"
         style="@style/NormalText"
         android:text="@string/yourDailyEnergyNeed"
-        app:layout_constraintTop_toTopOf="@+id/tv_your_bmi_category_value"
+        app:layout_constraintTop_toBottomOf="@+id/tv_your_bmi_category_value"
         app:layout_constraintBottom_toTopOf="@id/tv_your_daily_energy_need_value"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
@@ -171,9 +175,9 @@
         android:ems="10"
         style="@style/NormalText"
         android:text="@string/placeholderOneWord"
-        app:layout_constraintTop_toTopOf="@+id/tv_your_daily_energy_need"
+        app:layout_constraintTop_toBottomOf="@+id/tv_your_daily_energy_need"
         app:layout_constraintBottom_toBottomOf="@+id/glBottomHor"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
