@@ -14,7 +14,7 @@ class ProfileFragment : Fragment() {
     var age = 0.0f
     var weight = 0.0f
     var height = 0.0f
-    var sex = "noSex"
+    var sex = "none"
     var sleepHoursADay = 0.0f
     var workPalValue = 0.0f
     var workHoursADay = 0.0f
@@ -32,7 +32,11 @@ class ProfileFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        //checkIfTableAndUserExistInDB()
+        // create DHHelper object
+        Utility.helper = DBHelper(context as Activity)
+        // get write access for db
+        Utility.db = Utility.helper.writableDatabase
+        checkIfTableAndUserExistInDB()
     }
 
     override fun onCreateView(
@@ -56,8 +60,8 @@ class ProfileFragment : Fragment() {
         // save user data into db
         view.findViewById<Button>(R.id.btn_save_user_data_and_show_body_calculations)?.setOnClickListener {
             calculatBodyMetrics()
-            //updateUserDataInDB()
-            navigateToBodyCalculationsFragment()
+            updateUserDataInDB()
+            //navigateToBodyCalculationsFragment()
         }
 
         view.findViewById<Button>(R.id.btn_show_body_calculations)?.setOnClickListener {
@@ -159,16 +163,12 @@ class ProfileFragment : Fragment() {
     }
 
     private fun checkIfTableAndUserExistInDB(){
-        // create DHHelper object
-        Utility.helper = DBHelper(context as Activity)
-        // get write access for db
-        Utility.db = Utility.helper.writableDatabase
         // check if table USER exists
         var rd = Utility.db.rawQuery("SELECT name FROM sqlite_master WHERE type='table' AND name='USER'", null)
         if(rd.count == 0){
             // table USER does not exist, create table and standard user
             rd = Utility.db.rawQuery("CREATE TABLE USER(USERID INTEGER PRIMARY KEY, NAME TEXT, AGE FLOAT, WEIGHT FLOAT, HEIGHT FLOAT, SEX FLOAT, SLEEP_HOURS_A_DAY FLOAT, WORK_HOURS_A_DAY FLOAT, WORK_PAL_VALUE FLOAT, SPORT_HOURS FLOAT_A_DAY, SPORT_PAL_VALUE FLOAT, BMI FLOAT, DAILY_ENERGY_NEED_KCAL FLOAT)", null)
-            rd = Utility.db.rawQuery("INSERT INTO USER(USERID,NAME,AGE,WEIGHT,HEIGHT,SEX,SLEEP_HOURS_A_DAY,WORK_HOURS_A_DAY,WORK_PAL_VALUE,SPORT_HOURS,SPORT_PAL_VALUE,BMI,DAILY_ENERGY_NEED_KCAL) VALUES(0,'user',0,0,0,'Pick your sex',0,0,0,0,0,0,0)", null)
+            rd = Utility.db.rawQuery("INSERT INTO USER(USERID,NAME,AGE,WEIGHT,HEIGHT,SEX,SLEEP_HOURS_A_DAY,WORK_HOURS_A_DAY,WORK_PAL_VALUE,SPORT_HOURS,SPORT_PAL_VALUE,BMI,DAILY_ENERGY_NEED_KCAL) VALUES(0,'user',0,0,0,'none',0,0,0,0,0,0,0)", null)
         }else{
             // table USER does exist, check if standard user exists
             rd = Utility.db.rawQuery("SELECT EXISTS(SELECT 1 FROM USER WHERE USERID=0 LIMIT 1)", null)
@@ -180,20 +180,12 @@ class ProfileFragment : Fragment() {
         rd.close()
     }
     private fun updateUserDataInDB(){
-        // create DHHelper object
-        Utility.helper = DBHelper(context as Activity)
-        // get write access for db
-        Utility.db = Utility.helper.writableDatabase
-        //cursor
+        // update user data in db
         val rd = Utility.db.rawQuery("UPDATE USER SET NAME = name,AGE = age,WEIGHT = weight,HEIGHT = height,SEX = sex,SLEEP_HOURS_A_DAY = sleepHoursADay,WORK_HOURS_A_DAY = workHoursADay,WORK_PAL_VALUE = workPalValue,SPORT_HOURS = sportHoursADay,SPORT_PAL_VALUE = sportPalValue,BMI = bmi,DAILY_ENERGY_NEED_KCAL = dailyEnergyNeedKcal WHERE USERID = 0", null)
         rd.close()
     }
 
     private fun readUserDataFromDbAndUpdateProfileViews(){
-        // create DHHelper object
-        Utility.helper = DBHelper(context as Activity)
-        // get read access for db
-        Utility.db = Utility.helper.readableDatabase
         // read user data from db
         val rd = Utility.db.rawQuery("SELECT USERID,NAME,AGE,WEIGHT,HEIGHT,SEX,SLEEP_HOURS_A_DAY,WORK_HOURS_A_DAY,WORK_PAL_VALUE,SPORT_HOURS,SPORT_PAL_VALUE,BMI,DAILY_ENERGY_NEED_KCAL FROM USER WHERE USERID = 0", null)
         // update profile views
