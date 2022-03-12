@@ -1,8 +1,12 @@
 package com.example.myroutine
 
-/*denk auch an den User im DBHelper*/
-data class User(val name: String, val bday: String) {
-    companion object {
-        var currentUser: User? = null
-    }
+import androidx.room.ColumnInfo
+import androidx.room.Entity
+import androidx.room.PrimaryKey
+
+@Entity
+data class User(@PrimaryKey @ColumnInfo(name = "userid") val userid: Int, @ColumnInfo(name = "name") val name: String?) {
+    //companion object {
+    //    var currentUser: User? = null
+    //}
 }
