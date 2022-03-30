@@ -57,6 +57,17 @@
     <string name="descEtExerciseGif">Inserted Api value for Gif</string>
     <string name="descEtExerciseEquipment">Inserted Api value for Exercise Equipment</string>
 
+    <!-- Diary -->
+
+    <!-- SportDefinition -->
+    <string name="sportKnowledge">Thing you should know.</string>
+    <string name="textSportKnowlede">Even though this app uses the common method of BMI calculation, we would like to point out that this method is no longer up to date. It is more important for us to consider whether you are already experienced or not. In general, if you want to reduce weight, cardio units are important. For muscle building you can use both strength training and bodyweight.  </string>
+    <string name="lowSport"> lt/eq Light Sport</string>
+    <string name="mediumSport"> lt/eq Physical Demanding</string>
+    <string name="hardSport"> lt/eq Competitive Sport</string>
+    <string name="lowSportRepetition"> At your sport stage, the most important thing is to start slowly. Your body needs to build up muscles and should slowly get used to the load. Optimal are 2-3 sport units a week. If you want to put an extra focus on weight loss, one of these sessions should be a cardio session and each of your workouts should start with at least 10 minutes of cardio. You repeat the exercises between 8-10 times, as often as you can. You will do three sets with 30 seconds rest each. Before jumping to the next class, make sure you can maintain the workload.</string>
+    <string name="mediumSportRepetition"> You are already experienced in sports and your muscles already have a memory. Of course, if you want to reduce weight, do more cardio, and if you want muscles, do strength training. Otherwise, the focus of your training is on precision in the execution of exercises. You should try to do 15 repetitions in one set and repeat each set 3 times. If you notice that your body is not used to capacity, increase the number of repetitions and only then increase the weight.</string>
+    <string name="hardSportRepetition"> You are a sports professional and probably use this training only to strengthen your performance in other areas. Therefore you should start with 15-25 repetitions of 3 sets and see where you settle. Since you know best what kind of training is suitable for you, we just want to remind you to take regular breaks. </string>
 
     <!--Fragment Calling API -> fragment_rvsport*-->
     <string name="workoutHeadline">YOUR WORKOUT.</string>

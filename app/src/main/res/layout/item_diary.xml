@@ -38,18 +38,19 @@
 
     <EditText
         android:id="@+id/resume"
-        android:layout_width="wrap_content"
+        android:layout_width="@dimen/size_0"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:ellipsize="end"
         android:gravity="center"
-        android:maxLines="1"
+
         android:textSize="15sp"
         android:textStyle="bold"
         android:textColor="@color/purple_200"
         android:singleLine="false"
         app:layout_constraintTop_toBottomOf="@id/headline"
         app:layout_constraintStart_toStartOf="@id/gl20percentvert"
+        app:layout_constraintEnd_toStartOf="@id/date"
         app:layout_constraintWidth_percent="0.6"
         android:hint="Resume of the day"/>
 
@@ -63,12 +64,6 @@
         app:layout_constraintEnd_toEndOf="@id/gl80percentvert"
         android:hint="Date" />
 
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintStart_toEndOf="@id/resume"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"/>
 
     <Space
         android:id="@+id/space"
