@@ -1,4 +1,6 @@
 package com.example.myroutine
 
-class DiaryFragment {
+import androidx.fragment.app.Fragment
+
+class DiaryFragment: Fragment(){
 }
