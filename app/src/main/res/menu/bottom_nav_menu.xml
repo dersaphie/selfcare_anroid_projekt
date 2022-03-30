@@ -12,6 +12,10 @@ Definition which Fragment are called by Bottom Navigation
         android:id="@+id/sportFragment"
         android:icon="@drawable/ic_baseline_directions_run_24"
         android:title="@string/sport" />
+    <item
+        android:id="@+id/diaryFragment"
+        android:icon="@drawable/ic_baseline_directions_run_24"
+        android:title="@string/diary" />
    <item
         android:id="@+id/profileFragment"
         android:icon="@drawable/ic_baseline_self_improvement_24"
