@@ -6,6 +6,7 @@
         <item name="textSubheader">@style/text_subheader_wh</item>
         <item name="textLarge">@style/text_large_wh</item>
         <item name="textRegular">@style/text_regular_wh</item>
+        <item name="textColored">@style/text_colored</item>
         <item name="button">@style/button_wh</item>
         <item name="spinner">@style/spinner_wh</item>
         <item name="actionBarStyle">@style/action_bar_wh</item>
@@ -18,6 +19,7 @@
         <item name="textSubheader">@style/text_subheader_wh</item>
         <item name="textLarge">@style/text_large_wh</item>
         <item name="textRegular">@style/text_regular_wh</item>
+        <item name="textColored">@style/text_colored</item>
         <item name="button">@style/button_rose</item>
         <item name="spinner">@style/spinner_wh</item>
         <item name="actionBarStyle">@style/actionbar_rose</item>
@@ -30,6 +32,7 @@
         <item name="textSubheader">@style/text_subheader_wh</item>
         <item name="textLarge">@style/text_large_wh</item>
         <item name="textRegular">@style/text_regular_wh</item>
+        <item name="textColored">@style/text_colored</item>
         <item name="button">@style/button_yellow</item>
         <item name="spinner">@style/spinner_wh</item>
         <item name="actionBarStyle">@style/actionbar_yellow</item>
@@ -42,6 +45,7 @@
         <item name="textSubheader">@style/text_subheader_wh</item>
         <item name="textLarge">@style/text_large_wh</item>
         <item name="textRegular">@style/text_regular_wh</item>
+        <item name="textColored">@style/text_colored</item>
         <item name="button">@style/button_green</item>
         <item name="spinner">@style/spinner_wh</item>
         <item name="actionBarStyle">@style/actionbar_green</item>

@@ -7,9 +7,15 @@
         <item name="android:textColor">#FFF</item>
     </style>
 
-    <!-- Style for every spinner -->
+    <!-- Style for general things -->
     <style name="spinner_wh">
         <item name="android:background">@drawable/spinner_wh_background</item>
+    </style>
+
+    <style name="text_colored">
+        <item name="android:textColor">@color/purple_200</item>
+        <item name="android:textSize">@dimen/text_20</item>
+        <item name="android:textStyle">bold</item>
     </style>
 
     <!-- =============================================================== -->

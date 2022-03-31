@@ -27,6 +27,7 @@
 
     <!--Text size-->
     <dimen name="text_14">14sp</dimen>
+    <dimen name="text_20">20sp</dimen>
 
     <!--int-->
     <dimen name="int_1">1</dimen>
