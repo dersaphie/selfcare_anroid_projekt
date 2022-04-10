@@ -5,37 +5,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/tv_background_knowledge"
-        android:layout_width="@dimen/size_0"
-        android:layout_height="wrap_content"
-        android:text="@string/textSportKnowledge"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintVertical_bias="0.1"
-        app:layout_constraintStart_toStartOf="@id/gl10percentvert"
-        app:layout_constraintEnd_toEndOf="@id/gl90percentvert"
-        tools:text="@string/textSportKnowledge"/>
-
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/tv_recomandation"
-        android:layout_width="@dimen/size_0"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/gl45percenthor"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="@id/gl10percentvert"
-        app:layout_constraintEnd_toEndOf="@id/gl90percentvert" />
-
     <Button
         android:id="@+id/btn_see_info"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/sportKnowledge"
+        android:text="@string/btn_generalSportKnowledge"
         style="?button"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/gl30percenthor"
+        app:layout_constraintTop_toBottomOf="@id/gl1percenthor"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintEnd_toStartOf="@id/btn_lowSport"/>
 
     <Button
         android:id="@+id/btn_lowSport"
@@ -43,9 +21,8 @@
         android:layout_height="wrap_content"
         android:text="@string/lowSport"
         style="?button"
-        app:layout_constraintTop_toBottomOf="@id/gl30percenthor"
-        app:layout_constraintBottom_toTopOf="@id/gl45percenthor"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/gl1percenthor"
+        app:layout_constraintStart_toEndOf="@id/btn_see_info"
         app:layout_constraintEnd_toStartOf="@id/btn_mediumSport"/>
 
     <Button
@@ -54,10 +31,9 @@
         android:layout_height="wrap_content"
         android:text="@string/mediumSport"
         style="?button"
-        app:layout_constraintTop_toBottomOf="@id/gl30percenthor"
-        app:layout_constraintBottom_toTopOf="@id/gl45percenthor"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/gl1percenthor"
+        app:layout_constraintStart_toEndOf="@id/btn_lowSport"
+        app:layout_constraintEnd_toStartOf="@id/btn_hardSport" />
 
     <Button
         android:id="@+id/btn_hardSport"
@@ -65,10 +41,18 @@
         android:layout_height="wrap_content"
         android:text="@string/hardSport"
         style="?button"
-        app:layout_constraintTop_toBottomOf="@id/gl30percenthor"
-        app:layout_constraintBottom_toTopOf="@id/gl45percenthor"
+        app:layout_constraintTop_toBottomOf="@id/gl1percenthor"
         app:layout_constraintStart_toEndOf="@id/btn_mediumSport"
         app:layout_constraintEnd_toEndOf="parent"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_recommendation"
+        android:layout_width="@dimen/size_0"
+        android:layout_height="wrap_content"
+        android:text="@string/textSportKnowledge"
+        app:layout_constraintTop_toBottomOf="@id/btn_hardSport"
+        app:layout_constraintStart_toStartOf="@id/gl10percentvert"
+        app:layout_constraintEnd_toEndOf="@id/gl90percentvert" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/gl10percentvert"
@@ -83,6 +67,13 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         app:layout_constraintGuide_percent="0.9" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gl1percenthor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.01" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/gl30percenthor"

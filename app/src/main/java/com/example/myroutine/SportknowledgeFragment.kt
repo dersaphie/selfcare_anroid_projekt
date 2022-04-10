@@ -18,7 +18,7 @@ class SportknowledgeFragment: Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         // Inflate the layout for this fragment
         _binding = FragmentSportknowledgeBinding.inflate(layoutInflater, container, false)
         return binding.root
@@ -27,18 +27,16 @@ class SportknowledgeFragment: Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.btnSeeInfo.setOnClickListener{
-            binding.btnSeeInfo.visibility = View.INVISIBLE
-          //  binding.tvBackgroundKnowledge.visibility = View.INVISIBLE
-            binding.tvBackgroundKnowledge?.setText(R.string.textSportKnowledge)
+            binding.tvRecommendation.setText(R.string.textSportKnowledge)
         }
         binding.btnLowSport.setOnClickListener {
-            binding.tvRecomandation?.setText(R.string.lowSportRepetition)
+            binding.tvRecommendation.setText(R.string.lowSportRepetition)
         }
         binding.btnMediumSport.setOnClickListener {
-            binding.tvRecomandation?.setText(R.string.mediumSportRepetition)
+            binding.tvRecommendation.setText(R.string.mediumSportRepetition)
         }
         binding.btnHardSport.setOnClickListener {
-            binding.tvRecomandation?.setText(R.string.hardSportRepetition)
+            binding.tvRecommendation.setText(R.string.hardSportRepetition)
         }
     }
 }

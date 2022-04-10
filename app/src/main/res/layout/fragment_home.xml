@@ -50,22 +50,6 @@
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.65" />
 
-    <!--User Picture-->
-    <!--
-    <ImageView
-        android:id="@+id/img_User"
-        android:layout_width="@dimen/size_131"
-        android:layout_height="@dimen/size_130"
-        android:background="@drawable/sh_circle"
-        android:src="@drawable/img_user_emoji"
-        app:layout_constraintBottom_toTopOf="@id/gl50PercentHor"
-        app:layout_constraintEnd_toEndOf="@id/gl66PercentVert"
-        app:layout_constraintStart_toStartOf="@id/gl33PercentVert"
-        app:layout_constraintTop_toTopOf="@id/gl005PercentHor"
-        android:contentDescription="@string/img_user"
-        app:layout_constraintVertical_bias="0" />
-        -->
-
     <!--Background Images for Buttons to Sections-->
     <ImageView
         android:id="@+id/cotnProfile"
@@ -78,8 +62,6 @@
         app:layout_constraintEnd_toEndOf="@id/gl33PercentVert"
         android:contentDescription="@string/cotn_profile"
         android:background="@drawable/ic_cranium_2028555"/>
-            <!--optional Bild 28 -->
-
 
     <ImageView
         android:id="@+id/cotnSport"

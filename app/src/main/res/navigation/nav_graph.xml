@@ -23,6 +23,9 @@ action to that certain Fragment-->
         <action
             android:id="@+id/action_homeFragment_to_diaryFragment2"
             app:destination="@id/diaryFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_sportknowledgeFragment2"
+            app:destination="@id/sportKnowledgeFragment2" />
 
     </fragment>
     <fragment
@@ -89,4 +92,8 @@ action to that certain Fragment-->
         android:id="@+id/diaryFragment"
         android:name="com.example.myroutine.DiaryFragment"
         android:label="DiaryFragment" />
+    <fragment
+        android:id="@+id/sportKnowledgeFragment2"
+        android:name="com.example.myroutine.SportknowledgeFragment"
+        android:label="SportknowledgeFragment" />
 </navigation>
