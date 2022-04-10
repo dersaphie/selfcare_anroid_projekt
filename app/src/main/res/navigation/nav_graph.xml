@@ -20,6 +20,9 @@ action to that certain Fragment-->
         <action
             android:id="@+id/action_homeFragment_to_profileFragment"
             app:destination="@id/profileFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_diaryFragment2"
+            app:destination="@id/diaryFragment" />
 
     </fragment>
     <fragment
@@ -82,4 +85,8 @@ action to that certain Fragment-->
             app:argType="string"
             android:defaultValue="0.0 kj / 0.0 kcal" />
     </fragment>
+    <fragment
+        android:id="@+id/diaryFragment"
+        android:name="com.example.myroutine.DiaryFragment"
+        android:label="DiaryFragment" />
 </navigation>
