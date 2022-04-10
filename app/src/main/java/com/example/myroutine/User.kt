@@ -70,7 +70,7 @@ class User(val context: Activity) {
 
     fun checkIfTableAndUserExistInDB(){
         // delete user for development
-        userDao.delete(userDao.selectAllById(0))
+        //userDao.delete(userDao.selectAllById(0))
         // create user in user table if it does not exist
         if (userDao.getAll().isEmpty()) {
             userDao.insertAll(UserInDb(id=id,name=name,age=age,weight=weight,height=height,sex=sex, sleep_hours = sleepHoursADay, sport_energy_need = sportPalValue, sport_hours = sportHoursADay, work_energy_need = workPalValue, work_hours = workHoursADay))
