@@ -155,6 +155,11 @@
     <string name="tachjen">tachjen</string>
     <string name="btnTestCalculation">Test Calculation</string>
     <string name="placeholderOneWord">Placeholder</string>
+    <string name="standardUserName">user</string>
+    <string name="none">none</string>
+    <string name="bmiColorPlaceholder">#000</string>
+    <string name="sexPlaceHolder">none</string>
+    <string name="dailyEnergyNeedKcalAndKjStringPlaceholder">0.0 kcal / 0.0 kj</string>
 
     <!-- Fragment Titles -->
     <string name="home">home</string>
@@ -168,12 +173,32 @@
     <string name="sun">sun</string>
     <string name="spacerBetweenTwoKjValues">" - "</string>
 
-    <!-- Strings for Themes on themechanger spinner-->
+    <!-- Strings for Themes on theme changer spinner -->
     <string-array name="theme_array">
         <item>BasicTheme</item>
         <item>RoseTheme</item>
         <item>SunnyTheme</item>
         <item>ForestTheme</item>
     </string-array>
+
+    <!-- error messages -->
+    <string name="errorMessageAgeMinimum">age must be minimum 0 years</string>
+    <string name="errorMessageWeightMinimum">weight must be minimum 0.0 kg</string>
+    <string name="errorMessageHeightMinimum">height must be minimum 0.0 cm</string>
+    <string name="errorMessageSleepHoursADayRange">sleep hours a day must be between 0.0 and 24.0 hours</string>
+    <string name="errorMessageWorkPalValueMinimum">work pal value must be minimum 0.0 pal</string>
+    <string name="errorMessageWorkHoursADayRange">work hours a day must be between 0.0 and 24.0 hours</string>
+    <string name="errorMessageSportPalValueMinimum">sport pal value must be minimum 0.0 pal</string>
+    <string name="errorMessageSportHoursADayRange">sport hours a day must be between 0.0 and 24.0 hours</string>
+    <string name="errorMessageBmiMinimum">bmi must be minimum 0.0</string>
+    <string name="errorMessageDailyEnergyNeedKcal">daily energy need in kcal must be minimum 0.0 kcal</string>
+    <string name="errorMessageDailyEnergyNeedKj">daily energy need in kj must be minimum 0.0 kj</string>
+    <string name="errorMessageUserNameEmpty">user name must not be empty</string>
+    <string name="errorMessageSleepSportWorkHoursCombinedOver24Hours"><![CDATA[sleep + sport + work > 24 hours]]></string>
+    <string name="sexMan">Man</string>
+    <string name="sexWoman">Woman</string>
+    <string name="errorMessageNoEnergyNeedFormulaForSex">\"no formula for kcal energy calculation for sex\"</string>
+    <string name="errorMessageSleepSportAndWorkHoursRange">values for daily sleep, sport and work hours must be within 0 and 24 hours</string>
+
 
 </resources>

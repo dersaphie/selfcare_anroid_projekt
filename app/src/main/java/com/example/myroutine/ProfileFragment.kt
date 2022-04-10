@@ -11,7 +11,7 @@ import androidx.navigation.NavOptions
 import androidx.navigation.fragment.findNavController
 
 class ProfileFragment : Fragment() {
-    private val calculations = BodyCalculations()
+    private lateinit var calculations: BodyCalculations
     private lateinit var sexSpinnerOptions: Array<String>
     private lateinit var workEnergyNeedSpinnerOptions: Array<String>
     private lateinit var sportEnergyNeedSpinnerOptions: Array<String>
@@ -20,9 +20,8 @@ class ProfileFragment : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         user = User(context as Activity)
-        // delete user for development
-        //userDao.delete(userDao.selectAllById(0))
         user.checkIfTableAndUserExistInDB()
+        calculations = BodyCalculations(context as Activity)
     }
 
     override fun onCreateView(
@@ -46,8 +45,8 @@ class ProfileFragment : Fragment() {
         // save user data into db
         view.findViewById<Button>(R.id.btn_save_user_data_and_show_body_calculations)?.setOnClickListener {
             getValuesFromViews()
-            calculateBodyMetrics()
             user.updateUserDataInDB()
+            calculateBodyMetrics()
             navigateToBodyCalculationsFragment()
         }
 
@@ -110,26 +109,46 @@ class ProfileFragment : Fragment() {
 
         if(nameView.isNotEmpty()){
             user.name = nameView
-        }
-        if(weightView.matches(regexFloat)){
-            user.weight = weightView.toFloat()
-        }
-        if(heightView.matches(regexFloat)){
-            user.height = heightView.toFloat()
+        }else{
+            throw IllegalArgumentException(this.getString(R.string.errorMessageUserNameEmpty))
         }
         if(ageView.matches(regexInt)){
             user.age = ageView.toInt()
+        }else{
+            throw IllegalArgumentException(this.getString(R.string.errorMessageAgeMinimum))
+        }
+        if(weightView.matches(regexFloat)){
+            user.weight = weightView.toFloat()
+        }else{
+            throw IllegalArgumentException(this.getString(R.string.errorMessageWeightMinimum))
+        }
+        if(heightView.matches(regexFloat)){
+            user.height = heightView.toFloat()
+        }else{
+            throw IllegalArgumentException(this.getString(R.string.errorMessageHeightMinimum))
         }
         if(sexView != getString(R.string.pickYourSex)){
             user.sex = sexView
         }
         if(sleepHoursADayView.matches(regexFloat)){
+            if(user.sleepHoursADay+user.workHoursADay+user.sportHoursADay>24)
+            {
+                throw IllegalArgumentException(this.getString(R.string.errorMessageSleepSportWorkHoursCombinedOver24Hours))
+            }
             user.sleepHoursADay = sleepHoursADayView.toFloat()
         }
         if(workHoursADayView.matches(regexFloat)){
+            if(user.sleepHoursADay+user.workHoursADay+user.sportHoursADay>24)
+            {
+                throw IllegalArgumentException(this.getString(R.string.errorMessageSleepSportWorkHoursCombinedOver24Hours))
+            }
             user.workHoursADay = workHoursADayView.toFloat()
         }
         if(sportHoursADayView.matches(regexFloat)){
+            if(user.sleepHoursADay+user.workHoursADay+user.sportHoursADay>24)
+            {
+                throw IllegalArgumentException(this.getString(R.string.errorMessageSleepSportWorkHoursCombinedOver24Hours))
+            }
             user.sportHoursADay = sportHoursADayView.toFloat()
         }
     }

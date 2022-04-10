@@ -2,7 +2,7 @@ package com.example.myroutine
 
 import android.app.Activity
 
-class BodyCalculations {
+class BodyCalculations(val context: Activity) {
     fun bmiCalculator(weight: Float, height: Float):Float{
         return "%.2f".format(weight / (height/100.0f * height/100.0f)).toFloat()
         // BMI tables https://www.foodspring.de/bmi#vorteil
@@ -46,24 +46,34 @@ class BodyCalculations {
         // Grundumsatz (GU): 4 kJ x Gewicht in kg x 24h
         // leichte Arbeit (2-4 kJ)
         val energyNeedPerDayInKcal: Float
-        val awakeWithoutSportAndWorkHours = 24.0f - sleepHoursADay - workHoursADay - sportHoursADay
         val sleepPalValue = 0.95f
         val awakeWithoutSportAndWorkPalValue = 1.6f
-        val combinedPalValue = ((sleepHoursADay * sleepPalValue) + (awakeWithoutSportAndWorkHours * awakeWithoutSportAndWorkPalValue) + (workHoursADay * workPalValue) + (sportHoursADay * sportPalValue)) / 24
-        val energyBaseNeedPerDayInKcal: Float = when (sex) {
-            "Man" -> {
-                // 66,47 + (13,7 × Körpergewicht in kg) + (5 × Körpergröße in cm) – (6,8 × Alter in Jahren) = Grundumsatz [kcal/24 h]
-                (66.47f + (13.7f * weight) + (5f * height) - (6.8f * age.toFloat()))
+            if(sleepHoursADay in 0f..24f && sportHoursADay in 0f..24f && workHoursADay in 0f..24f)
+        {
+            val awakeHoursWithoutSportAndWorkHours = 24.0f - sleepHoursADay - workHoursADay - sportHoursADay
+            if(awakeHoursWithoutSportAndWorkHours > 0)
+            {
+                val combinedPalValue = ((sleepHoursADay * sleepPalValue) + (awakeHoursWithoutSportAndWorkHours * awakeWithoutSportAndWorkPalValue) + (workHoursADay * workPalValue) + (sportHoursADay * sportPalValue)) / 24
+                val energyBaseNeedPerDayInKcal: Float = when (sex) {
+                    context.getString(R.string.sexMan) -> {
+                        // 66,47 + (13,7 × Körpergewicht in kg) + (5 × Körpergröße in cm) – (6,8 × Alter in Jahren) = Grundumsatz [kcal/24 h]
+                        (66.47f + (13.7f * weight) + (5f * height) - (6.8f * age.toFloat()))
+                    }
+                    context.getString(R.string.sexWoman) -> {
+                        // 655,1 + (9,6 × Körpergewicht in kg) + (1,8 × Körpergröße in cm) – (4,7 × Alter in Jahren) = Grundumsatz [kcal/24 h]
+                        (655.1f + (9.6f * weight) + (1.8f * height) - (4.7f * age.toFloat()))
+                    }
+                    else -> {
+                        throw IllegalArgumentException(context.getString(R.string.errorMessageNoEnergyNeedFormulaForSex)+": "+sex)
+                    }
+                }
+                energyNeedPerDayInKcal = "%.2f".format(energyBaseNeedPerDayInKcal * combinedPalValue).toFloat()
+            }else{
+                throw IllegalArgumentException(context.getString(R.string.errorMessageSleepSportWorkHoursCombinedOver24Hours))
             }
-            "Woman" -> {
-                // 655,1 + (9,6 × Körpergewicht in kg) + (1,8 × Körpergröße in cm) – (4,7 × Alter in Jahren) = Grundumsatz [kcal/24 h]
-                (655.1f + (9.6f * weight) + (1.8f * height) - (4.7f * age.toFloat()))
-            }
-            else -> {
-                0.0f
-            }
+        }else{
+            throw IllegalArgumentException(context.getString(R.string.errorMessageSleepSportAndWorkHoursRange))
         }
-        energyNeedPerDayInKcal = "%.2f".format(energyBaseNeedPerDayInKcal * combinedPalValue).toFloat()
         return energyNeedPerDayInKcal
     }
 
