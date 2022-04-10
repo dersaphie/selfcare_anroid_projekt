@@ -136,8 +136,9 @@
     <string name="yourDailyEnergyNeed">Your Daily Energy Need (not exact)</string>
     <string name="yourBmiCategory">Your BMI Category (not exact)</string>
     <string name="bmiOutOfRange">BMI out of Range</string>
-    <string name="spacerBetweenKcalValueAndKjValue">kcal /</string>
-    <string name="unitForKjValue">kj</string>
+    <string name="unitForKjValueWithLeadingSpace"> kj</string>
+    <string name="spacerBetweenKjValueAndKcalValue"> / </string>
+    <string name="unitForKcalValueWithLeadingSpace"> kcal</string>
 
     <!-- BMI -->
     <string name="valuesForBMIAreIncomplete">Values for BMI are incomplete </string>
@@ -164,6 +165,8 @@
     <string name="woman">Woman</string>
     <string name="man">Man</string>
     <string name="divers">Divers</string>
+    <string name="sun">sun</string>
+    <string name="spacerBetweenTwoKjValues">" - "</string>
 
     <!-- Strings for Themes on themechanger spinner-->
     <string-array name="theme_array">

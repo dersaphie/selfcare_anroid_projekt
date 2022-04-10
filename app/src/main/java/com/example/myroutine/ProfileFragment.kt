@@ -9,33 +9,40 @@ import android.widget.*
 import androidx.fragment.app.Fragment
 import androidx.navigation.NavOptions
 import androidx.navigation.fragment.findNavController
+
 class ProfileFragment : Fragment() {
-    var name = "user"
-    var age = 0.0f
-    var weight = 0.0f
-    var height = 0.0f
-    var sex = "none"
-    var sleepHoursADay = 0.0f
-    var workPalValue = 0.0f
-    var workHoursADay = 0.0f
-    var sportPalValue = 0.0f
-    var sportHoursADay = 0.0f
-    var bmi = 0.0f
-    var bmiColor = 0
-    var bmiCategory = "none"
-    var dailyenergyneedkcal = 0.0f
-    var dailyEnergyNeedKj = 0.0f
+    private var name = "user"
+    private var age = 0
+    private var weight = 0.0f
+    private var height = 0f
+    private var sex = "none"
+    private var sleepHoursADay = 0.0f
+    private var workPalValue = 0.0f
+    private var workHoursADay = 0.0f
+    private var sportPalValue = 0.0f
+    private var sportHoursADay = 0.0f
+    private var bmi = 0.0f
+    private var bmiColor = 0
+    private var bmiCategory = "none"
+    private var dailyEnergyNeedKcal = 0.0f
+    private var dailyEnergyNeedKj = 0.0f
+    private var dailyEnergyKcalAndKjString = "0.0 kcal / 0.0 kj"
     private val calculations = BodyCalculations()
     private lateinit var sexSpinnerOptions: Array<String>
     private lateinit var workEnergyNeedSpinnerOptions: Array<String>
     private lateinit var sportEnergyNeedSpinnerOptions: Array<String>
+    private lateinit var db: UserRoomDatabase
+    private lateinit var userDao: UserDao
+    private lateinit var user: User
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        // create DHHelper object
-        Utility.helper = DBHelper(context as Activity)
-        // get write access for db
-        Utility.db = Utility.helper.writableDatabase
+        db = UserRoomDatabase.getDatabase(context as Activity)
+        //db = userApplication.database
+        userDao = db.userDao()
+        user = User()
+        // delete user for development
+        //userDao.delete(userDao.selectAllById(0))
         checkIfTableAndUserExistInDB()
     }
 
@@ -50,22 +57,22 @@ class ProfileFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         sexSpinnerOptions = arrayOf(getString(R.string.pickYourSex),getString(R.string.woman),getString(R.string.man),getString(R.string.divers))
-        workEnergyNeedSpinnerOptions = arrayOf(getString(R.string.palSleep), getString(R.string.palJustSittingOrLayingActivity), getString(R.string.palMostlySittingOrLayingActivity), getString(R.string.palSomeWalkingActivity), getString(R.string.palMostlyWalkingOrStandingActivity), getString(R.string.palPhysicalDemandingActivity), getString(R.string.palPhysicalVeryDemandingActivity))
-        sportEnergyNeedSpinnerOptions = arrayOf(getString(R.string.palVeryLightSport), getString(R.string.palLightSport), getString(R.string.palModerateSport), getString(R.string.palPhysicalDemandingSport), getString(R.string.palVeryLightSport), getString(R.string.palCompetitiveSport))
+        workEnergyNeedSpinnerOptions = arrayOf(getString(R.string.pickYourWorkEnergyNeed), getString(R.string.palSleep), getString(R.string.palJustSittingOrLayingActivity), getString(R.string.palMostlySittingOrLayingActivity), getString(R.string.palSomeWalkingActivity), getString(R.string.palMostlyWalkingOrStandingActivity), getString(R.string.palPhysicalDemandingActivity), getString(R.string.palPhysicalVeryDemandingActivity))
+        sportEnergyNeedSpinnerOptions = arrayOf(getString(R.string.pickYourSportEnergyNeed), getString(R.string.palVeryLightSport), getString(R.string.palLightSport), getString(R.string.palModerateSport), getString(R.string.palPhysicalDemandingSport), getString(R.string.palVeryLightSport), getString(R.string.palCompetitiveSport))
         createSpinnerFunction(spinnerViewId = R.id.sp_your_sex, spinnerOptions = sexSpinnerOptions)
         createSpinnerFunction(spinnerViewId = R.id.sp_work_pal_value, spinnerOptions = workEnergyNeedSpinnerOptions)
         createSpinnerFunction(spinnerViewId = R.id.sp_sport_pal_value, spinnerOptions = sportEnergyNeedSpinnerOptions)
-        //readUserDataFromDbAndUpdateProfileViews()
+        readUserDataFromDbAndUpdateProfileViews()
 
         // save user data into db
         view.findViewById<Button>(R.id.btn_save_user_data_and_show_body_calculations)?.setOnClickListener {
-            calculatBodyMetrics()
+            calculateBodyMetrics()
             updateUserDataInDB()
-            //navigateToBodyCalculationsFragment()
+            navigateToBodyCalculationsFragment()
         }
 
         view.findViewById<Button>(R.id.btn_show_body_calculations)?.setOnClickListener {
-            calculatBodyMetrics()
+            calculateBodyMetrics()
             navigateToBodyCalculationsFragment()
         }
     }
@@ -73,34 +80,44 @@ class ProfileFragment : Fragment() {
     private fun navigateToBodyCalculationsFragment() {
         val action = bmiCategory.let {
             ProfileFragmentDirections.actionProfileFragmentToBodyCalculationsFragment(bmi, bmiColor,
-                it, dailyenergyneedkcal, dailyEnergyNeedKj)
+                it, dailyEnergyKcalAndKjString)
         }
         val navOptions: NavOptions = NavOptions.Builder()
             .setPopUpTo(R.id.profileFragment, inclusive = false, saveState = true)
             .build()
-        if (action != null) {
-            findNavController().navigate(action, navOptions)
-        }
+        findNavController().navigate(action, navOptions)
     }
 
-    private fun calculatBodyMetrics(){
+    private fun calculateBodyMetrics(){
         getValuesFromViews()
-        if (weight != 0.0f && height != 0.0f){
+        if (weight > 0.0f && height > 0.0f){
                 bmi = calculations.bmiCalculator(weight = weight.toString().toFloat(), height = height.toString().toFloat())
                 bmiColor = calculations.bmiColor(bmi = bmi, context = context as Activity)
                 bmiCategory = calculations.bmiCategory(bmi = bmi, context = context as Activity)
 
-            if (age != 0.0f && (sex == getString(R.string.man) || sex == getString(R.string.woman)) && sleepHoursADay != 0.0f && workHoursADay != 0.0f && sportHoursADay != 0.0f){
-                dailyenergyneedkcal = calculations.energyNeedCalculatorKcal(weight = weight, height = height, sex = sex, age = age, sleepHoursADay = sleepHoursADay, workPalValue = workPalValue, workHoursADay = workHoursADay, sportPalValue = sportPalValue, sportHoursADay = sportHoursADay)
-                dailyEnergyNeedKj = calculations.kcalToKjConverter(dailyenergyneedkcal)
+            if (age > 0) {
+                if (sex == getString(R.string.man) || sex == getString(R.string.woman) && sleepHoursADay >= 0.0f && workHoursADay >= 0.0f && sportHoursADay >= 0.0f && workPalValue != 0.0f && sportPalValue != 0.0f){
+                    dailyEnergyNeedKcal = calculations.energyNeedCalculatorKcal(weight = weight, height = height, sex = sex, age = age, sleepHoursADay = sleepHoursADay, workPalValue = workPalValue, workHoursADay = workHoursADay, sportPalValue = sportPalValue, sportHoursADay = sportHoursADay)
+                    dailyEnergyNeedKj = calculations.kcalToKjConverter(dailyEnergyNeedKcal)
+                    dailyEnergyKcalAndKjString = dailyEnergyNeedKj.toString() + context?.getString(R.string.unitForKjValueWithLeadingSpace) + context?.getString(R.string.spacerBetweenKjValueAndKcalValue) + dailyEnergyNeedKcal.toString() + context?.getString(R.string.unitForKcalValueWithLeadingSpace)
+                }
+                if (sex == getString(R.string.divers)){
+                    // range of dailyEnergyNeedKj for woman to dailyEnergyNeedKj for man
+                    dailyEnergyNeedKcal = calculations.energyNeedCalculatorKcal(weight = weight, height = height, sex = "Woman", age = age, sleepHoursADay = sleepHoursADay, workPalValue = workPalValue, workHoursADay = workHoursADay, sportPalValue = sportPalValue, sportHoursADay = sportHoursADay)
+                    dailyEnergyNeedKj = calculations.kcalToKjConverter(dailyEnergyNeedKcal)
+                    dailyEnergyKcalAndKjString = dailyEnergyNeedKj.toString() + context?.getString(R.string.unitForKjValueWithLeadingSpace) + context?.getString(R.string.spacerBetweenKjValueAndKcalValue) + dailyEnergyNeedKcal.toString() + context?.getString(R.string.unitForKcalValueWithLeadingSpace)
+                    dailyEnergyNeedKcal = calculations.energyNeedCalculatorKcal(weight = weight, height = height, sex = "Man", age = age, sleepHoursADay = sleepHoursADay, workPalValue = workPalValue, workHoursADay = workHoursADay, sportPalValue = sportPalValue, sportHoursADay = sportHoursADay)
+                    dailyEnergyNeedKj = calculations.kcalToKjConverter(dailyEnergyNeedKcal)
+                    dailyEnergyKcalAndKjString += context?.getString(R.string.spacerBetweenTwoKjValues) + "\n" + dailyEnergyNeedKj.toString() + context?.getString(R.string.unitForKjValueWithLeadingSpace) + context?.getString(R.string.spacerBetweenKjValueAndKcalValue) + dailyEnergyNeedKcal.toString() + context?.getString(R.string.unitForKcalValueWithLeadingSpace)
+                }
             }
         }
-
     }
 
     private fun getValuesFromViews(){
         val calculations = BodyCalculations()
         val regexFloat = "\\d+(\\.\\d+)?".toRegex()
+        val regexInt = "\\d+?".toRegex()
         val nameView = view?.findViewById<EditText>(R.id.et_your_name)?.text.toString()
         val weightView = view?.findViewById<EditText>(R.id.et_your_weight)?.text.toString()
         val heightView = view?.findViewById<EditText>(R.id.et_your_height)?.text.toString()
@@ -109,7 +126,7 @@ class ProfileFragment : Fragment() {
         val sleepHoursADayView = view?.findViewById<EditText>(R.id.et_your_sleep_hours)?.text.toString()
         workPalValue = calculations.palCategoryToPalValueWork(palCategory = view?.findViewById<Spinner>(R.id.sp_work_pal_value)?.selectedItem.toString(),context = context as Activity)
         val workHoursADayView = view?.findViewById<EditText>(R.id.et_your_work_hours)?.text.toString()
-        sportPalValue = calculations.palCategoryToPalValueWork(palCategory = view?.findViewById<Spinner>(R.id.sp_sport_pal_value)?.selectedItem.toString(), context = context as Activity)
+        sportPalValue = calculations.palCategoryToPalValueSport(palCategory = view?.findViewById<Spinner>(R.id.sp_sport_pal_value)?.selectedItem.toString(), context = context as Activity)
         val sportHoursADayView = view?.findViewById<EditText>(R.id.et_your_sport_hours)?.text.toString()
 
         if(nameView.isNotEmpty()){
@@ -121,8 +138,8 @@ class ProfileFragment : Fragment() {
         if(heightView.matches(regexFloat)){
             height = heightView.toFloat()
         }
-        if(ageView.matches(regexFloat)){
-            age = ageView.toFloat()
+        if(ageView.matches(regexInt)){
+            age = ageView.toInt()
         }
         if(sexView != getString(R.string.pickYourSex)){
             sex = sexView
@@ -163,45 +180,34 @@ class ProfileFragment : Fragment() {
     }
 
     private fun checkIfTableAndUserExistInDB(){
-        // check if table USER exists
-        var rd = Utility.db.rawQuery("SELECT name FROM sqlite_master WHERE type='table' AND name='USER'", null)
-        if(rd.count == 0){
-            // table USER does not exist, create table and standard user
-            rd = Utility.db.rawQuery("CREATE TABLE USER(USERID INTEGER PRIMARY KEY, NAME TEXT, AGE FLOAT, WEIGHT FLOAT, HEIGHT FLOAT, SEX FLOAT, SLEEP_HOURS_A_DAY FLOAT, WORK_HOURS_A_DAY FLOAT, WORK_PAL_VALUE FLOAT, SPORT_HOURS FLOAT_A_DAY, SPORT_PAL_VALUE FLOAT, BMI FLOAT, DAILY_ENERGY_NEED_KCAL FLOAT)", null)
-            rd = Utility.db.rawQuery("INSERT INTO USER(USERID,NAME,AGE,WEIGHT,HEIGHT,SEX,SLEEP_HOURS_A_DAY,WORK_HOURS_A_DAY,WORK_PAL_VALUE,SPORT_HOURS,SPORT_PAL_VALUE,BMI,DAILY_ENERGY_NEED_KCAL) VALUES(0,'user',0,0,0,'none',0,0,0,0,0,0,0)", null)
-        }else{
-            // table USER does exist, check if standard user exists
-            rd = Utility.db.rawQuery("SELECT EXISTS(SELECT 1 FROM USER WHERE USERID=0 LIMIT 1)", null)
-            if(rd.count == 0){
-                // standard user does not exist, create standard user
-                rd = Utility.db.rawQuery("INSERT INTO USER(USERID,NAME,AGE,WEIGHT,HEIGHT,SEX,SLEEP_HOURS_A_DAY,WORK_HOURS_A_DAY,WORK_PAL_VALUE,SPORT_HOURS,SPORT_PAL_VALUE,BMI,DAILY_ENERGY_NEED_KCAL) VALUES(0,'user',0,0,0,'Pick your sex',0,0,0,0,0,0,0)", null)
-            }
+        // create user in user table if it does not exist
+        if (userDao.getAll().isEmpty()) {
+            val user = User(0, name, age, weight, height, getString(R.string.pickYourSex), sleepHoursADay, sportPalValue,sportHoursADay,workPalValue,workHoursADay)
+            userDao.insertAll(user)
         }
-        rd.close()
     }
     private fun updateUserDataInDB(){
         // update user data in db
-        val rd = Utility.db.rawQuery("UPDATE USER SET NAME = name,AGE = age,WEIGHT = weight,HEIGHT = height,SEX = sex,SLEEP_HOURS_A_DAY = sleepHoursADay,WORK_HOURS_A_DAY = workHoursADay,WORK_PAL_VALUE = workPalValue,SPORT_HOURS = sportHoursADay,SPORT_PAL_VALUE = sportPalValue,BMI = bmi,DAILY_ENERGY_NEED_KCAL = dailyEnergyNeedKcal WHERE USERID = 0", null)
-        rd.close()
+        val user = User(0,name,age,weight,height,sex,sleepHoursADay,sportPalValue,sportHoursADay,workPalValue,workHoursADay)
+        userDao.updateUsers(user)
     }
 
     private fun readUserDataFromDbAndUpdateProfileViews(){
         // read user data from db
-        val rd = Utility.db.rawQuery("SELECT USERID,NAME,AGE,WEIGHT,HEIGHT,SEX,SLEEP_HOURS_A_DAY,WORK_HOURS_A_DAY,WORK_PAL_VALUE,SPORT_HOURS,SPORT_PAL_VALUE,BMI,DAILY_ENERGY_NEED_KCAL FROM USER WHERE USERID = 0", null)
+        val user = userDao.selectAllById(0)
         // update profile views
-        view?.findViewById<EditText>(R.id.et_your_name)?.setText(rd.getString(1))
-        view?.findViewById<EditText>(R.id.et_your_age)?.setText(rd.getString(2))
-        view?.findViewById<EditText>(R.id.et_your_weight)?.setText(rd.getString(3))
-        view?.findViewById<EditText>(R.id.et_your_height)?.setText(rd.getString(4))
-        val sexValueIndex = sexSpinnerOptions.indexOf(rd.getString(5))
+        view?.findViewById<EditText>(R.id.et_your_name)?.setText(user.name)
+        view?.findViewById<EditText>(R.id.et_your_age)?.setText(user.age.toString())
+        view?.findViewById<EditText>(R.id.et_your_weight)?.setText(user.weight.toString())
+        view?.findViewById<EditText>(R.id.et_your_height)?.setText(user.height.toString())
+        val sexValueIndex = sexSpinnerOptions.indexOf(user.sex)
         view?.findViewById<Spinner>(R.id.sp_your_sex)?.setSelection(sexValueIndex)
-        view?.findViewById<EditText>(R.id.et_your_sleep_hours)?.setText(rd.getString(6))
-        val workPalValueIndex = workEnergyNeedSpinnerOptions.indexOf(rd.getString(7))
-        val workPalValue = view?.findViewById<Spinner>(R.id.sp_work_pal_value)?.setSelection(workPalValueIndex)
-        view?.findViewById<EditText>(R.id.et_your_work_hours)?.setText(rd.getString(8))
-        val sportPalValueIndex = sportEnergyNeedSpinnerOptions.indexOf(rd.getString(9))
-        val sportPalValue = view?.findViewById<Spinner>(R.id.sp_sport_pal_value)?.setSelection(sportPalValueIndex)
-        view?.findViewById<EditText>(R.id.et_your_sport_hours)?.setText(rd.getString(10))
-        rd.close()
+        view?.findViewById<EditText>(R.id.et_your_sleep_hours)?.setText(user.sleep_hours.toString())
+        val workPalValueIndex = workEnergyNeedSpinnerOptions.indexOf(calculations.palValueToPalCategoryWork(user.work_energy_need, context as Activity))
+        view?.findViewById<Spinner>(R.id.sp_work_pal_value)?.setSelection(workPalValueIndex)
+        view?.findViewById<EditText>(R.id.et_your_work_hours)?.setText(user.work_hours.toString())
+        val sportPalValueIndex = sportEnergyNeedSpinnerOptions.indexOf(calculations.palValueToPalCategorySport(user.sport_energy_need, context as Activity))
+        view?.findViewById<Spinner>(R.id.sp_sport_pal_value)?.setSelection(sportPalValueIndex)
+        view?.findViewById<EditText>(R.id.et_your_sport_hours)?.setText(user.sport_hours.toString())
     }
 }

@@ -64,5 +64,6 @@
     <color name="colorObesityGradeOne">#fb0</color>
     <color name="colorObesityGradeTwo">#f60</color>
     <color name="colorObesityGradeThree">#f00</color>
+    <color name="sun">#f9f65B</color>
 
 </resources>

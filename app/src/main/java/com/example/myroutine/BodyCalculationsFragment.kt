@@ -24,9 +24,7 @@ class BodyCalculationsFragment : Fragment() {
         val bmi = safeArgs.bmi
         val bmiColor = safeArgs.bmiColor
         val bmiCategory = safeArgs.bmiCategory
-        val dailyEnergyNeedKcal = safeArgs.dailyEnergyNeedKcal
-        val dailyEnergyNeedKj = safeArgs.dailyEnergyNeedKj
-        val dailyEnergyKcalAndKjString = dailyEnergyNeedKcal.toString() + " " + context?.getString(R.string.spacerBetweenKcalValueAndKjValue) + " " + dailyEnergyNeedKj + " " + context?.getString(R.string.unitForKjValue)
+        val dailyEnergyKcalAndKjString = safeArgs.dailyEnergyKcalAndKjString
         view.findViewById<TextView>(R.id.tv_your_bmi_value)?.text = bmi.toString()
         view.findViewById<TextView>(R.id.tv_your_bmi_category_value)?.setTextColor(bmiColor)
         view.findViewById<TextView>(R.id.tv_your_bmi_category_value)?.text = bmiCategory

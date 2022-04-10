@@ -78,12 +78,8 @@ action to that certain Fragment-->
             app:argType="string"
             android:defaultValue="Needed values for calculation are incomplete" />
         <argument
-            android:name="dailyEnergyNeedKcal"
-            app:argType="float"
-            android:defaultValue="0.0" />
-        <argument
-            android:name="dailyEnergyNeedKj"
-            app:argType="float"
-            android:defaultValue="0.0" />
+            android:name="dailyEnergyKcalAndKjString"
+            app:argType="string"
+            android:defaultValue="0.0 kj / 0.0 kcal" />
     </fragment>
 </navigation>

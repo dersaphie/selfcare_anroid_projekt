@@ -18,7 +18,8 @@ class BodyCalculations {
             in 25.01f..30.0f -> context.getString(R.string.preadiposity)
             in 30.01f..35.0f -> context.getString(R.string.obesityGradeOne)
             in 35.01f..40.0f -> context.getString(R.string.obesityGradeTwo)
-            in 40.1f..1000000.0f -> context.getString(R.string.obesityGradeThree)
+            in 40.1f..200.0f -> context.getString(R.string.obesityGradeThree)
+            4.10070522e+12f -> context.getString(R.string.sun)
             else -> context.getString(R.string.bmiOutOfRange)
         }
         return bmiCategory
@@ -34,13 +35,14 @@ class BodyCalculations {
             in 25.01f..30.0f -> context.getColor(R.color.colorPreadiposity)
             in 30.01f..35.0f -> context.getColor(R.color.colorObesityGradeOne)
             in 35.01f..40.0f -> context.getColor(R.color.colorObesityGradeTwo)
-            in 40.1f..1000000.0f -> context.getColor(R.color.colorObesityGradeThree)
+            in 40.1f..200.0f -> context.getColor(R.color.colorObesityGradeThree)
+            4.10070522e+12f -> context.getColor(R.color.sun)
             else -> context.getColor(R.color.black)
         }
         return bmiColor
     }
 
-    fun energyNeedCalculatorKcal(weight: Float, height: Float, sex: String, age: Float, sleepHoursADay: Float, workPalValue: Float, workHoursADay: Float, sportPalValue: Float, sportHoursADay: Float):Float{
+    fun energyNeedCalculatorKcal(weight: Float, height: Float, sex: String, age: Int, sleepHoursADay: Float, workPalValue: Float, workHoursADay: Float, sportPalValue: Float, sportHoursADay: Float):Float{
         // Grundumsatz (GU): 4 kJ x Gewicht in kg x 24h
         // leichte Arbeit (2-4 kJ)
         val energyNeedPerDayInKcal: Float
@@ -51,11 +53,11 @@ class BodyCalculations {
         val energyBaseNeedPerDayInKcal: Float = when (sex) {
             "Man" -> {
                 // 66,47 + (13,7 × Körpergewicht in kg) + (5 × Körpergröße in cm) – (6,8 × Alter in Jahren) = Grundumsatz [kcal/24 h]
-                (66.47f + (13.7f * weight) + (5f * height) - (6.8f * age))
+                (66.47f + (13.7f * weight) + (5f * height) - (6.8f * age.toFloat()))
             }
             "Woman" -> {
                 // 655,1 + (9,6 × Körpergewicht in kg) + (1,8 × Körpergröße in cm) – (4,7 × Alter in Jahren) = Grundumsatz [kcal/24 h]
-                (655.1f + (9.6f * weight) + (1.8f * height) - (4.7f * age))
+                (655.1f + (9.6f * weight) + (1.8f * height) - (4.7f * age.toFloat()))
             }
             else -> {
                 0.0f
@@ -65,7 +67,7 @@ class BodyCalculations {
         return energyNeedPerDayInKcal
     }
 
-    fun energyNeedCalculatorKj(weight: Float, height: Float, sex: String, age: Float, sleepHoursADay: Float, workPalValue: Float, workHoursADay: Float, sportPalValue: Float, sportHoursADay: Float):Float{
+    fun energyNeedCalculatorKj(weight: Float, height: Float, sex: String, age: Int, sleepHoursADay: Float, workPalValue: Float, workHoursADay: Float, sportPalValue: Float, sportHoursADay: Float):Float{
         val kcalToKjFactor = 4.1868f
         return "%.2f".format(energyNeedCalculatorKcal(weight, height, sex, age, sleepHoursADay, workPalValue, workHoursADay, sportPalValue, sportHoursADay) * kcalToKjFactor).toFloat()
     }
@@ -78,6 +80,7 @@ class BodyCalculations {
     fun palCategoryToPalValueWork(palCategory: String, context: Activity): Float
     {
         val palValue = when(palCategory){
+            context.getString(R.string.pickYourWorkEnergyNeed) -> 0.0f
             context.getString(R.string.palSleep) -> 0.95f
             context.getString(R.string.palJustSittingOrLayingActivity) -> 1.2f
             context.getString(R.string.palMostlySittingOrLayingActivity) -> 1.4f
@@ -93,6 +96,7 @@ class BodyCalculations {
     fun palCategoryToPalValueSport(palCategory: String, context: Activity): Float
     {
         val palValue = when(palCategory){
+            context.getString(R.string.pickYourSportEnergyNeed) -> 0.0f
             context.getString(R.string.palVeryLightSport) -> 1.6f
             context.getString(R.string.palLightSport) -> 1.8f
             context.getString(R.string.palModerateSport) -> 2.0f
@@ -102,5 +106,36 @@ class BodyCalculations {
             else -> 0.0f
         }
         return palValue
+    }
+
+    fun palValueToPalCategoryWork(palValue: Float?, context: Activity): String
+    {
+        val palCategory = when(palValue){
+            0.0f -> context.getString(R.string.pickYourWorkEnergyNeed)
+            0.95f -> context.getString(R.string.palSleep)
+            1.2f -> context.getString(R.string.palJustSittingOrLayingActivity)
+            1.4f -> context.getString(R.string.palMostlySittingOrLayingActivity)
+            1.6f -> context.getString(R.string.palSomeWalkingActivity)
+            1.8f -> context.getString(R.string.palMostlyWalkingOrStandingActivity)
+            2.0f -> context.getString(R.string.palPhysicalDemandingActivity)
+            2.4f -> context.getString(R.string.palPhysicalVeryDemandingActivity)
+            else -> context.getString(R.string.pickYourWorkEnergyNeed)
+        }
+        return palCategory
+    }
+
+    fun palValueToPalCategorySport(palValue: Float?, context: Activity): String
+    {
+        val palCategory = when(palValue){
+            0.0f -> context.getString(R.string.pickYourSportEnergyNeed)
+            1.6f -> context.getString(R.string.palVeryLightSport)
+            1.8f -> context.getString(R.string.palLightSport)
+            2.0f -> context.getString(R.string.palModerateSport)
+            2.4f -> context.getString(R.string.palPhysicalDemandingSport)
+            2.7f -> context.getString(R.string.palPhysicalVeryDemandingSport)
+            3.0f -> context.getString(R.string.palCompetitiveSport)
+            else -> context.getString(R.string.pickYourSportEnergyNeed)
+        }
+        return palCategory
     }
 }

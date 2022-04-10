@@ -60,12 +60,13 @@ dependencies {
     // Jetpack Compose Integration Fragment Navigation
     implementation 'androidx.navigation:navigation-compose:2.4.1'
     implementation 'androidx.preference:preference-ktx:1.2.0'
-    // Testing Navigation Fragment Navigation
+    // Testing
     androidTestImplementation 'androidx.navigation:navigation-testing:2.4.1'
     testImplementation 'junit:junit:latest'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
     // DB
+    implementation 'androidx.room:room-ktx:2.4.2'
     implementation 'androidx.room:room-runtime:2.4.2'
     annotationProcessor 'androidx.room:room-compiler:2.4.2'
     kapt 'androidx.room:room-compiler:2.4.2'
