@@ -23,8 +23,6 @@ class DiaryFragment : Fragment() {
 
     private var _binding: FragmentDiaryBinding? = null
     private val binding get() = _binding!!
-    // MutableList: List can be edited (add cocktails, delete cocktails, ...)
-    // mutableListOf: initializes empty list
     private val diaryList : MutableList<Diary> = mutableListOf()
     private lateinit var diaryAdapter : DiaryAdapter
     private val swipeBackground : ColorDrawable = ColorDrawable(Color.parseColor("#FF03DAC5"))
@@ -122,15 +120,12 @@ class DiaryFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        //binding = ActivityMainBinding.inflate(layoutInflater)
-        //setContentView(binding.root)
 
-        deleteIcon = getDrawable(binding.root.context, R.drawable.ic_delete)//getDrawable(R.drawable.ic_delete)//R.drawable.ic_delete)
+        deleteIcon = getDrawable(binding.root.context, R.drawable.ic_delete)
 
         fillDiaryList()
 
         //Set the layout manager for recyclerview
-        //binding.rvDiary.setLayoutManager(LinearLayoutManager(this, RecyclerView.VERTICAL, false))
         binding.rvDiary.layoutManager = LinearLayoutManager(binding.root.context, RecyclerView.VERTICAL, false)
         binding.rvDiary.addItemDecoration(DividerItemDecoration(binding.root.context, DividerItemDecoration.VERTICAL))
         //Add ItemTouchHelper for swipe2delete
@@ -140,19 +135,14 @@ class DiaryFragment : Fragment() {
         binding.rvDiary.setAdapter(diaryAdapter)
 
 
-        //sortByPrice()
-
-        //Button to add a fix cocktail to the list
-        binding.fabAddDay.setOnClickListener( {
-            val newDay = Diary("","","")
+        binding.fabAddDay.setOnClickListener {
+            val newDay = Diary("", "", "")
             diaryAdapter.addDiary(newDay)
             diaryAdapter.notifyItemInserted(diaryList.size - 1)
-        })
+        }
     }
 
     private fun fillDiaryList() {
         diaryList.addAll(listOf(
             Diary("MEGA TAG!", "sehr gute Note für unsere App bekommen <3", "09.03.2022"))) }
-
-
 }
