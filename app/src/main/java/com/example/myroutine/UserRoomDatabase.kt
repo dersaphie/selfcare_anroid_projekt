@@ -6,7 +6,7 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 
 // annotates class to be a room database with a table (entity) of the user class
-@Database(entities = [User::class], version = 2)
+@Database(entities = [UserInDb::class], version = 2)
 abstract class UserRoomDatabase : RoomDatabase() {
     abstract fun userDao(): UserDao
     companion object {

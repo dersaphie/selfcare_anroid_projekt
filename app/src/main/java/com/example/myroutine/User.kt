@@ -1,55 +1,52 @@
 package com.example.myroutine
 
 import android.app.Activity
-import android.content.res.Resources
-import android.widget.EditText
-import android.widget.Spinner
-import androidx.room.ColumnInfo
-import androidx.room.Entity
-import androidx.room.PrimaryKey
+import android.content.Context
 
-@Entity(tableName = "user")
-data class User(@PrimaryKey @ColumnInfo(name = "id") val id: Int,
-                @ColumnInfo(name = "name") var name: String?,
-                @ColumnInfo(name = "age") val age: Int?,
-                @ColumnInfo(name = "weight") val weight: Float?,
-                @ColumnInfo(name = "height") val height: Float?,
-                @ColumnInfo(name = "sex") val sex: String? = Resources.getSystem().getString(R.string.pickYourSex),
-                @ColumnInfo(name = "sleep_hours") val sleep_hours: Float?,
-                @ColumnInfo(name = "sport_energy_need") val sport_energy_need: Float?,
-                @ColumnInfo(name = "sport_hours") val sport_hours: Float?,
-                @ColumnInfo(name = "work_energy_need") val work_energy_need: Float?,
-                @ColumnInfo(name = "work_hours") val work_hours: Float?
-                ) {
-    private var sleepHoursADay = 0.0f
-    private var workPalValue = 0.0f
-    private var workHoursADay = 0.0f
-    private var sportPalValue = 0.0f
-    private var sportHoursADay = 0.0f
-    private var bmi = 0.0f
-    private var bmiColor = 0
-    private var bmiCategory = "none"
-    private var dailyEnergyNeedKcal = 0.0f
-    private var dailyEnergyNeedKj = 0.0f
-    private var dailyEnergyKcalAndKjString = "0.0 kcal / 0.0 kj"
-    private val calculations = BodyCalculations()
-    private lateinit var db: UserRoomDatabase
-    private lateinit var userDao: UserDao
+class User(context: Context) {
+    private val id = 0
+    var name: String = "user"
+    var age: Int = 0
+    var weight: Float = 0.0f
+    var height: Float = 0f
+    var sex: String = "none"
+    var sleepHoursADay: Float = 0.0f
+    var workPalValue: Float = 0.0f
+    var workHoursADay: Float = 0.0f
+    var sportPalValue: Float = 0.0f
+    var sportHoursADay: Float = 0.0f
+    var bmi: Float = 0.0f
+    var bmiColor: Int = 0
+    var bmiCategory: String = "none"
+    var dailyEnergyNeedKcal: Float = 0.0f
+    var dailyEnergyNeedKj: Float = 0.0f
+    var dailyEnergyKcalAndKjString: String = "0.0 kcal / 0.0 kj"
+    private val db = UserRoomDatabase.getDatabase(context)
+    private val userDao = db.userDao()
 
-    private fun checkIfTableAndUserExistInDB(){
+    fun checkIfTableAndUserExistInDB(){
         // create user in user table if it does not exist
         if (userDao.getAll().isEmpty()) {
-            userDao.insertAll(this)
+            userDao.insertAll(UserInDb(id=id,name=name,age=age,weight=weight,height=height,sex=sex, sleep_hours = sleepHoursADay, sport_energy_need = sportPalValue, sport_hours = sportHoursADay, work_energy_need = workPalValue, work_hours = workHoursADay))
         }
     }
-    private fun updateUserDataInDB(){
+    fun updateUserDataInDB(){
         // update user data in db
-        userDao.updateUsers(this)
+        userDao.updateUsers(UserInDb(id=id,name=name,age=age,weight=weight,height=height,sex=sex, sleep_hours = sleepHoursADay, sport_energy_need = sportPalValue, sport_hours = sportHoursADay, work_energy_need = workPalValue, work_hours = workHoursADay))
     }
 
-    private fun readUserDataFromDbAndUpdateProfileViews(){
+    fun readUserDataFromDb(){
         // read user data from db
         val user = userDao.selectAllById(0)
-        this.name = user.name
+        this.name = user.name.toString()
+        this.age = user.age!!
+        this.weight = user.weight!!
+        this.height = user.height!!
+        this.sex = user.sex!!
+        this.sleepHoursADay = user.sleep_hours!!
+        this.sportPalValue = user.sport_energy_need!!
+        this.sportHoursADay = user.sport_hours!!
+        this.workPalValue = user.work_energy_need!!
+        this.workHoursADay = user.work_hours!!
     }
 }

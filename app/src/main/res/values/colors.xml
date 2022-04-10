@@ -58,9 +58,9 @@
     <color name="colorValuesForBMIAreIncomplete">#f5f</color>
     <color name="colorSevereUnderweight">#f00</color>
     <color name="colorModerateUnderweight">#fb0</color>
-    <color name="colorSlightUnderweight">#df0</color>
+    <color name="colorSlightUnderweight">#bd0</color>
     <color name="colorNormalWeight">#0f0</color>
-    <color name="colorPreadiposity">#df0</color>
+    <color name="colorPreadiposity">#bd0</color>
     <color name="colorObesityGradeOne">#fb0</color>
     <color name="colorObesityGradeTwo">#f60</color>
     <color name="colorObesityGradeThree">#f00</color>
