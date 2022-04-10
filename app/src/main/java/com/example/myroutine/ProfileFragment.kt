@@ -19,9 +19,15 @@ class ProfileFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        user = User(context as Activity)
-        user.checkIfTableAndUserExistInDB()
-        calculations = BodyCalculations(context as Activity)
+        try {
+            user = User(context as Activity)
+            user.checkIfTableAndUserExistInDB()
+            calculations = BodyCalculations(context as Activity)
+        }catch (e: Exception){
+            Toast.makeText(context, e.message.toString(), Toast.LENGTH_SHORT).show()
+        }finally {
+            navigateToHomeFragment()
+        }
     }
 
     override fun onCreateView(
@@ -40,20 +46,39 @@ class ProfileFragment : Fragment() {
         createSpinnerFunction(spinnerViewId = R.id.sp_your_sex, spinnerOptions = sexSpinnerOptions)
         createSpinnerFunction(spinnerViewId = R.id.sp_work_pal_value, spinnerOptions = workEnergyNeedSpinnerOptions)
         createSpinnerFunction(spinnerViewId = R.id.sp_sport_pal_value, spinnerOptions = sportEnergyNeedSpinnerOptions)
-        readUserDataFromDbAndUpdateProfileViews()
+        try {
+            readUserDataFromDbAndUpdateProfileViews()
+        }catch (e: Exception){
+            Toast.makeText(context, e.message.toString(), Toast.LENGTH_SHORT).show()
+        }finally {
+            navigateToHomeFragment()
+        }
 
         // save user data into db
         view.findViewById<Button>(R.id.btn_save_user_data_and_show_body_calculations)?.setOnClickListener {
-            getValuesFromViews()
-            user.updateUserDataInDB()
-            calculateBodyMetrics()
-            navigateToBodyCalculationsFragment()
+            try {
+                getValuesFromViews()
+                user.updateUserDataInDB()
+                calculateBodyMetrics()
+                navigateToBodyCalculationsFragment()
+            }catch (e: Exception){
+                Toast.makeText(context, e.message.toString(), Toast.LENGTH_SHORT).show()
+            }finally {
+                navigateToHomeFragment()
+            }
         }
 
+        // only show the calculation results without saving them
         view.findViewById<Button>(R.id.btn_show_body_calculations)?.setOnClickListener {
-            getValuesFromViews()
-            calculateBodyMetrics()
-            navigateToBodyCalculationsFragment()
+            try {
+                getValuesFromViews()
+                calculateBodyMetrics()
+                navigateToBodyCalculationsFragment()
+            }catch (e: Exception){
+                Toast.makeText(context,e.message.toString(), Toast.LENGTH_SHORT).show()
+            }finally {
+                navigateToHomeFragment()
+            }
         }
     }
 
@@ -66,6 +91,9 @@ class ProfileFragment : Fragment() {
             .setPopUpTo(R.id.profileFragment, inclusive = false, saveState = true)
             .build()
         findNavController().navigate(action, navOptions)
+    }
+
+    private fun navigateToHomeFragment() {
     }
 
     private fun calculateBodyMetrics(){
