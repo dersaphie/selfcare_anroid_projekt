@@ -112,7 +112,8 @@ class DiaryFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-
+        // set title of top action bar
+        (activity as AppCompatActivity).supportActionBar?.title = this.getString(R.string.diary)
         // Inflate the layout for this fragment
         _binding = FragmentDiaryBinding.inflate(layoutInflater, container,false)
         return binding.root
@@ -120,7 +121,6 @@ class DiaryFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
         deleteIcon = getDrawable(binding.root.context, R.drawable.ic_delete)
 
         fillDiaryList()

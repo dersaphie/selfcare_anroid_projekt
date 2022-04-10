@@ -172,19 +172,27 @@
     <string name="bmiColorPlaceholder">#000</string>
     <string name="sexPlaceHolder">none</string>
     <string name="dailyEnergyNeedKcalAndKjStringPlaceholder">0.0 kcal / 0.0 kj</string>
-
-    <!-- Fragment Titles -->
-    <string name="home">home</string>
-    <string name="sport">sport</string>
-    <string name="nutrition">nutrition</string>
-    <string name="profile">profile</string>
-    <string name="diary">diary</string>
     <string name="pickYourSex">Pick your Sex</string>
+
+    <!-- Sex -->
+    <string name="sexMan">Man</string>
+    <string name="sexWoman">Woman</string>
     <string name="woman">Woman</string>
     <string name="man">Man</string>
     <string name="divers">Divers</string>
+
+    <!-- Miscellaneous -->
     <string name="sun">sun</string>
     <string name="spacerBetweenTwoKjValues">" - "</string>
+
+    <!-- Fragment Titles -->
+    <string name="home">HOME</string>
+    <string name="sport">SPORT</string>
+    <string name="sportKnowledge">SPORT KNOWLEDGE</string>
+    <string name="nutrition">NUTRITION</string>
+    <string name="profile">PROFILE</string>
+    <string name="bodyCalculations">BODY CALCULATIONS</string>
+    <string name="diary">DIARY</string>
 
     <!-- Strings for Themes on theme changer spinner -->
     <string-array name="theme_array">
@@ -208,8 +216,6 @@
     <string name="errorMessageDailyEnergyNeedKj">daily energy need in kj must be minimum 0.0 kj</string>
     <string name="errorMessageUserNameEmpty">user name must not be empty</string>
     <string name="errorMessageSleepSportWorkHoursCombinedOver24Hours"><![CDATA[sleep + sport + work > 24 hours]]></string>
-    <string name="sexMan">Man</string>
-    <string name="sexWoman">Woman</string>
     <string name="errorMessageNoEnergyNeedFormulaForSex">\"no formula for kcal energy calculation for sex\"</string>
     <string name="errorMessageSleepSportAndWorkHoursRange">values for daily sleep, sport and work hours must be within 0 and 24 hours</string>
 

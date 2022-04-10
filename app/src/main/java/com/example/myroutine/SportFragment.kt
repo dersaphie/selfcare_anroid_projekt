@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavOptions
 import androidx.navigation.fragment.findNavController
 import api.ExerciseRepo
@@ -25,6 +26,8 @@ class SportFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        // set title of top action bar
+        (activity as AppCompatActivity).supportActionBar?.title = this.getString(R.string.sport)
         // Inflate the layout for this fragment
         _binding = FragmentSportBinding.inflate(layoutInflater, container, false)
         return binding.root
@@ -34,7 +37,6 @@ class SportFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
 
         view.findViewById<Button>(R.id.btnMuscleEquipment)?.setOnClickListener {
             val navOptions: NavOptions = NavOptions.Builder()

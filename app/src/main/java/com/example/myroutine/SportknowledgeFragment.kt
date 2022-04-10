@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import api.ExerciseRepo
 import com.example.myroutine.databinding.FragmentSportknowledgeBinding
@@ -19,6 +20,8 @@ class SportknowledgeFragment: Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
+        // set title of top action bar
+        (activity as AppCompatActivity).supportActionBar?.title = this.getString(R.string.sportKnowledge)
         // Inflate the layout for this fragment
         _binding = FragmentSportknowledgeBinding.inflate(layoutInflater, container, false)
         return binding.root

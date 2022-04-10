@@ -3,6 +3,7 @@ package com.example.myroutine
 import android.os.Bundle
 import android.view.*
 import android.widget.Button
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.navigation.NavOptions
 import androidx.navigation.Navigation
@@ -19,6 +20,8 @@ class HomeFragment : Fragment(){
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        // set title of top action bar
+        (activity as AppCompatActivity).supportActionBar?.title = this.getString(R.string.home)
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_home, container, false)
     }
